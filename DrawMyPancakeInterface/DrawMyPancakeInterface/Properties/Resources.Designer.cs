@@ -63,9 +63,9 @@ namespace DrawMyPancakeInterface.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap WhatsApp_Image_2018_09_06_at_15_10_44 {
+        internal static System.Drawing.Bitmap draw_my_pancake_logo {
             get {
-                object obj = ResourceManager.GetObject("WhatsApp_Image_2018_09_06_at_15_10_44", resourceCulture);
+                object obj = ResourceManager.GetObject("draw_my_pancake_logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
