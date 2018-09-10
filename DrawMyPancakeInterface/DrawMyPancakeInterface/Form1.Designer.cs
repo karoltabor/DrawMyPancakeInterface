@@ -106,7 +106,7 @@
             this.panel1.BackColor = System.Drawing.Color.LemonChiffon;
             this.panel1.Location = new System.Drawing.Point(214, 171);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1314, 745);
+            this.panel1.Size = new System.Drawing.Size(1314, 721);
             this.panel1.TabIndex = 4;
             // 
             // pictureBox2
@@ -156,7 +156,7 @@
             // 
             // pictureBox6
             // 
-            this.pictureBox6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
             this.pictureBox6.Location = new System.Drawing.Point(3, 118);
             this.pictureBox6.Name = "pictureBox6";
@@ -218,40 +218,40 @@
             // pictureBox12
             // 
             this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
-            this.pictureBox12.Location = new System.Drawing.Point(1547, 191);
+            this.pictureBox12.Location = new System.Drawing.Point(1519, 171);
             this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(136, 109);
-            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox12.Size = new System.Drawing.Size(204, 148);
+            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox12.TabIndex = 6;
             this.pictureBox12.TabStop = false;
             // 
             // pictureBox13
             // 
             this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
-            this.pictureBox13.Location = new System.Drawing.Point(1547, 331);
+            this.pictureBox13.Location = new System.Drawing.Point(1519, 353);
             this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(136, 109);
-            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox13.Size = new System.Drawing.Size(204, 148);
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox13.TabIndex = 7;
             this.pictureBox13.TabStop = false;
             // 
             // pictureBox14
             // 
             this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
-            this.pictureBox14.Location = new System.Drawing.Point(1547, 476);
+            this.pictureBox14.Location = new System.Drawing.Point(1519, 534);
             this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(136, 109);
-            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox14.Size = new System.Drawing.Size(204, 148);
+            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox14.TabIndex = 8;
             this.pictureBox14.TabStop = false;
             // 
             // pictureBox15
             // 
             this.pictureBox15.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox15.Image")));
-            this.pictureBox15.Location = new System.Drawing.Point(1547, 671);
+            this.pictureBox15.Location = new System.Drawing.Point(1519, 710);
             this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(196, 187);
-            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox15.Size = new System.Drawing.Size(204, 148);
+            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox15.TabIndex = 9;
             this.pictureBox15.TabStop = false;
             // 
@@ -259,12 +259,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1684, 931);
-            this.Controls.Add(this.pictureBox15);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(148)))), ((int)(((byte)(21)))));
+            this.ClientSize = new System.Drawing.Size(1684, 933);
+            this.Controls.Add(this.pictureBox12);
             this.Controls.Add(this.pictureBox14);
             this.Controls.Add(this.pictureBox13);
-            this.Controls.Add(this.pictureBox12);
+            this.Controls.Add(this.pictureBox15);
             this.Controls.Add(this.flowLayoutPanel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.flowLayoutPanel1);
