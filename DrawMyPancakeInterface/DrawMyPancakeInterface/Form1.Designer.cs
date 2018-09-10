@@ -89,24 +89,27 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Controls.Add(this.pictureBox3);
             this.flowLayoutPanel1.Controls.Add(this.pictureBox2);
             this.flowLayoutPanel1.Controls.Add(this.pictureBox4);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(1056, 12);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(1006, 12);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(472, 143);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(459, 143);
             this.flowLayoutPanel1.TabIndex = 4;
             this.flowLayoutPanel1.WrapContents = false;
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.LemonChiffon;
             this.panel1.Location = new System.Drawing.Point(214, 171);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1314, 721);
+            this.panel1.Size = new System.Drawing.Size(1251, 721);
             this.panel1.TabIndex = 4;
             // 
             // pictureBox2
@@ -141,7 +144,7 @@
             this.flowLayoutPanel2.Controls.Add(this.pictureBox11);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(15, 171);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(186, 745);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(186, 721);
             this.flowLayoutPanel2.TabIndex = 5;
             // 
             // pictureBox5
@@ -217,8 +220,10 @@
             // 
             // pictureBox12
             // 
+            this.pictureBox12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
-            this.pictureBox12.Location = new System.Drawing.Point(1519, 171);
+            this.pictureBox12.Location = new System.Drawing.Point(1459, 171);
+            this.pictureBox12.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(204, 148);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -227,8 +232,10 @@
             // 
             // pictureBox13
             // 
+            this.pictureBox13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
-            this.pictureBox13.Location = new System.Drawing.Point(1519, 353);
+            this.pictureBox13.Location = new System.Drawing.Point(1459, 353);
+            this.pictureBox13.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(204, 148);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -237,8 +244,10 @@
             // 
             // pictureBox14
             // 
+            this.pictureBox14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
-            this.pictureBox14.Location = new System.Drawing.Point(1519, 534);
+            this.pictureBox14.Location = new System.Drawing.Point(1459, 534);
+            this.pictureBox14.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(204, 148);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -247,8 +256,10 @@
             // 
             // pictureBox15
             // 
+            this.pictureBox15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox15.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox15.Image")));
-            this.pictureBox15.Location = new System.Drawing.Point(1519, 710);
+            this.pictureBox15.Location = new System.Drawing.Point(1459, 710);
+            this.pictureBox15.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(204, 148);
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
