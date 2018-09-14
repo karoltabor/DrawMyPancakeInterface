@@ -29,72 +29,72 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.pbFormTriangle = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pbFormCircle = new System.Windows.Forms.PictureBox();
+            this.pbFormBox = new System.Windows.Forms.PictureBox();
+            this.pnlMain = new System.Windows.Forms.Panel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.pbDrawingTriangle = new System.Windows.Forms.PictureBox();
+            this.pbDrawingCircle = new System.Windows.Forms.PictureBox();
+            this.pbDrawingBox = new System.Windows.Forms.PictureBox();
+            this.pbDrawingHeart = new System.Windows.Forms.PictureBox();
+            this.pbDrawingStar = new System.Windows.Forms.PictureBox();
+            this.pbDrawingSeaHorse = new System.Windows.Forms.PictureBox();
+            this.pbDrawingBunny = new System.Windows.Forms.PictureBox();
+            this.btnDraw = new System.Windows.Forms.PictureBox();
+            this.btnStepBack = new System.Windows.Forms.PictureBox();
+            this.btnReset = new System.Windows.Forms.PictureBox();
+            this.btnStart = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFormTriangle)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFormCircle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFormBox)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDrawingTriangle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDrawingCircle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDrawingBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDrawingHeart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDrawingStar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDrawingSeaHorse)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDrawingBunny)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDraw)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnStepBack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReset)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnStart)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pbLogo
             // 
-            this.pictureBox1.BackgroundImage = global::DrawMyPancakeInterface.Properties.Resources.draw_my_pancake_logo;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(-24, -22);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(278, 184);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pbLogo.BackgroundImage = global::DrawMyPancakeInterface.Properties.Resources.draw_my_pancake_logo;
+            this.pbLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbLogo.Location = new System.Drawing.Point(-24, -22);
+            this.pbLogo.Margin = new System.Windows.Forms.Padding(2);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(278, 184);
+            this.pbLogo.TabIndex = 0;
+            this.pbLogo.TabStop = false;
             // 
-            // pictureBox3
+            // pbFormTriangle
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(242, 2);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(116, 89);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
+            this.pbFormTriangle.Image = ((System.Drawing.Image)(resources.GetObject("pbFormTriangle.Image")));
+            this.pbFormTriangle.Location = new System.Drawing.Point(242, 2);
+            this.pbFormTriangle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbFormTriangle.Name = "pbFormTriangle";
+            this.pbFormTriangle.Size = new System.Drawing.Size(116, 89);
+            this.pbFormTriangle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbFormTriangle.TabIndex = 2;
+            this.pbFormTriangle.TabStop = false;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Controls.Add(this.pictureBox3);
-            this.flowLayoutPanel1.Controls.Add(this.pictureBox2);
-            this.flowLayoutPanel1.Controls.Add(this.pictureBox4);
+            this.flowLayoutPanel1.Controls.Add(this.pbFormTriangle);
+            this.flowLayoutPanel1.Controls.Add(this.pbFormCircle);
+            this.flowLayoutPanel1.Controls.Add(this.pbFormBox);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(754, 10);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
@@ -103,181 +103,181 @@
             this.flowLayoutPanel1.TabIndex = 4;
             this.flowLayoutPanel1.WrapContents = false;
             // 
-            // pictureBox2
+            // pbFormCircle
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(122, 2);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(116, 89);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
+            this.pbFormCircle.Image = ((System.Drawing.Image)(resources.GetObject("pbFormCircle.Image")));
+            this.pbFormCircle.Location = new System.Drawing.Point(122, 2);
+            this.pbFormCircle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbFormCircle.Name = "pbFormCircle";
+            this.pbFormCircle.Size = new System.Drawing.Size(116, 89);
+            this.pbFormCircle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbFormCircle.TabIndex = 3;
+            this.pbFormCircle.TabStop = false;
             // 
-            // pictureBox4
+            // pbFormBox
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(2, 2);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(116, 89);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 4;
-            this.pictureBox4.TabStop = false;
+            this.pbFormBox.Image = ((System.Drawing.Image)(resources.GetObject("pbFormBox.Image")));
+            this.pbFormBox.Location = new System.Drawing.Point(2, 2);
+            this.pbFormBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbFormBox.Name = "pbFormBox";
+            this.pbFormBox.Size = new System.Drawing.Size(116, 89);
+            this.pbFormBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbFormBox.TabIndex = 4;
+            this.pbFormBox.TabStop = false;
             // 
-            // panel1
+            // pnlMain
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.pnlMain.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.AutoSize = true;
-            this.panel1.BackColor = System.Drawing.Color.LemonChiffon;
-            this.panel1.Location = new System.Drawing.Point(160, 139);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(837, 586);
-            this.panel1.TabIndex = 4;
+            this.pnlMain.AutoSize = true;
+            this.pnlMain.BackColor = System.Drawing.Color.LemonChiffon;
+            this.pnlMain.Location = new System.Drawing.Point(160, 139);
+            this.pnlMain.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Size = new System.Drawing.Size(837, 586);
+            this.pnlMain.TabIndex = 4;
             // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.AutoScroll = true;
-            this.flowLayoutPanel2.Controls.Add(this.pictureBox5);
-            this.flowLayoutPanel2.Controls.Add(this.pictureBox6);
-            this.flowLayoutPanel2.Controls.Add(this.pictureBox7);
-            this.flowLayoutPanel2.Controls.Add(this.pictureBox8);
-            this.flowLayoutPanel2.Controls.Add(this.pictureBox9);
-            this.flowLayoutPanel2.Controls.Add(this.pictureBox10);
-            this.flowLayoutPanel2.Controls.Add(this.pictureBox11);
+            this.flowLayoutPanel2.Controls.Add(this.pbDrawingTriangle);
+            this.flowLayoutPanel2.Controls.Add(this.pbDrawingCircle);
+            this.flowLayoutPanel2.Controls.Add(this.pbDrawingBox);
+            this.flowLayoutPanel2.Controls.Add(this.pbDrawingHeart);
+            this.flowLayoutPanel2.Controls.Add(this.pbDrawingStar);
+            this.flowLayoutPanel2.Controls.Add(this.pbDrawingSeaHorse);
+            this.flowLayoutPanel2.Controls.Add(this.pbDrawingBunny);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(11, 139);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(140, 586);
             this.flowLayoutPanel2.TabIndex = 5;
             // 
-            // pictureBox5
+            // pbDrawingTriangle
             // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(2, 2);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(116, 89);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 3;
-            this.pictureBox5.TabStop = false;
+            this.pbDrawingTriangle.Image = ((System.Drawing.Image)(resources.GetObject("pbDrawingTriangle.Image")));
+            this.pbDrawingTriangle.Location = new System.Drawing.Point(2, 2);
+            this.pbDrawingTriangle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbDrawingTriangle.Name = "pbDrawingTriangle";
+            this.pbDrawingTriangle.Size = new System.Drawing.Size(116, 89);
+            this.pbDrawingTriangle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbDrawingTriangle.TabIndex = 3;
+            this.pbDrawingTriangle.TabStop = false;
             // 
-            // pictureBox6
+            // pbDrawingCircle
             // 
-            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(2, 95);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(116, 89);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 4;
-            this.pictureBox6.TabStop = false;
+            this.pbDrawingCircle.BackColor = System.Drawing.Color.Transparent;
+            this.pbDrawingCircle.Image = ((System.Drawing.Image)(resources.GetObject("pbDrawingCircle.Image")));
+            this.pbDrawingCircle.Location = new System.Drawing.Point(2, 95);
+            this.pbDrawingCircle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbDrawingCircle.Name = "pbDrawingCircle";
+            this.pbDrawingCircle.Size = new System.Drawing.Size(116, 89);
+            this.pbDrawingCircle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbDrawingCircle.TabIndex = 4;
+            this.pbDrawingCircle.TabStop = false;
             // 
-            // pictureBox7
+            // pbDrawingBox
             // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(2, 188);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(116, 89);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 5;
-            this.pictureBox7.TabStop = false;
+            this.pbDrawingBox.Image = ((System.Drawing.Image)(resources.GetObject("pbDrawingBox.Image")));
+            this.pbDrawingBox.Location = new System.Drawing.Point(2, 188);
+            this.pbDrawingBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbDrawingBox.Name = "pbDrawingBox";
+            this.pbDrawingBox.Size = new System.Drawing.Size(116, 89);
+            this.pbDrawingBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbDrawingBox.TabIndex = 5;
+            this.pbDrawingBox.TabStop = false;
             // 
-            // pictureBox8
+            // pbDrawingHeart
             // 
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(2, 281);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(116, 89);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 6;
-            this.pictureBox8.TabStop = false;
+            this.pbDrawingHeart.Image = ((System.Drawing.Image)(resources.GetObject("pbDrawingHeart.Image")));
+            this.pbDrawingHeart.Location = new System.Drawing.Point(2, 281);
+            this.pbDrawingHeart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbDrawingHeart.Name = "pbDrawingHeart";
+            this.pbDrawingHeart.Size = new System.Drawing.Size(116, 89);
+            this.pbDrawingHeart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbDrawingHeart.TabIndex = 6;
+            this.pbDrawingHeart.TabStop = false;
             // 
-            // pictureBox9
+            // pbDrawingStar
             // 
-            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(2, 374);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(116, 89);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox9.TabIndex = 7;
-            this.pictureBox9.TabStop = false;
+            this.pbDrawingStar.Image = ((System.Drawing.Image)(resources.GetObject("pbDrawingStar.Image")));
+            this.pbDrawingStar.Location = new System.Drawing.Point(2, 374);
+            this.pbDrawingStar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbDrawingStar.Name = "pbDrawingStar";
+            this.pbDrawingStar.Size = new System.Drawing.Size(116, 89);
+            this.pbDrawingStar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbDrawingStar.TabIndex = 7;
+            this.pbDrawingStar.TabStop = false;
             // 
-            // pictureBox10
+            // pbDrawingSeaHorse
             // 
-            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(2, 467);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(116, 89);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox10.TabIndex = 8;
-            this.pictureBox10.TabStop = false;
+            this.pbDrawingSeaHorse.Image = ((System.Drawing.Image)(resources.GetObject("pbDrawingSeaHorse.Image")));
+            this.pbDrawingSeaHorse.Location = new System.Drawing.Point(2, 467);
+            this.pbDrawingSeaHorse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbDrawingSeaHorse.Name = "pbDrawingSeaHorse";
+            this.pbDrawingSeaHorse.Size = new System.Drawing.Size(116, 89);
+            this.pbDrawingSeaHorse.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbDrawingSeaHorse.TabIndex = 8;
+            this.pbDrawingSeaHorse.TabStop = false;
             // 
-            // pictureBox11
+            // pbDrawingBunny
             // 
-            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(2, 560);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(116, 89);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox11.TabIndex = 9;
-            this.pictureBox11.TabStop = false;
+            this.pbDrawingBunny.Image = ((System.Drawing.Image)(resources.GetObject("pbDrawingBunny.Image")));
+            this.pbDrawingBunny.Location = new System.Drawing.Point(2, 560);
+            this.pbDrawingBunny.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbDrawingBunny.Name = "pbDrawingBunny";
+            this.pbDrawingBunny.Size = new System.Drawing.Size(116, 89);
+            this.pbDrawingBunny.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbDrawingBunny.TabIndex = 9;
+            this.pbDrawingBunny.TabStop = false;
             // 
-            // pictureBox12
+            // btnDraw
             // 
-            this.pictureBox12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
-            this.pictureBox12.Location = new System.Drawing.Point(999, 139);
-            this.pictureBox12.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(204, 148);
-            this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox12.TabIndex = 6;
-            this.pictureBox12.TabStop = false;
+            this.btnDraw.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDraw.Image = ((System.Drawing.Image)(resources.GetObject("btnDraw.Image")));
+            this.btnDraw.Location = new System.Drawing.Point(999, 139);
+            this.btnDraw.Margin = new System.Windows.Forms.Padding(0);
+            this.btnDraw.Name = "btnDraw";
+            this.btnDraw.Size = new System.Drawing.Size(204, 148);
+            this.btnDraw.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btnDraw.TabIndex = 6;
+            this.btnDraw.TabStop = false;
             // 
-            // pictureBox13
+            // btnStepBack
             // 
-            this.pictureBox13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
-            this.pictureBox13.Location = new System.Drawing.Point(999, 286);
-            this.pictureBox13.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(204, 148);
-            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox13.TabIndex = 7;
-            this.pictureBox13.TabStop = false;
+            this.btnStepBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnStepBack.Image = ((System.Drawing.Image)(resources.GetObject("btnStepBack.Image")));
+            this.btnStepBack.Location = new System.Drawing.Point(999, 286);
+            this.btnStepBack.Margin = new System.Windows.Forms.Padding(0);
+            this.btnStepBack.Name = "btnStepBack";
+            this.btnStepBack.Size = new System.Drawing.Size(204, 148);
+            this.btnStepBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btnStepBack.TabIndex = 7;
+            this.btnStepBack.TabStop = false;
             // 
-            // pictureBox14
+            // btnReset
             // 
-            this.pictureBox14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
-            this.pictureBox14.Location = new System.Drawing.Point(999, 434);
-            this.pictureBox14.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(204, 148);
-            this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox14.TabIndex = 8;
-            this.pictureBox14.TabStop = false;
+            this.btnReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReset.Image = ((System.Drawing.Image)(resources.GetObject("btnReset.Image")));
+            this.btnReset.Location = new System.Drawing.Point(999, 434);
+            this.btnReset.Margin = new System.Windows.Forms.Padding(0);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(204, 148);
+            this.btnReset.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btnReset.TabIndex = 8;
+            this.btnReset.TabStop = false;
             // 
-            // pictureBox15
+            // btnStart
             // 
-            this.pictureBox15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox15.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox15.Image")));
-            this.pictureBox15.Location = new System.Drawing.Point(999, 582);
-            this.pictureBox15.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(204, 148);
-            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox15.TabIndex = 9;
-            this.pictureBox15.TabStop = false;
+            this.btnStart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnStart.Image = ((System.Drawing.Image)(resources.GetObject("btnStart.Image")));
+            this.btnStart.Location = new System.Drawing.Point(999, 582);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(0);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(204, 148);
+            this.btnStart.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btnStart.TabIndex = 9;
+            this.btnStart.TabStop = false;
             // 
             // Form1
             // 
@@ -285,35 +285,35 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(148)))), ((int)(((byte)(21)))));
             this.ClientSize = new System.Drawing.Size(1203, 716);
-            this.Controls.Add(this.pictureBox12);
-            this.Controls.Add(this.pictureBox14);
-            this.Controls.Add(this.pictureBox13);
-            this.Controls.Add(this.pictureBox15);
+            this.Controls.Add(this.btnDraw);
+            this.Controls.Add(this.btnReset);
+            this.Controls.Add(this.btnStepBack);
+            this.Controls.Add(this.btnStart);
             this.Controls.Add(this.flowLayoutPanel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlMain);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbLogo);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFormTriangle)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFormCircle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFormBox)).EndInit();
             this.flowLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDrawingTriangle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDrawingCircle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDrawingBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDrawingHeart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDrawingStar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDrawingSeaHorse)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDrawingBunny)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDraw)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnStepBack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReset)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnStart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,24 +321,24 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pbLogo;
+        private System.Windows.Forms.PictureBox pbFormTriangle;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Panel pnlMain;
+        private System.Windows.Forms.PictureBox pbFormCircle;
+        private System.Windows.Forms.PictureBox pbFormBox;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.PictureBox pictureBox13;
-        private System.Windows.Forms.PictureBox pictureBox14;
-        private System.Windows.Forms.PictureBox pictureBox15;
+        private System.Windows.Forms.PictureBox pbDrawingTriangle;
+        private System.Windows.Forms.PictureBox pbDrawingCircle;
+        private System.Windows.Forms.PictureBox pbDrawingBox;
+        private System.Windows.Forms.PictureBox pbDrawingHeart;
+        private System.Windows.Forms.PictureBox pbDrawingStar;
+        private System.Windows.Forms.PictureBox pbDrawingSeaHorse;
+        private System.Windows.Forms.PictureBox pbDrawingBunny;
+        private System.Windows.Forms.PictureBox btnDraw;
+        private System.Windows.Forms.PictureBox btnStepBack;
+        private System.Windows.Forms.PictureBox btnReset;
+        private System.Windows.Forms.PictureBox btnStart;
     }
 }
 
