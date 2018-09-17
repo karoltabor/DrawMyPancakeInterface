@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DrawMyPancakeInterface.Properties
+namespace EasyPaint.Properties
 {
 
 

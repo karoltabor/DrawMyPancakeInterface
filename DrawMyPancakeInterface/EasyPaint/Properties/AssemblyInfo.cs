@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DrawMyPancakeInterface")]
+[assembly: AssemblyTitle("EasyPaint")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DrawMyPancakeInterface")]
+[assembly: AssemblyProduct("EasyPaint")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("fe4427e4-1e01-4805-9a92-eb756ce74214")]
+[assembly: Guid("331bd681-0b89-4a4b-a2ea-ad58c37acd6d")]
 
 // Version information for an assembly consists of the following four values:
 //
