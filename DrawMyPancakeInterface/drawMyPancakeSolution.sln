@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "drawMyPancakeInterface", "DrawMyPancake\drawMyPancakeInterface.csproj", "{C64D1E88-FC09-4775-98E2-ACB4B39D91CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyPaint", "EasyPaint\EasyPaint.csproj", "{331BD681-0B89-4A4B-A2EA-AD58C37ACD6D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C64D1E88-FC09-4775-98E2-ACB4B39D91CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C64D1E88-FC09-4775-98E2-ACB4B39D91CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C64D1E88-FC09-4775-98E2-ACB4B39D91CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{331BD681-0B89-4A4B-A2EA-AD58C37ACD6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{331BD681-0B89-4A4B-A2EA-AD58C37ACD6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{331BD681-0B89-4A4B-A2EA-AD58C37ACD6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{331BD681-0B89-4A4B-A2EA-AD58C37ACD6D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

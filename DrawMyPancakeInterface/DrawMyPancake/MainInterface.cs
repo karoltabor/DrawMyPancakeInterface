@@ -77,7 +77,7 @@ namespace PanelTesting
 
         private void btnPencil_Click(object sender, EventArgs e)
         {
-
+            clrDialog.ShowDialog();
         }
 
         private void btnStart_Click(object sender, EventArgs e)

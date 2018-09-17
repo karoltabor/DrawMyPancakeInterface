@@ -45,6 +45,7 @@
             this.middlePanel = new System.Windows.Forms.TableLayoutPanel();
             this.topPanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.clrDialog = new System.Windows.Forms.ColorDialog();
             this.tableLayoutPanel1.SuspendLayout();
             this.leftPanel.SuspendLayout();
             this.rightPanel.SuspendLayout();
@@ -299,6 +300,7 @@
         private System.Windows.Forms.TableLayoutPanel middlePanel;
         private System.Windows.Forms.Panel topPanel;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ColorDialog clrDialog;
     }
 }
 
