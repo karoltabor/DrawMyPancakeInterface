@@ -69,7 +69,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 450F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 549);
             this.tableLayoutPanel1.TabIndex = 0;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // leftPanel
             // 
@@ -183,6 +182,7 @@
             this.btnStart.Size = new System.Drawing.Size(118, 100);
             this.btnStart.TabIndex = 6;
             this.btnStart.UseVisualStyleBackColor = false;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // btnDelete
             // 
@@ -225,6 +225,7 @@
             this.btnPencil.Size = new System.Drawing.Size(118, 100);
             this.btnPencil.TabIndex = 3;
             this.btnPencil.UseVisualStyleBackColor = false;
+            this.btnPencil.Click += new System.EventHandler(this.btnPencil_Click);
             // 
             // middlePanel
             // 
