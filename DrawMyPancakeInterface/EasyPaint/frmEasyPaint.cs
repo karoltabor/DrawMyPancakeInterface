@@ -15,7 +15,7 @@ namespace EasyPaint
         Graphics g; //defines an incredible number of methods for drawing and manipulating gaphic objects.
         bool drawFlag = false; //check mouse down
         int xDown, yDown, xUp, yUp, //track the screen positions
-            LLint, TTint, BBint, WWint, HHint = 0; //define the bounding rectangle for all of the geometric shapes 
+            LLint, TTint, WWint, HHint = 0; //define the bounding rectangle for all of the geometric shapes 
         int intToolselected = 1;
         int intBrushSize = 6;
         int intPenWidth = 2;
@@ -43,6 +43,7 @@ namespace EasyPaint
                 yDown = e.Y;
                 g.FillEllipse(new SolidBrush(clrSelected), xDown, yDown, intBrushSize, intBrushSize);
                 g.Save();
+                
                 picCanvas.Image = bmpPic;
                 picCanvas.Refresh();
             }
@@ -257,7 +258,8 @@ namespace EasyPaint
         private void mnuFileNew_Click(object sender, EventArgs e)
         {
             pnlMain.Enabled = true;
-            picCanvas.BackColor = Color.White;
+            //picCanvas.BackColor = Color.White;
+            picCanvas.BackgroundImage = Properties.Resources.brush;
             bmpPic = new Bitmap(picCanvas.Width, picCanvas.Height);
             g = Graphics.FromImage(bmpPic);
             g.Clear(Color.White);

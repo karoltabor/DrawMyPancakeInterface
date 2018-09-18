@@ -44,12 +44,16 @@
             this.btnPencil = new System.Windows.Forms.Button();
             this.middlePanel = new System.Windows.Forms.TableLayoutPanel();
             this.topPanel = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.centerPanel = new System.Windows.Forms.Panel();
+            this.pbCanvas = new System.Windows.Forms.PictureBox();
             this.clrDialog = new System.Windows.Forms.ColorDialog();
+            this.sfdSave = new System.Windows.Forms.SaveFileDialog();
             this.tableLayoutPanel1.SuspendLayout();
             this.leftPanel.SuspendLayout();
             this.rightPanel.SuspendLayout();
             this.middlePanel.SuspendLayout();
+            this.centerPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCanvas)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -234,7 +238,7 @@
             this.middlePanel.ColumnCount = 1;
             this.middlePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.middlePanel.Controls.Add(this.topPanel, 0, 0);
-            this.middlePanel.Controls.Add(this.panel1, 0, 1);
+            this.middlePanel.Controls.Add(this.centerPanel, 0, 1);
             this.middlePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.middlePanel.Location = new System.Drawing.Point(130, 3);
             this.middlePanel.Name = "middlePanel";
@@ -255,14 +259,24 @@
             this.topPanel.Size = new System.Drawing.Size(537, 87);
             this.topPanel.TabIndex = 0;
             // 
-            // panel1
+            // centerPanel
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 96);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(537, 444);
-            this.panel1.TabIndex = 1;
+            this.centerPanel.BackColor = System.Drawing.Color.Transparent;
+            this.centerPanel.Controls.Add(this.pbCanvas);
+            this.centerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.centerPanel.Location = new System.Drawing.Point(3, 96);
+            this.centerPanel.Name = "centerPanel";
+            this.centerPanel.Size = new System.Drawing.Size(537, 444);
+            this.centerPanel.TabIndex = 1;
+            // 
+            // pbCanvas
+            // 
+            this.pbCanvas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbCanvas.Location = new System.Drawing.Point(0, 0);
+            this.pbCanvas.Name = "pbCanvas";
+            this.pbCanvas.Size = new System.Drawing.Size(537, 444);
+            this.pbCanvas.TabIndex = 0;
+            this.pbCanvas.TabStop = false;
             // 
             // mainForm
             // 
@@ -278,6 +292,8 @@
             this.leftPanel.ResumeLayout(false);
             this.rightPanel.ResumeLayout(false);
             this.middlePanel.ResumeLayout(false);
+            this.centerPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbCanvas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -299,8 +315,10 @@
         private System.Windows.Forms.Button btnPencil;
         private System.Windows.Forms.TableLayoutPanel middlePanel;
         private System.Windows.Forms.Panel topPanel;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel centerPanel;
         private System.Windows.Forms.ColorDialog clrDialog;
+        private System.Windows.Forms.PictureBox pbCanvas;
+        private System.Windows.Forms.SaveFileDialog sfdSave;
     }
 }
 
