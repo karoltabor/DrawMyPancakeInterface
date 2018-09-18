@@ -31,6 +31,8 @@
             this.dlgFont = new System.Windows.Forms.FontDialog();
             this.sfdSavePic = new System.Windows.Forms.SaveFileDialog();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.picCanvas = new System.Windows.Forms.PictureBox();
+            this.pnlFrame = new System.Windows.Forms.Panel();
             this.lblRed = new System.Windows.Forms.Label();
             this.lblNavy = new System.Windows.Forms.Label();
             this.cmbPenWidth = new System.Windows.Forms.ComboBox();
@@ -47,16 +49,14 @@
             this.lblFontDetails = new System.Windows.Forms.Label();
             this.txtInsertText = new System.Windows.Forms.TextBox();
             this.lblEditText = new System.Windows.Forms.Label();
-            this.pnlFrame = new System.Windows.Forms.Panel();
             this.mnuEasyPaint = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFileNew = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFileSave = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFileExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.picCanvas = new System.Windows.Forms.PictureBox();
             this.pnlMain.SuspendLayout();
-            this.mnuEasyPaint.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).BeginInit();
+            this.mnuEasyPaint.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMain
@@ -85,6 +85,26 @@
             this.pnlMain.Size = new System.Drawing.Size(624, 538);
             this.pnlMain.TabIndex = 1;
             // 
+            // picCanvas
+            // 
+            this.picCanvas.BackColor = System.Drawing.Color.Gray;
+            this.picCanvas.Location = new System.Drawing.Point(10, 50);
+            this.picCanvas.Name = "picCanvas";
+            this.picCanvas.Size = new System.Drawing.Size(480, 480);
+            this.picCanvas.TabIndex = 3;
+            this.picCanvas.TabStop = false;
+            this.picCanvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picCanvas_MouseDown);
+            this.picCanvas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picCanvas_MouseMove);
+            this.picCanvas.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picCanvas_MouseUp);
+            // 
+            // pnlFrame
+            // 
+            this.pnlFrame.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlFrame.Location = new System.Drawing.Point(9, 49);
+            this.pnlFrame.Name = "pnlFrame";
+            this.pnlFrame.Size = new System.Drawing.Size(482, 482);
+            this.pnlFrame.TabIndex = 2;
+            // 
             // lblRed
             // 
             this.lblRed.BackColor = System.Drawing.Color.Red;
@@ -108,6 +128,38 @@
             // cmbPenWidth
             // 
             this.cmbPenWidth.FormattingEnabled = true;
+            this.cmbPenWidth.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31"});
             this.cmbPenWidth.Location = new System.Drawing.Point(573, 459);
             this.cmbPenWidth.Name = "cmbPenWidth";
             this.cmbPenWidth.Size = new System.Drawing.Size(36, 21);
@@ -269,14 +321,6 @@
             this.lblEditText.TabIndex = 0;
             this.lblEditText.Text = "Insert text:";
             // 
-            // pnlFrame
-            // 
-            this.pnlFrame.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlFrame.Location = new System.Drawing.Point(9, 49);
-            this.pnlFrame.Name = "pnlFrame";
-            this.pnlFrame.Size = new System.Drawing.Size(482, 482);
-            this.pnlFrame.TabIndex = 2;
-            // 
             // mnuEasyPaint
             // 
             this.mnuEasyPaint.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -299,35 +343,23 @@
             // mnuFileNew
             // 
             this.mnuFileNew.Name = "mnuFileNew";
-            this.mnuFileNew.Size = new System.Drawing.Size(180, 22);
+            this.mnuFileNew.Size = new System.Drawing.Size(98, 22);
             this.mnuFileNew.Text = "New";
             this.mnuFileNew.Click += new System.EventHandler(this.mnuFileNew_Click);
             // 
             // mnuFileSave
             // 
             this.mnuFileSave.Name = "mnuFileSave";
-            this.mnuFileSave.Size = new System.Drawing.Size(180, 22);
+            this.mnuFileSave.Size = new System.Drawing.Size(98, 22);
             this.mnuFileSave.Text = "Save";
             this.mnuFileSave.Click += new System.EventHandler(this.mnuFileSave_Click);
             // 
             // mnuFileExit
             // 
             this.mnuFileExit.Name = "mnuFileExit";
-            this.mnuFileExit.Size = new System.Drawing.Size(180, 22);
+            this.mnuFileExit.Size = new System.Drawing.Size(98, 22);
             this.mnuFileExit.Text = "Exit";
             this.mnuFileExit.Click += new System.EventHandler(this.mnuFileExit_Click);
-            // 
-            // picCanvas
-            // 
-            this.picCanvas.BackColor = System.Drawing.Color.Gray;
-            this.picCanvas.Location = new System.Drawing.Point(10, 50);
-            this.picCanvas.Name = "picCanvas";
-            this.picCanvas.Size = new System.Drawing.Size(480, 480);
-            this.picCanvas.TabIndex = 3;
-            this.picCanvas.TabStop = false;
-            this.picCanvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picCanvas_MouseDown);
-            this.picCanvas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picCanvas_MouseMove);
-            this.picCanvas.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picCanvas_MouseUp);
             // 
             // form1
             // 
@@ -340,9 +372,9 @@
             this.Text = "EasyPaint";
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).EndInit();
             this.mnuEasyPaint.ResumeLayout(false);
             this.mnuEasyPaint.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

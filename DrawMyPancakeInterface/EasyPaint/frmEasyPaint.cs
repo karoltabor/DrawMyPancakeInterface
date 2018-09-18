@@ -16,11 +16,11 @@ namespace EasyPaint
         bool drawFlag = false; //check mouse down
         int xDown, yDown, xUp, yUp, //track the screen positions
             LLint, TTint, BBint, WWint, HHint = 0; //define the bounding rectangle for all of the geometric shapes 
-        int intToolselected = 0;
+        int intToolselected = 1;
         int intBrushSize = 6;
         int intPenWidth = 2;
         Bitmap bmpPic;
-        Color clrSelected;
+        Color clrSelected = Color.Black;
 
         public form1()
         {
@@ -42,9 +42,13 @@ namespace EasyPaint
                 xDown = e.X;
                 yDown = e.Y;
                 g.FillEllipse(new SolidBrush(clrSelected), xDown, yDown, intBrushSize, intBrushSize);
+                g.Save();
+                picCanvas.Image = bmpPic;
                 picCanvas.Refresh();
             }
         }
+
+        #region figuurtjes
 
         private void dimSquare()
         {
@@ -155,21 +159,6 @@ namespace EasyPaint
             WWint *= 2;
         }
 
-        private void mnuFileSave_Click(object sender, EventArgs e)              
-        {
-            sfdSavePic.Filter = "bitmap |*.bmp";                    
-            if(sfdSavePic.ShowDialog() == DialogResult.OK)
-            {                                                                                       //naar kijken volgende keer (doesn't seem to work)
-                picCanvas.Image.Save(sfdSavePic.FileName, System.Drawing.Imaging.ImageFormat.Bmp); //error handling 
-                MessageBox.Show("file saved.");
-            }
-        }
-
-        private void mnuFileExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void dimEllipse()
         {
             if (xUp < 0)
@@ -194,6 +183,23 @@ namespace EasyPaint
             TTint = yDown - HHint;
             WWint *= 2;
             HHint *= 2;
+        }
+
+        #endregion
+
+        private void mnuFileSave_Click(object sender, EventArgs e)              
+        {
+            sfdSavePic.Filter = "bitmap |*.bmp";                    
+            if(sfdSavePic.ShowDialog() == DialogResult.OK)
+            {                                                                                     
+                picCanvas.Image.Save(sfdSavePic.FileName, System.Drawing.Imaging.ImageFormat.Bmp); 
+                MessageBox.Show("file saved.");
+            }
+        }
+
+        private void mnuFileExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
         private void picCanvas_MouseUp(object sender, MouseEventArgs e)
@@ -254,8 +260,10 @@ namespace EasyPaint
             picCanvas.BackColor = Color.White;
             bmpPic = new Bitmap(picCanvas.Width, picCanvas.Height);
             g = Graphics.FromImage(bmpPic);
-            picCanvas.DrawToBitmap(bmpPic, picCanvas.ClientRectangle);
+            g.Clear(Color.White);
+            picCanvas.Image = bmpPic;
         }
+        #region Toolselection
 
         private void lblPalette_Click(object sender, EventArgs e)
         {
@@ -266,13 +274,21 @@ namespace EasyPaint
             switch (lbl.BackColor.Name)
             {
                 case "Black":
-                    lblColorSelected.Text = "Colour: Black"; break;
+                    lblColorSelected.Text = "Colour: Black";
+                    clrSelected = Color.Black;
+                    break;
                 case "Red":
-                    lblColorSelected.Text = "Colour: Red"; break;
+                    lblColorSelected.Text = "Colour: Red";
+                    clrSelected = Color.Red;
+                    break;
                 case "Navy":
-                    lblColorSelected.Text = "Colour: Navy"; break;
+                    lblColorSelected.Text = "Colour: Navy";
+                    clrSelected = Color.Navy;
+                    break;
                 default:
-                    lblColorSelected.Text = "Colour:  Black"; break;
+                    lblColorSelected.Text = "Colour:  Black";
+                    clrSelected = Color.Black;
+                    break;
             }
         }
         private void lblTool_Click(object sender, EventArgs e)
@@ -298,6 +314,7 @@ namespace EasyPaint
                     break;
             }
         }
+        #endregion
 
         private void ResetTools()
         {
