@@ -14,44 +14,23 @@ namespace EasyPaint
     {
         Graphics g; //defines an incredible number of methods for drawing and manipulating gaphic objects.
         bool drawFlag = false; //check mouse down
-        int xDown, yDown, xUp, yUp, //track the screen positions
+        int xDown, yDown, //track the screen positions
             LLint, TTint, WWint, HHint = 0; //define the bounding rectangle for all of the geometric shapes 
         int intToolselected = 1;
         int intBrushSize = 6;
         int intPenWidth = 2;
         Bitmap bmpPic;
         Color clrSelected = Color.Black;
+        Bitmap tmp;
 
         public form1()
         {
             InitializeComponent();
         }
 
-
-        private void picCanvas_MouseDown(object sender, MouseEventArgs e)
-        {
-            drawFlag = true;
-            xDown = e.X;
-            yDown = e.Y;
-        }
-
-        private void picCanvas_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (intToolselected == 1 && drawFlag == true)                   //naar kijken volgende keer (doesn't seem to work)
-            {
-                xDown = e.X;
-                yDown = e.Y;
-                g.FillEllipse(new SolidBrush(clrSelected), xDown, yDown, intBrushSize, intBrushSize);
-                g.Save();
-                
-                picCanvas.Image = bmpPic;
-                picCanvas.Refresh();
-            }
-        }
-
         #region figuurtjes
 
-        private void dimSquare()
+        private void dimSquare(int xUp, int yUp)
         {
             if (xUp < 0)
             {
@@ -93,7 +72,7 @@ namespace EasyPaint
             }
         }
 
-        private void dimRectangle()
+        private void dimRectangle(int xUp, int yUp)
         {
             if (xUp < 0)
             {
@@ -131,7 +110,7 @@ namespace EasyPaint
             }
         }
 
-        private void dimCircle()
+        private void dimCircle(int xUp, int yUp)
         {
             if (xUp < 0)
             {
@@ -160,7 +139,7 @@ namespace EasyPaint
             WWint *= 2;
         }
 
-        private void dimEllipse()
+        private void dimEllipse(int xUp, int yUp)
         {
             if (xUp < 0)
             {
@@ -203,56 +182,126 @@ namespace EasyPaint
             Application.Exit();
         }
 
+        private void picCanvas_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (drawFlag == true)
+            { 
+                bmpPic = tmp;                       //todo fix update image
+                g = Graphics.FromImage(bmpPic);
+                int xMove = e.X;
+                int yMove = e.Y;
+
+                //picCanvas.Image = bmpPic;
+                SolidBrush brushFill = new SolidBrush(clrSelected);
+                Pen penLine = new Pen(clrSelected, intPenWidth);
+
+                switch (intToolselected)
+                {
+                    case 1:
+                        g.FillEllipse(new SolidBrush(clrSelected), xDown, yDown, intBrushSize, intBrushSize);
+                        break;
+
+                    case 2:
+                        g.DrawLine(penLine, xDown, yDown, xMove, yMove);
+                        break;
+                    //case 3: woorden break;
+                    case 4:
+                        dimSquare(xMove,yMove);
+                        g.DrawRectangle(penLine, LLint, TTint, WWint, WWint);
+                        break;
+                    case 5:
+                        dimSquare(xMove,yMove);
+                        g.FillRectangle(brushFill, LLint, TTint, WWint, WWint);
+                        break;
+                    case 6:
+                        dimRectangle(xMove, yMove);
+                        g.DrawRectangle(penLine, LLint, TTint, WWint, HHint);
+                        break;
+                    case 7:
+                        dimRectangle(xMove, yMove);
+                        g.FillRectangle(brushFill, LLint, TTint, WWint, HHint);
+                        break;
+                    case 8:
+                        dimCircle(xMove, yMove);
+                        g.DrawEllipse(penLine, LLint, TTint, WWint, WWint);
+                        break;
+                    case 9:
+                        dimCircle(xMove, yMove);
+                        g.FillEllipse(brushFill, LLint, TTint, WWint, WWint);
+                        break;
+                    case 10:
+                        dimEllipse(xMove, yMove);
+                        g.DrawEllipse(penLine, LLint, TTint, WWint, HHint);
+                        break;
+                    case 11:
+                        dimEllipse(xMove, yMove);
+                        g.FillEllipse(brushFill, LLint, TTint, WWint, HHint);
+                        break;
+                }
+                picCanvas.Refresh();
+                //picCanvas.Refresh();
+            }
+        }
+
+        private void picCanvas_MouseDown(object sender, MouseEventArgs e)
+        {
+            tmp = bmpPic;
+            drawFlag = true;
+            xDown = e.X;
+            yDown = e.Y;
+
+        }
+
         private void picCanvas_MouseUp(object sender, MouseEventArgs e)
         {
-            SolidBrush brushFill = new SolidBrush(clrSelected);
-            Pen penLine = new Pen(clrSelected, intPenWidth);
+            //SolidBrush brushFill = new SolidBrush(clrSelected);
+            //Pen penLine = new Pen(clrSelected, intPenWidth);
 
             drawFlag = false;
-            xUp = e.X;
-            yUp = e.Y;
+            //xUp = e.X;
+            //yUp = e.Y;
 
-            switch (intToolselected)
-            {
+            //switch (intToolselected)
+            //{
 
-                case 2:
-                    g.DrawLine(penLine, xDown, yDown, xUp, yUp);
-                    break;
-                //case 3: break;
-                case 4:
-                    dimSquare();
-                    g.DrawRectangle(penLine, LLint, TTint, WWint, WWint);
-                    break;
-                case 5:
-                    dimSquare();
-                    g.FillRectangle(brushFill, LLint, TTint, WWint, WWint);
-                    break;
-                case 6:
-                    dimRectangle();
-                    g.DrawRectangle(penLine, LLint, TTint, WWint, HHint);
-                    break;
-                case 7:
-                    dimRectangle();
-                    g.FillRectangle(brushFill, LLint, TTint, WWint, HHint);
-                    break;
-                case 8:
-                    dimCircle();
-                    g.DrawEllipse(penLine, LLint, TTint, WWint, WWint);
-                    break;
-                case 9:
-                    dimCircle();
-                    g.FillEllipse(brushFill, LLint, TTint, WWint, WWint);
-                    break;
-                case 10:
-                    dimEllipse();
-                    g.DrawEllipse(penLine, LLint, TTint, WWint, HHint);
-                    break;
-                case 11:
-                    dimEllipse();
-                    g.FillEllipse(brushFill, LLint, TTint, WWint, HHint);
-                    break;
-            }
-            picCanvas.Refresh();
+            //    case 2:
+            //        g.DrawLine(penLine, xDown, yDown, xUp, yUp);
+            //        break;
+            //    //case 3: break;
+            //    case 4:
+            //        dimSquare();
+            //        g.DrawRectangle(penLine, LLint, TTint, WWint, WWint);
+            //        break;
+            //    case 5:
+            //        dimSquare();
+            //        g.FillRectangle(brushFill, LLint, TTint, WWint, WWint);
+            //        break;
+            //    case 6:
+            //        dimRectangle();
+            //        g.DrawRectangle(penLine, LLint, TTint, WWint, HHint);
+            //        break;
+            //    case 7:
+            //        dimRectangle();
+            //        g.FillRectangle(brushFill, LLint, TTint, WWint, HHint);
+            //        break;
+            //    case 8:
+            //        dimCircle();
+            //        g.DrawEllipse(penLine, LLint, TTint, WWint, WWint);
+            //        break;
+            //    case 9:
+            //        dimCircle();
+            //        g.FillEllipse(brushFill, LLint, TTint, WWint, WWint);
+            //        break;
+            //    case 10:
+            //        dimEllipse();
+            //        g.DrawEllipse(penLine, LLint, TTint, WWint, HHint);
+            //        break;
+            //    case 11:
+            //        dimEllipse();
+            //        g.FillEllipse(brushFill, LLint, TTint, WWint, HHint);
+            //        break;
+            //}
+            //picCanvas.Refresh();
         }
 
         private void mnuFileNew_Click(object sender, EventArgs e)
@@ -305,7 +354,7 @@ namespace EasyPaint
                     lblToolSelected.Text = "Tool: Brush";
                     break;
                 case "Line":
-                    intToolselected = 2;
+                    intToolselected = 5;
                     lblLine.BorderStyle = BorderStyle.FixedSingle;
                     lblToolSelected.Text = "Tool: Line";
                     break;

@@ -18,6 +18,7 @@ namespace PanelTesting
         #region ev3 variables
         private EV3Wifi myEV3;
         private Timer messageReceiveTimer;
+        string ipEV3 = "192.168.43.153";
         #endregion
 
         #region drawing variables
@@ -48,7 +49,7 @@ namespace PanelTesting
 
             // EV3: Create an EV3Wifi object which you can use to talk to the EV3.
             myEV3 = new EV3Wifi();
-            string ipEV3 = "192.168.43.153";
+            
 
             if (!IPAddress.TryParse(ipEV3, out IPAddress address))
             {
