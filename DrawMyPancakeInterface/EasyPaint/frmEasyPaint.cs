@@ -12,16 +12,19 @@ namespace EasyPaint
 {
     public partial class form1 : Form
     {
-        Graphics g; //defines an incredible number of methods for drawing and manipulating gaphic objects.
         bool drawFlag = false; //check mouse down
         int xDown, yDown, //track the screen positions
             LLint, TTint, WWint, HHint = 0; //define the bounding rectangle for all of the geometric shapes 
+        int xTmp = -1; // draw only in 1 direction
+        int yTmp = -1; // draw only in 1 direction
         int intToolselected = 1;
         int intBrushSize = 6;
         int intPenWidth = 2;
         Bitmap bmpPic;
         Color clrSelected = Color.Black;
-        Bitmap tmp;
+        private Stack<Image> _undoStack = new Stack<Image>();
+        private Stack<Image> _redoStack = new Stack<Image>();
+        private readonly object _undoRedoLocker = new object();
 
         public form1()
         {
@@ -36,17 +39,17 @@ namespace EasyPaint
             {
                 xUp = 0;
             }
-            if (xUp > 400)
+            if (xUp > picCanvas.Width)
             {
-                xUp = 400;
+                xUp = picCanvas.Width;
             }
             if (yUp < 0)
             {
                 yUp = 0;
             }
-            if (yUp > 480)
+            if (yUp > picCanvas.Height)
             {
-                yUp = 480;
+                yUp = picCanvas.Height;
             }
             WWint = Math.Abs(xUp - xDown);
             HHint = Math.Abs(yUp - yDown);
@@ -167,12 +170,12 @@ namespace EasyPaint
 
         #endregion
 
-        private void mnuFileSave_Click(object sender, EventArgs e)              
+        private void mnuFileSave_Click(object sender, EventArgs e)
         {
-            sfdSavePic.Filter = "bitmap |*.bmp";                    
-            if(sfdSavePic.ShowDialog() == DialogResult.OK)
-            {                                                                                     
-                picCanvas.Image.Save(sfdSavePic.FileName, System.Drawing.Imaging.ImageFormat.Bmp); 
+            sfdSavePic.Filter = "bitmap |*.bmp";
+            if (sfdSavePic.ShowDialog() == DialogResult.OK)
+            {
+                picCanvas.Image.Save(sfdSavePic.FileName, System.Drawing.Imaging.ImageFormat.Bmp);
                 MessageBox.Show("file saved.");
             }
         }
@@ -185,9 +188,22 @@ namespace EasyPaint
         private void picCanvas_MouseMove(object sender, MouseEventArgs e)
         {
             if (drawFlag == true)
-            { 
-                bmpPic = tmp;                       //todo fix update image
-                g = Graphics.FromImage(bmpPic);
+            {
+                if (xTmp == -1 && yTmp == -1)
+                {
+                    xTmp = e.X;
+                    yTmp = e.Y;
+                }
+                Console.WriteLine("xTmp: " + xTmp + " xDown: " + xDown + " e.X: " + e.X);
+                Console.WriteLine("yTmp: " + yTmp + " yDown: " + yDown + " e.Y: " + e.Y);
+            }
+            if (drawFlag == true
+                && ((xTmp >= xDown && e.X >= xTmp) || (xTmp <= xDown && e.X <= xTmp) || (xTmp == e.X))
+                && ((yTmp >= yDown && e.Y >= yTmp) || (yTmp <= yDown && e.Y <= yTmp) || (yTmp == e.Y))
+                )
+            {
+                picCanvas.Invalidate();
+                Graphics g = Graphics.FromImage(picCanvas.Image as Bitmap);
                 int xMove = e.X;
                 int yMove = e.Y;
 
@@ -206,11 +222,11 @@ namespace EasyPaint
                         break;
                     //case 3: woorden break;
                     case 4:
-                        dimSquare(xMove,yMove);
+                        dimSquare(xMove, yMove);
                         g.DrawRectangle(penLine, LLint, TTint, WWint, WWint);
                         break;
                     case 5:
-                        dimSquare(xMove,yMove);
+                        dimSquare(xMove, yMove);
                         g.FillRectangle(brushFill, LLint, TTint, WWint, WWint);
                         break;
                     case 6:
@@ -238,26 +254,32 @@ namespace EasyPaint
                         g.FillEllipse(brushFill, LLint, TTint, WWint, HHint);
                         break;
                 }
+                g.Save();
                 picCanvas.Refresh();
-                //picCanvas.Refresh();
+
             }
         }
 
         private void picCanvas_MouseDown(object sender, MouseEventArgs e)
         {
-            tmp = bmpPic;
             drawFlag = true;
             xDown = e.X;
             yDown = e.Y;
+            xTmp = -1;
+            yTmp = -1;
+            //g.DrawImage(bmpPic,0,0);
+            //g.Save();
 
         }
 
         private void picCanvas_MouseUp(object sender, MouseEventArgs e)
         {
+            drawFlag = false;
+            #region oldcode
             //SolidBrush brushFill = new SolidBrush(clrSelected);
             //Pen penLine = new Pen(clrSelected, intPenWidth);
 
-            drawFlag = false;
+
             //xUp = e.X;
             //yUp = e.Y;
 
@@ -302,6 +324,7 @@ namespace EasyPaint
             //        break;
             //}
             //picCanvas.Refresh();
+            #endregion
         }
 
         private void mnuFileNew_Click(object sender, EventArgs e)
@@ -310,10 +333,9 @@ namespace EasyPaint
             //picCanvas.BackColor = Color.White;
             picCanvas.BackgroundImage = Properties.Resources.brush;
             bmpPic = new Bitmap(picCanvas.Width, picCanvas.Height);
-            g = Graphics.FromImage(bmpPic);
-            g.Clear(Color.White);
             picCanvas.Image = bmpPic;
         }
+
         #region Toolselection
 
         private void lblPalette_Click(object sender, EventArgs e)
@@ -365,7 +387,7 @@ namespace EasyPaint
                     break;
             }
         }
-        #endregion
+        
 
         private void ResetTools()
         {
@@ -382,5 +404,6 @@ namespace EasyPaint
         {
             intPenWidth = Convert.ToInt32(cmbPenWidth.Text);
         }
+        #endregion
     }
 }
