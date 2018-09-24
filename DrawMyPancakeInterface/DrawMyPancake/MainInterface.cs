@@ -19,12 +19,14 @@ namespace PanelTesting
 
         Graphics g; //defines an incredible number of methods for drawing and manipulating gaphic objects.
         bool drawFlag = false; //check mouse down
+        bool disableDraw = false;
         int xDown, yDown, xUp, yUp, //track the screen positions
             LLint, TTint, WWint, HHint = 0; //define the bounding rectangle for all of the geometric shapes 
         int intToolselected = 1;
         int intBrushSize = 40;
         Bitmap bmpPic;
         Color clrSelected = Color.Black;
+
 
 
         #endregion
@@ -248,6 +250,47 @@ namespace PanelTesting
             }
         }
 
+        private void btnPresetFreeDraw_Click(object sender, EventArgs e)
+        {
+            disableDraw = false;
+            picCanvas.BackColor = Color.Transparent;
+            
+        }
+
+        private void btnPresetCircle_Click(object sender, EventArgs e)
+        {
+            disableDrawing();
+            picCanvas.BackColor = Color.Brown;
+        }
+
+        private void btnPresetTriangle_Click(object sender, EventArgs e)
+        {
+            disableDrawing();
+            picCanvas.BackColor = Color.White;
+        }
+
+        private void btnPresetHeart_Click(object sender, EventArgs e)
+        {
+            disableDrawing();
+            picCanvas.BackColor = Color.Red;
+        }
+
+        private void btnPresetSpiral_Click(object sender, EventArgs e)
+        {
+            disableDrawing();
+            picCanvas.BackColor = Color.Blue;
+        }
+
+        private void disableDrawing()
+        {
+            disableDraw = true;
+        }
+
+        private void btnPresetSquare_Click(object sender, EventArgs e)
+        {
+            disableDrawing();
+            picCanvas.BackColor = Color.DarkOliveGreen;
+        }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -275,7 +318,7 @@ namespace PanelTesting
 
         private void picCanvas_MouseMove(object sender, MouseEventArgs e)
         {
-            if (intToolselected == 1 && drawFlag == true)                   //naar kijken volgende keer (doesn't seem to work)
+            if (intToolselected == 1 && drawFlag == true && disableDraw == false)
             {
                 xDown = e.X;
                 yDown = e.Y;

@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.leftPanel = new System.Windows.Forms.Panel();
-            this.btnPreset6 = new System.Windows.Forms.Button();
-            this.btnPreset5 = new System.Windows.Forms.Button();
-            this.btnPreset4 = new System.Windows.Forms.Button();
-            this.btnPreset3 = new System.Windows.Forms.Button();
-            this.btnPreset2 = new System.Windows.Forms.Button();
-            this.btnPreset1 = new System.Windows.Forms.Button();
+            this.btnPresetFreeDraw = new System.Windows.Forms.Button();
+            this.btnPresetSpiral = new System.Windows.Forms.Button();
+            this.btnPresetHeart = new System.Windows.Forms.Button();
+            this.btnPresetTriangle = new System.Windows.Forms.Button();
+            this.btnPresetCircle = new System.Windows.Forms.Button();
+            this.btnPresetSquare = new System.Windows.Forms.Button();
             this.rightPanel = new System.Windows.Forms.Panel();
             this.btnStart = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -79,89 +79,95 @@
             // leftPanel
             // 
             this.leftPanel.AutoScroll = true;
-            this.leftPanel.Controls.Add(this.btnPreset6);
-            this.leftPanel.Controls.Add(this.btnPreset5);
-            this.leftPanel.Controls.Add(this.btnPreset4);
-            this.leftPanel.Controls.Add(this.btnPreset3);
-            this.leftPanel.Controls.Add(this.btnPreset2);
-            this.leftPanel.Controls.Add(this.btnPreset1);
+            this.leftPanel.Controls.Add(this.btnPresetFreeDraw);
+            this.leftPanel.Controls.Add(this.btnPresetSpiral);
+            this.leftPanel.Controls.Add(this.btnPresetHeart);
+            this.leftPanel.Controls.Add(this.btnPresetTriangle);
+            this.leftPanel.Controls.Add(this.btnPresetCircle);
+            this.leftPanel.Controls.Add(this.btnPresetSquare);
             this.leftPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.leftPanel.Location = new System.Drawing.Point(3, 3);
             this.leftPanel.Name = "leftPanel";
             this.leftPanel.Size = new System.Drawing.Size(121, 543);
             this.leftPanel.TabIndex = 0;
             // 
-            // btnPreset6
+            // btnPresetFreeDraw
             // 
-            this.btnPreset6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPreset6.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnPreset6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnPreset6.Location = new System.Drawing.Point(0, 500);
-            this.btnPreset6.Name = "btnPreset6";
-            this.btnPreset6.Size = new System.Drawing.Size(104, 100);
-            this.btnPreset6.TabIndex = 5;
-            this.btnPreset6.Text = "PRESET  6";
-            this.btnPreset6.UseVisualStyleBackColor = true;
+            this.btnPresetFreeDraw.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPresetFreeDraw.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnPresetFreeDraw.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnPresetFreeDraw.Location = new System.Drawing.Point(0, 500);
+            this.btnPresetFreeDraw.Name = "btnPresetFreeDraw";
+            this.btnPresetFreeDraw.Size = new System.Drawing.Size(104, 100);
+            this.btnPresetFreeDraw.TabIndex = 5;
+            this.btnPresetFreeDraw.Text = "PRESET FREE DRAW";
+            this.btnPresetFreeDraw.UseVisualStyleBackColor = true;
+            this.btnPresetFreeDraw.Click += new System.EventHandler(this.btnPresetFreeDraw_Click);
             // 
-            // btnPreset5
+            // btnPresetSpiral
             // 
-            this.btnPreset5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPreset5.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnPreset5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnPreset5.Location = new System.Drawing.Point(0, 400);
-            this.btnPreset5.Name = "btnPreset5";
-            this.btnPreset5.Size = new System.Drawing.Size(104, 100);
-            this.btnPreset5.TabIndex = 4;
-            this.btnPreset5.Text = "PRESET  5";
-            this.btnPreset5.UseVisualStyleBackColor = true;
+            this.btnPresetSpiral.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPresetSpiral.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnPresetSpiral.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnPresetSpiral.Location = new System.Drawing.Point(0, 400);
+            this.btnPresetSpiral.Name = "btnPresetSpiral";
+            this.btnPresetSpiral.Size = new System.Drawing.Size(104, 100);
+            this.btnPresetSpiral.TabIndex = 4;
+            this.btnPresetSpiral.Text = "PRESET    Spiraal";
+            this.btnPresetSpiral.UseVisualStyleBackColor = true;
+            this.btnPresetSpiral.Click += new System.EventHandler(this.btnPresetSpiral_Click);
             // 
-            // btnPreset4
+            // btnPresetHeart
             // 
-            this.btnPreset4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPreset4.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnPreset4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnPreset4.Location = new System.Drawing.Point(0, 300);
-            this.btnPreset4.Name = "btnPreset4";
-            this.btnPreset4.Size = new System.Drawing.Size(104, 100);
-            this.btnPreset4.TabIndex = 3;
-            this.btnPreset4.Text = "PRESET  4";
-            this.btnPreset4.UseVisualStyleBackColor = true;
+            this.btnPresetHeart.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPresetHeart.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnPresetHeart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnPresetHeart.Location = new System.Drawing.Point(0, 300);
+            this.btnPresetHeart.Name = "btnPresetHeart";
+            this.btnPresetHeart.Size = new System.Drawing.Size(104, 100);
+            this.btnPresetHeart.TabIndex = 3;
+            this.btnPresetHeart.Text = "PRESET  Hartje";
+            this.btnPresetHeart.UseVisualStyleBackColor = true;
+            this.btnPresetHeart.Click += new System.EventHandler(this.btnPresetHeart_Click);
             // 
-            // btnPreset3
+            // btnPresetTriangle
             // 
-            this.btnPreset3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPreset3.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnPreset3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnPreset3.Location = new System.Drawing.Point(0, 200);
-            this.btnPreset3.Name = "btnPreset3";
-            this.btnPreset3.Size = new System.Drawing.Size(104, 100);
-            this.btnPreset3.TabIndex = 2;
-            this.btnPreset3.Text = "PRESET  3";
-            this.btnPreset3.UseVisualStyleBackColor = true;
+            this.btnPresetTriangle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPresetTriangle.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnPresetTriangle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnPresetTriangle.Location = new System.Drawing.Point(0, 200);
+            this.btnPresetTriangle.Name = "btnPresetTriangle";
+            this.btnPresetTriangle.Size = new System.Drawing.Size(104, 100);
+            this.btnPresetTriangle.TabIndex = 2;
+            this.btnPresetTriangle.Text = "PRESET   Driehoek";
+            this.btnPresetTriangle.UseVisualStyleBackColor = true;
+            this.btnPresetTriangle.Click += new System.EventHandler(this.btnPresetTriangle_Click);
             // 
-            // btnPreset2
+            // btnPresetCircle
             // 
-            this.btnPreset2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPreset2.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnPreset2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnPreset2.Location = new System.Drawing.Point(0, 100);
-            this.btnPreset2.Name = "btnPreset2";
-            this.btnPreset2.Size = new System.Drawing.Size(104, 100);
-            this.btnPreset2.TabIndex = 1;
-            this.btnPreset2.Text = "PRESET  2";
-            this.btnPreset2.UseVisualStyleBackColor = true;
+            this.btnPresetCircle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPresetCircle.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnPresetCircle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnPresetCircle.Location = new System.Drawing.Point(0, 100);
+            this.btnPresetCircle.Name = "btnPresetCircle";
+            this.btnPresetCircle.Size = new System.Drawing.Size(104, 100);
+            this.btnPresetCircle.TabIndex = 1;
+            this.btnPresetCircle.Text = "PRESET    Cirkel";
+            this.btnPresetCircle.UseVisualStyleBackColor = true;
+            this.btnPresetCircle.Click += new System.EventHandler(this.btnPresetCircle_Click);
             // 
-            // btnPreset1
+            // btnPresetSquare
             // 
-            this.btnPreset1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPreset1.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPreset1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnPreset1.Location = new System.Drawing.Point(0, 0);
-            this.btnPreset1.Name = "btnPreset1";
-            this.btnPreset1.Size = new System.Drawing.Size(104, 100);
-            this.btnPreset1.TabIndex = 0;
-            this.btnPreset1.Text = "PRESET  1";
-            this.btnPreset1.UseVisualStyleBackColor = true;
+            this.btnPresetSquare.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPresetSquare.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPresetSquare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnPresetSquare.Location = new System.Drawing.Point(0, 0);
+            this.btnPresetSquare.Name = "btnPresetSquare";
+            this.btnPresetSquare.Size = new System.Drawing.Size(104, 100);
+            this.btnPresetSquare.TabIndex = 0;
+            this.btnPresetSquare.Text = "PRESET  Vierkant";
+            this.btnPresetSquare.UseVisualStyleBackColor = true;
+            this.btnPresetSquare.Click += new System.EventHandler(this.btnPresetSquare_Click);
             // 
             // rightPanel
             // 
@@ -273,7 +279,7 @@
             // 
             // picCanvas
             // 
-            this.picCanvas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picCanvas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picCanvas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picCanvas.Location = new System.Drawing.Point(0, 0);
             this.picCanvas.Name = "picCanvas";
@@ -312,12 +318,12 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel leftPanel;
-        private System.Windows.Forms.Button btnPreset6;
-        private System.Windows.Forms.Button btnPreset5;
-        private System.Windows.Forms.Button btnPreset4;
-        private System.Windows.Forms.Button btnPreset3;
-        private System.Windows.Forms.Button btnPreset2;
-        private System.Windows.Forms.Button btnPreset1;
+        private System.Windows.Forms.Button btnPresetFreeDraw;
+        private System.Windows.Forms.Button btnPresetSpiral;
+        private System.Windows.Forms.Button btnPresetHeart;
+        private System.Windows.Forms.Button btnPresetTriangle;
+        private System.Windows.Forms.Button btnPresetCircle;
+        private System.Windows.Forms.Button btnPresetSquare;
         private System.Windows.Forms.Panel rightPanel;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnDelete;
