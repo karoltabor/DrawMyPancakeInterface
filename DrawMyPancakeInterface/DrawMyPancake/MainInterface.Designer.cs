@@ -40,16 +40,21 @@
             this.rightPanel = new System.Windows.Forms.Panel();
             this.btnStart = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btnUndo = new System.Windows.Forms.Button();
-            this.btnPencil = new System.Windows.Forms.Button();
+            this.btnLoad = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.middlePanel = new System.Windows.Forms.TableLayoutPanel();
             this.topPanel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.picCanvas = new System.Windows.Forms.PictureBox();
             this.clrDialog = new System.Windows.Forms.ColorDialog();
+            this.sfdSavePic = new System.Windows.Forms.SaveFileDialog();
+            this.ofdLoadPic = new System.Windows.Forms.OpenFileDialog();
             this.tableLayoutPanel1.SuspendLayout();
             this.leftPanel.SuspendLayout();
             this.rightPanel.SuspendLayout();
             this.middlePanel.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -162,8 +167,8 @@
             // 
             this.rightPanel.Controls.Add(this.btnStart);
             this.rightPanel.Controls.Add(this.btnDelete);
-            this.rightPanel.Controls.Add(this.btnUndo);
-            this.rightPanel.Controls.Add(this.btnPencil);
+            this.rightPanel.Controls.Add(this.btnLoad);
+            this.rightPanel.Controls.Add(this.btnSave);
             this.rightPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rightPanel.Location = new System.Drawing.Point(679, 3);
             this.rightPanel.Name = "rightPanel";
@@ -199,34 +204,35 @@
             this.btnDelete.TabIndex = 5;
             this.btnDelete.UseVisualStyleBackColor = false;
             // 
-            // btnUndo
+            // btnLoad
             // 
-            this.btnUndo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(116)))), ((int)(((byte)(185)))));
-            this.btnUndo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnUndo.FlatAppearance.BorderSize = 0;
-            this.btnUndo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUndo.Image = ((System.Drawing.Image)(resources.GetObject("btnUndo.Image")));
-            this.btnUndo.Location = new System.Drawing.Point(0, 100);
-            this.btnUndo.Name = "btnUndo";
-            this.btnUndo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnUndo.Size = new System.Drawing.Size(118, 100);
-            this.btnUndo.TabIndex = 4;
-            this.btnUndo.UseVisualStyleBackColor = false;
+            this.btnLoad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(116)))), ((int)(((byte)(185)))));
+            this.btnLoad.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLoad.FlatAppearance.BorderSize = 0;
+            this.btnLoad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoad.Image = ((System.Drawing.Image)(resources.GetObject("btnLoad.Image")));
+            this.btnLoad.Location = new System.Drawing.Point(0, 100);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnLoad.Size = new System.Drawing.Size(118, 100);
+            this.btnLoad.TabIndex = 4;
+            this.btnLoad.UseVisualStyleBackColor = false;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
-            // btnPencil
+            // btnSave
             // 
-            this.btnPencil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(171)))), ((int)(((byte)(225)))));
-            this.btnPencil.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPencil.FlatAppearance.BorderSize = 0;
-            this.btnPencil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPencil.Image = ((System.Drawing.Image)(resources.GetObject("btnPencil.Image")));
-            this.btnPencil.Location = new System.Drawing.Point(0, 0);
-            this.btnPencil.Name = "btnPencil";
-            this.btnPencil.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnPencil.Size = new System.Drawing.Size(118, 100);
-            this.btnPencil.TabIndex = 3;
-            this.btnPencil.UseVisualStyleBackColor = false;
-            this.btnPencil.Click += new System.EventHandler(this.btnPencil_Click);
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(171)))), ((int)(((byte)(225)))));
+            this.btnSave.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
+            this.btnSave.Location = new System.Drawing.Point(0, 0);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnSave.Size = new System.Drawing.Size(118, 100);
+            this.btnSave.TabIndex = 3;
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // middlePanel
             // 
@@ -258,11 +264,29 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.picCanvas);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 96);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(537, 444);
             this.panel1.TabIndex = 1;
+            // 
+            // picCanvas
+            // 
+            this.picCanvas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.picCanvas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picCanvas.Location = new System.Drawing.Point(0, 0);
+            this.picCanvas.Name = "picCanvas";
+            this.picCanvas.Size = new System.Drawing.Size(537, 444);
+            this.picCanvas.TabIndex = 0;
+            this.picCanvas.TabStop = false;
+            this.picCanvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picCanvas_MouseDown);
+            this.picCanvas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picCanvas_MouseMove);
+            this.picCanvas.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picCanvas_MouseUp);
+            // 
+            // ofdLoadPic
+            // 
+            this.ofdLoadPic.FileName = "openFileDialog1";
             // 
             // mainForm
             // 
@@ -278,6 +302,8 @@
             this.leftPanel.ResumeLayout(false);
             this.rightPanel.ResumeLayout(false);
             this.middlePanel.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -295,12 +321,15 @@
         private System.Windows.Forms.Panel rightPanel;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnUndo;
-        private System.Windows.Forms.Button btnPencil;
+        private System.Windows.Forms.Button btnLoad;
+        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TableLayoutPanel middlePanel;
         private System.Windows.Forms.Panel topPanel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ColorDialog clrDialog;
+        private System.Windows.Forms.PictureBox picCanvas;
+        private System.Windows.Forms.SaveFileDialog sfdSavePic;
+        private System.Windows.Forms.OpenFileDialog ofdLoadPic;
     }
 }
 

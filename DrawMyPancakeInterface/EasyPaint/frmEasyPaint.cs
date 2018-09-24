@@ -15,7 +15,7 @@ namespace EasyPaint
         Graphics g; //defines an incredible number of methods for drawing and manipulating gaphic objects.
         bool drawFlag = false; //check mouse down
         int xDown, yDown, xUp, yUp, //track the screen positions
-            LLint, TTint, BBint, WWint, HHint = 0; //define the bounding rectangle for all of the geometric shapes 
+            LLint, TTint, WWint, HHint = 0; //define the bounding rectangle for all of the geometric shapes 
         int intToolselected = 1;
         int intBrushSize = 6;
         int intPenWidth = 2;
@@ -37,7 +37,7 @@ namespace EasyPaint
 
         private void picCanvas_MouseMove(object sender, MouseEventArgs e)
         {
-            if (intToolselected == 1 && drawFlag == true)                   //naar kijken volgende keer (doesn't seem to work)
+            if (intToolselected == 1 && drawFlag == true)                   
             {
                 xDown = e.X;
                 yDown = e.Y;
