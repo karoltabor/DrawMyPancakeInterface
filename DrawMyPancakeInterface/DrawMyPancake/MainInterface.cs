@@ -22,8 +22,8 @@ namespace PanelTesting
         bool disableDraw = false;
         int xDown, yDown, xUp, yUp, //track the screen positions
             LLint, TTint, WWint, HHint = 0; //define the bounding rectangle for all of the geometric shapes 
-        int intToolselected = 1;
         int intBrushSize = 40;
+        int selectedPreset = 1;
         Bitmap bmpPic;
         Color clrSelected = Color.Black;
 
@@ -246,51 +246,68 @@ namespace PanelTesting
         {
             if (myEV3.isConnected)
             {
-                myEV3.SendMessage("Rond", "0");  // "0" means EV3_INBOX0
+                switch (selectedPreset)
+                {
+                    case 2:
+                        myEV3.SendMessage("Square", "0");  // "0" means EV3_INBOX0
+                        break;
+                    case 3:
+                        myEV3.SendMessage("Circle", "0");  // "0" means EV3_INBOX0
+                        break;
+                    case 4:
+                        myEV3.SendMessage("Triangle", "0");  // "0" means EV3_INBOX0
+                        break;
+                    case 5:
+                        myEV3.SendMessage("Heart", "0");  // "0" means EV3_INBOX0
+                        break;
+                    case 6:
+                        myEV3.SendMessage("Spiral", "0");  // "0" means EV3_INBOX0
+                        break;
+                    default:
+                        //methode voor analyse();
+                        myEV3.SendMessage("FreeDraw", "0");  // "0" means EV3_INBOX0 
+                        break;
+                }
+               
             }
         }
 
         private void btnPresetFreeDraw_Click(object sender, EventArgs e)
         {
-            disableDraw = false;
+            selectedPreset = 1;
             picCanvas.BackColor = Color.Transparent;
-            
+        }
+
+        private void btnPresetSquare_Click(object sender, EventArgs e)
+        {
+            selectedPreset = 2;
+            picCanvas.BackColor = Color.DarkOliveGreen;
         }
 
         private void btnPresetCircle_Click(object sender, EventArgs e)
         {
-            disableDrawing();
+            selectedPreset = 3;
             picCanvas.BackColor = Color.Brown;
         }
 
         private void btnPresetTriangle_Click(object sender, EventArgs e)
         {
-            disableDrawing();
+            selectedPreset = 4;
             picCanvas.BackColor = Color.White;
         }
 
         private void btnPresetHeart_Click(object sender, EventArgs e)
         {
-            disableDrawing();
+            selectedPreset = 5;
             picCanvas.BackColor = Color.Red;
         }
 
         private void btnPresetSpiral_Click(object sender, EventArgs e)
         {
-            disableDrawing();
+            selectedPreset = 6;
             picCanvas.BackColor = Color.Blue;
         }
 
-        private void disableDrawing()
-        {
-            disableDraw = true;
-        }
-
-        private void btnPresetSquare_Click(object sender, EventArgs e)
-        {
-            disableDrawing();
-            picCanvas.BackColor = Color.DarkOliveGreen;
-        }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -318,7 +335,7 @@ namespace PanelTesting
 
         private void picCanvas_MouseMove(object sender, MouseEventArgs e)
         {
-            if (intToolselected == 1 && drawFlag == true && disableDraw == false)
+            if (drawFlag == true && selectedPreset == 1)
             {
                 xDown = e.X;
                 yDown = e.Y;
@@ -327,6 +344,7 @@ namespace PanelTesting
                 picCanvas.Image = bmpPic;
                 picCanvas.Refresh();
             }
+
         }
 
 
