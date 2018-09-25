@@ -44,7 +44,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.middlePanel = new System.Windows.Forms.TableLayoutPanel();
             this.topPanel = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlDrawCenter = new System.Windows.Forms.Panel();
             this.picCanvas = new System.Windows.Forms.PictureBox();
             this.clrDialog = new System.Windows.Forms.ColorDialog();
             this.sfdSavePic = new System.Windows.Forms.SaveFileDialog();
@@ -53,7 +53,7 @@
             this.leftPanel.SuspendLayout();
             this.rightPanel.SuspendLayout();
             this.middlePanel.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.pnlDrawCenter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -209,6 +209,7 @@
             this.btnDelete.Size = new System.Drawing.Size(118, 100);
             this.btnDelete.TabIndex = 5;
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnLoad
             // 
@@ -246,7 +247,7 @@
             this.middlePanel.ColumnCount = 1;
             this.middlePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.middlePanel.Controls.Add(this.topPanel, 0, 0);
-            this.middlePanel.Controls.Add(this.panel1, 0, 1);
+            this.middlePanel.Controls.Add(this.pnlDrawCenter, 0, 1);
             this.middlePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.middlePanel.Location = new System.Drawing.Point(130, 3);
             this.middlePanel.Name = "middlePanel";
@@ -267,18 +268,19 @@
             this.topPanel.Size = new System.Drawing.Size(537, 87);
             this.topPanel.TabIndex = 0;
             // 
-            // panel1
+            // pnlDrawCenter
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.picCanvas);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 96);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(537, 444);
-            this.panel1.TabIndex = 1;
+            this.pnlDrawCenter.BackColor = System.Drawing.Color.Transparent;
+            this.pnlDrawCenter.Controls.Add(this.picCanvas);
+            this.pnlDrawCenter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlDrawCenter.Location = new System.Drawing.Point(3, 96);
+            this.pnlDrawCenter.Name = "pnlDrawCenter";
+            this.pnlDrawCenter.Size = new System.Drawing.Size(537, 444);
+            this.pnlDrawCenter.TabIndex = 1;
             // 
             // picCanvas
             // 
+            this.picCanvas.BackColor = System.Drawing.Color.White;
             this.picCanvas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picCanvas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.picCanvas.Location = new System.Drawing.Point(0, 0);
@@ -308,7 +310,7 @@
             this.leftPanel.ResumeLayout(false);
             this.rightPanel.ResumeLayout(false);
             this.middlePanel.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            this.pnlDrawCenter.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).EndInit();
             this.ResumeLayout(false);
 
@@ -331,7 +333,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TableLayoutPanel middlePanel;
         private System.Windows.Forms.Panel topPanel;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlDrawCenter;
         private System.Windows.Forms.ColorDialog clrDialog;
         private System.Windows.Forms.PictureBox picCanvas;
         private System.Windows.Forms.SaveFileDialog sfdSavePic;

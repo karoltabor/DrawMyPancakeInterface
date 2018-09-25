@@ -19,16 +19,12 @@ namespace PanelTesting
 
         Graphics g; //defines an incredible number of methods for drawing and manipulating gaphic objects.
         bool drawFlag = false; //check mouse down
-        bool disableDraw = false;
         int xDown, yDown, xUp, yUp, //track the screen positions
             LLint, TTint, WWint, HHint = 0; //define the bounding rectangle for all of the geometric shapes 
-        int intBrushSize = 40;
+        int intBrushSize = 20;
         int selectedPreset = 1;
         Bitmap bmpPic;
         Color clrSelected = Color.Black;
-
-
-
         #endregion
 
         #region ev3 Variables
@@ -74,7 +70,10 @@ namespace PanelTesting
             #endregion
 
             #region Drawing prep
+            
             bmpPic = new Bitmap(picCanvas.Width, picCanvas.Height);
+            g = Graphics.FromImage(bmpPic);
+            g.Clear(Color.White);
             picCanvas.Image = bmpPic;
             #endregion
 
@@ -242,40 +241,11 @@ namespace PanelTesting
 
         #endregion
 
-        private void btnStart_Click(object sender, EventArgs e)
-        {
-            if (myEV3.isConnected)
-            {
-                switch (selectedPreset)
-                {
-                    case 2:
-                        myEV3.SendMessage("Square", "0");  // "0" means EV3_INBOX0
-                        break;
-                    case 3:
-                        myEV3.SendMessage("Circle", "0");  // "0" means EV3_INBOX0
-                        break;
-                    case 4:
-                        myEV3.SendMessage("Triangle", "0");  // "0" means EV3_INBOX0
-                        break;
-                    case 5:
-                        myEV3.SendMessage("Heart", "0");  // "0" means EV3_INBOX0
-                        break;
-                    case 6:
-                        myEV3.SendMessage("Spiral", "0");  // "0" means EV3_INBOX0
-                        break;
-                    default:
-                        //methode voor analyse();
-                        myEV3.SendMessage("FreeDraw", "0");  // "0" means EV3_INBOX0 
-                        break;
-                }
-               
-            }
-        }
-
+        #region Presets
         private void btnPresetFreeDraw_Click(object sender, EventArgs e)
         {
             selectedPreset = 1;
-            picCanvas.BackColor = Color.Transparent;
+            picCanvas.BackColor = Color.White;
         }
 
         private void btnPresetSquare_Click(object sender, EventArgs e)
@@ -308,6 +278,7 @@ namespace PanelTesting
             picCanvas.BackColor = Color.Blue;
         }
 
+        #endregion
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -323,6 +294,42 @@ namespace PanelTesting
         {
             ofdLoadPic.Filter = "bitmap |*.bmp";
             ofdLoadPic.ShowDialog();
+        }
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            g = Graphics.FromImage(picCanvas.Image);
+            g.Clear(Color.White);
+            picCanvas.Refresh();
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            if (myEV3.isConnected)
+            {
+                switch (selectedPreset)
+                {
+                    case 2:
+                        myEV3.SendMessage("Square", "0");  // "0" means EV3_INBOX0
+                        break;
+                    case 3:
+                        myEV3.SendMessage("Circle", "0");  // "0" means EV3_INBOX0
+                        break;
+                    case 4:
+                        myEV3.SendMessage("Triangle", "0");  // "0" means EV3_INBOX0
+                        break;
+                    case 5:
+                        myEV3.SendMessage("Heart", "0");  // "0" means EV3_INBOX0
+                        break;
+                    case 6:
+                        myEV3.SendMessage("Spiral", "0");  // "0" means EV3_INBOX0
+                        break;
+                    default:
+                        //methode voor analyse();
+                        myEV3.SendMessage("FreeDraw", "0");  // "0" means EV3_INBOX0 
+                        break;
+                }
+
+            }
         }
 
         private void picCanvas_MouseDown(object sender, MouseEventArgs e)
@@ -343,8 +350,8 @@ namespace PanelTesting
                 g.Save();
                 picCanvas.Image = bmpPic;
                 picCanvas.Refresh();
+                
             }
-
         }
 
 
