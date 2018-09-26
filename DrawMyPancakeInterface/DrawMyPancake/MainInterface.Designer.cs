@@ -49,12 +49,22 @@
             this.clrDialog = new System.Windows.Forms.ColorDialog();
             this.sfdSavePic = new System.Windows.Forms.SaveFileDialog();
             this.ofdLoadPic = new System.Windows.Forms.OpenFileDialog();
+            this.lblTextOverlay = new System.Windows.Forms.Label();
+            this.btnPresetText = new System.Windows.Forms.Button();
+            this.mnuDrawMyPancake = new System.Windows.Forms.MenuStrip();
+            this.mnuSettings = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFileConnection = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFileFontSize = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFileConnectionConnect = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnaFileConnectionDisconnect = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFileConnectionChange = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.leftPanel.SuspendLayout();
             this.rightPanel.SuspendLayout();
             this.middlePanel.SuspendLayout();
             this.pnlDrawCenter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).BeginInit();
+            this.mnuDrawMyPancake.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -80,6 +90,7 @@
             // 
             this.leftPanel.AutoScroll = true;
             this.leftPanel.Controls.Add(this.btnPresetFreeDraw);
+            this.leftPanel.Controls.Add(this.btnPresetText);
             this.leftPanel.Controls.Add(this.btnPresetSpiral);
             this.leftPanel.Controls.Add(this.btnPresetHeart);
             this.leftPanel.Controls.Add(this.btnPresetTriangle);
@@ -96,7 +107,7 @@
             this.btnPresetFreeDraw.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnPresetFreeDraw.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnPresetFreeDraw.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnPresetFreeDraw.Location = new System.Drawing.Point(0, 500);
+            this.btnPresetFreeDraw.Location = new System.Drawing.Point(0, 600);
             this.btnPresetFreeDraw.Name = "btnPresetFreeDraw";
             this.btnPresetFreeDraw.Size = new System.Drawing.Size(104, 100);
             this.btnPresetFreeDraw.TabIndex = 5;
@@ -271,6 +282,7 @@
             // pnlDrawCenter
             // 
             this.pnlDrawCenter.BackColor = System.Drawing.Color.Transparent;
+            this.pnlDrawCenter.Controls.Add(this.lblTextOverlay);
             this.pnlDrawCenter.Controls.Add(this.picCanvas);
             this.pnlDrawCenter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDrawCenter.Location = new System.Drawing.Point(3, 96);
@@ -296,6 +308,82 @@
             // 
             this.ofdLoadPic.FileName = "openFileDialog1";
             // 
+            // lblTextOverlay
+            // 
+            this.lblTextOverlay.AutoSize = true;
+            this.lblTextOverlay.Location = new System.Drawing.Point(232, 220);
+            this.lblTextOverlay.Name = "lblTextOverlay";
+            this.lblTextOverlay.Size = new System.Drawing.Size(35, 13);
+            this.lblTextOverlay.TabIndex = 1;
+            this.lblTextOverlay.Text = "label1";
+            this.lblTextOverlay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnPresetText
+            // 
+            this.btnPresetText.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPresetText.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnPresetText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnPresetText.Location = new System.Drawing.Point(0, 500);
+            this.btnPresetText.Name = "btnPresetText";
+            this.btnPresetText.Size = new System.Drawing.Size(104, 100);
+            this.btnPresetText.TabIndex = 6;
+            this.btnPresetText.Text = "PRESET TEXT";
+            this.btnPresetText.UseVisualStyleBackColor = true;
+            this.btnPresetText.Click += new System.EventHandler(this.btnPresetText_Click);
+            // 
+            // mnuDrawMyPancake
+            // 
+            this.mnuDrawMyPancake.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuSettings});
+            this.mnuDrawMyPancake.Location = new System.Drawing.Point(0, 0);
+            this.mnuDrawMyPancake.Name = "mnuDrawMyPancake";
+            this.mnuDrawMyPancake.Size = new System.Drawing.Size(800, 24);
+            this.mnuDrawMyPancake.TabIndex = 0;
+            this.mnuDrawMyPancake.Text = "menuStrip1";
+            // 
+            // mnuSettings
+            // 
+            this.mnuSettings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuFileConnection,
+            this.mnuFileFontSize});
+            this.mnuSettings.Name = "mnuSettings";
+            this.mnuSettings.Size = new System.Drawing.Size(61, 20);
+            this.mnuSettings.Text = "Settings";
+            // 
+            // mnuFileConnection
+            // 
+            this.mnuFileConnection.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuFileConnectionConnect,
+            this.mnaFileConnectionDisconnect,
+            this.mnuFileConnectionChange});
+            this.mnuFileConnection.Name = "mnuFileConnection";
+            this.mnuFileConnection.Size = new System.Drawing.Size(180, 22);
+            this.mnuFileConnection.Text = "Connection";
+            // 
+            // mnuFileFontSize
+            // 
+            this.mnuFileFontSize.Name = "mnuFileFontSize";
+            this.mnuFileFontSize.Size = new System.Drawing.Size(180, 22);
+            this.mnuFileFontSize.Text = "Font Size";
+            // 
+            // mnuFileConnectionConnect
+            // 
+            this.mnuFileConnectionConnect.Name = "mnuFileConnectionConnect";
+            this.mnuFileConnectionConnect.Size = new System.Drawing.Size(180, 22);
+            this.mnuFileConnectionConnect.Text = "Connect";
+            // 
+            // mnaFileConnectionDisconnect
+            // 
+            this.mnaFileConnectionDisconnect.Name = "mnaFileConnectionDisconnect";
+            this.mnaFileConnectionDisconnect.Size = new System.Drawing.Size(180, 22);
+            this.mnaFileConnectionDisconnect.Text = "Disconnect";
+            // 
+            // mnuFileConnectionChange
+            // 
+            this.mnuFileConnectionChange.Name = "mnuFileConnectionChange";
+            this.mnuFileConnectionChange.Size = new System.Drawing.Size(180, 22);
+            this.mnuFileConnectionChange.Text = "Change IP";
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -303,16 +391,23 @@
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 549);
+            this.Controls.Add(this.mnuDrawMyPancake);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.MainMenuStrip = this.mnuDrawMyPancake;
             this.Name = "mainForm";
             this.Text = "Draw My Pancake";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tableLayoutPanel1.ResumeLayout(false);
             this.leftPanel.ResumeLayout(false);
             this.rightPanel.ResumeLayout(false);
             this.middlePanel.ResumeLayout(false);
             this.pnlDrawCenter.ResumeLayout(false);
+            this.pnlDrawCenter.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).EndInit();
+            this.mnuDrawMyPancake.ResumeLayout(false);
+            this.mnuDrawMyPancake.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -338,6 +433,15 @@
         private System.Windows.Forms.PictureBox picCanvas;
         private System.Windows.Forms.SaveFileDialog sfdSavePic;
         private System.Windows.Forms.OpenFileDialog ofdLoadPic;
+        private System.Windows.Forms.Label lblTextOverlay;
+        private System.Windows.Forms.Button btnPresetText;
+        private System.Windows.Forms.MenuStrip mnuDrawMyPancake;
+        private System.Windows.Forms.ToolStripMenuItem mnuSettings;
+        private System.Windows.Forms.ToolStripMenuItem mnuFileConnection;
+        private System.Windows.Forms.ToolStripMenuItem mnuFileFontSize;
+        private System.Windows.Forms.ToolStripMenuItem mnuFileConnectionConnect;
+        private System.Windows.Forms.ToolStripMenuItem mnaFileConnectionDisconnect;
+        private System.Windows.Forms.ToolStripMenuItem mnuFileConnectionChange;
     }
 }
 

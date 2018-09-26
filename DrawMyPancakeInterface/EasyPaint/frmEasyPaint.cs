@@ -21,6 +21,11 @@ namespace EasyPaint
         int intPenWidth = 2;
         Bitmap bmpPic;
         Color clrSelected = Color.Black;
+        int intFontSize = 35;
+        string strText;
+        string strFont = "Arial";
+        FontStyle styFontstyle = new FontStyle();
+        //string[] strFontStyleArray = new[] { "Regular", "Bold", "Italic", "Bold Italic", "Unknown", "Unknown", "Unknown", "Unknown", "Regular Strikeout", "Bold Strikeout", "Italic Strikeout", "Bold Italic Strikeout", "Regular Underline Strikeout", "Bold Underline Strikeout", "Italic Underline Strikeout", "Bold Italic Underline Strikeout" };
 
         public form1()
         {
@@ -202,6 +207,14 @@ namespace EasyPaint
             Application.Exit();
         }
 
+        private void cmdFont_Click(object sender, EventArgs e)
+        {
+            dlgFont.ShowDialog();
+            strFont = dlgFont.Font.Name;
+            intFontSize = Convert.ToInt32(dlgFont.Font.Size);
+            //lblFontDetails.Text = "(" + strFont + " " + intFontSize + "pt, " + strFontStyleArray(styFontStyle) + ")";
+        }
+
         private void picCanvas_MouseUp(object sender, MouseEventArgs e)
         {
             SolidBrush brushFill = new SolidBrush(clrSelected);
@@ -211,13 +224,19 @@ namespace EasyPaint
             xUp = e.X;
             yUp = e.Y;
 
+            lblTextOverlay.Location = new Point(picCanvas.Width / 2 - lblTextOverlay.Width / 2, picCanvas.Height / 2 - lblTextOverlay.Height / 2);
+
             switch (intToolselected)
             {
 
                 case 2:
                     g.DrawLine(penLine, xDown, yDown, xUp, yUp);
                     break;
-                //case 3: break;
+                case 3:
+                    lblTextOverlay.Text = txtInsertText.Text;
+                    lblTextOverlay.Location = new Point(picCanvas.Width / 2 - lblTextOverlay.Width / 2, picCanvas.Height / 2 - lblTextOverlay.Height / 2);
+                    lblTextOverlay.Visible = true;
+                    break;
                 case 4:
                     dimSquare();
                     g.DrawRectangle(penLine, LLint, TTint, WWint, WWint);
@@ -307,6 +326,12 @@ namespace EasyPaint
                     lblLine.BorderStyle = BorderStyle.FixedSingle;
                     lblToolSelected.Text = "Tool: Line";
                     break;
+                case "Text":
+                    intToolselected = 3;
+                    lblBrush.BorderStyle = BorderStyle.FixedSingle;
+                    lblToolSelected.Text = "Tool: Text";
+                    break;
+                    
                 default:
                     intToolselected = 1;
                     lblBrush.BorderStyle = BorderStyle.FixedSingle;

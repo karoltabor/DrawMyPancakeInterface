@@ -278,7 +278,13 @@ namespace PanelTesting
             picCanvas.BackColor = Color.Blue;
         }
 
+        private void btnPresetText_Click(object sender, EventArgs e)
+        {
+            selectedPreset = 7;
+            picCanvas.BackColor = Color.Blue;
+        }
         #endregion
+
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -323,6 +329,9 @@ namespace PanelTesting
                     case 6:
                         myEV3.SendMessage("Spiral", "0");  // "0" means EV3_INBOX0
                         break;
+                    case 7:
+                        myEV3.SendMessage("Text" + lblTextOverlay.Text ,"0");
+                        break;
                     default:
                         //methode voor analyse();
                         myEV3.SendMessage("FreeDraw", "0");  // "0" means EV3_INBOX0 
@@ -331,6 +340,8 @@ namespace PanelTesting
 
             }
         }
+
+
 
         private void picCanvas_MouseDown(object sender, MouseEventArgs e)
         {
