@@ -53,11 +53,12 @@
             this.btnPresetText = new System.Windows.Forms.Button();
             this.mnuDrawMyPancake = new System.Windows.Forms.MenuStrip();
             this.mnuSettings = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuFileConnection = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuFileFontSize = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuFileConnectionConnect = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnaFileConnectionDisconnect = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuFileConnectionChange = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSettingsConnection = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSettingsFontSize = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSettingsConnectionConnect = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSettingsConnectionDisconnect = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSettingsConnectionChange = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSettingsSend = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.leftPanel.SuspendLayout();
             this.rightPanel.SuspendLayout();
@@ -344,45 +345,56 @@
             // mnuSettings
             // 
             this.mnuSettings.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileConnection,
-            this.mnuFileFontSize});
+            this.mnuSettingsConnection,
+            this.mnuSettingsFontSize,
+            this.mnuSettingsSend});
             this.mnuSettings.Name = "mnuSettings";
             this.mnuSettings.Size = new System.Drawing.Size(61, 20);
             this.mnuSettings.Text = "Settings";
             // 
-            // mnuFileConnection
+            // mnuSettingsConnection
             // 
-            this.mnuFileConnection.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileConnectionConnect,
-            this.mnaFileConnectionDisconnect,
-            this.mnuFileConnectionChange});
-            this.mnuFileConnection.Name = "mnuFileConnection";
-            this.mnuFileConnection.Size = new System.Drawing.Size(180, 22);
-            this.mnuFileConnection.Text = "Connection";
+            this.mnuSettingsConnection.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuSettingsConnectionConnect,
+            this.mnuSettingsConnectionDisconnect,
+            this.mnuSettingsConnectionChange});
+            this.mnuSettingsConnection.Name = "mnuSettingsConnection";
+            this.mnuSettingsConnection.Size = new System.Drawing.Size(180, 22);
+            this.mnuSettingsConnection.Text = "Connection";
             // 
-            // mnuFileFontSize
+            // mnuSettingsFontSize
             // 
-            this.mnuFileFontSize.Name = "mnuFileFontSize";
-            this.mnuFileFontSize.Size = new System.Drawing.Size(180, 22);
-            this.mnuFileFontSize.Text = "Font Size";
+            this.mnuSettingsFontSize.Name = "mnuSettingsFontSize";
+            this.mnuSettingsFontSize.Size = new System.Drawing.Size(180, 22);
+            this.mnuSettingsFontSize.Text = "Font Size";
             // 
-            // mnuFileConnectionConnect
+            // mnuSettingsConnectionConnect
             // 
-            this.mnuFileConnectionConnect.Name = "mnuFileConnectionConnect";
-            this.mnuFileConnectionConnect.Size = new System.Drawing.Size(180, 22);
-            this.mnuFileConnectionConnect.Text = "Connect";
+            this.mnuSettingsConnectionConnect.Name = "mnuSettingsConnectionConnect";
+            this.mnuSettingsConnectionConnect.Size = new System.Drawing.Size(180, 22);
+            this.mnuSettingsConnectionConnect.Text = "Connect";
+            this.mnuSettingsConnectionConnect.Click += new System.EventHandler(this.mnuSettingsConnectionConnect_Click);
             // 
-            // mnaFileConnectionDisconnect
+            // mnuSettingsConnectionDisconnect
             // 
-            this.mnaFileConnectionDisconnect.Name = "mnaFileConnectionDisconnect";
-            this.mnaFileConnectionDisconnect.Size = new System.Drawing.Size(180, 22);
-            this.mnaFileConnectionDisconnect.Text = "Disconnect";
+            this.mnuSettingsConnectionDisconnect.Name = "mnuSettingsConnectionDisconnect";
+            this.mnuSettingsConnectionDisconnect.Size = new System.Drawing.Size(180, 22);
+            this.mnuSettingsConnectionDisconnect.Text = "Disconnect";
+            this.mnuSettingsConnectionDisconnect.Click += new System.EventHandler(this.mnuSettingsConnectionDisconnect_Click);
             // 
-            // mnuFileConnectionChange
+            // mnuSettingsConnectionChange
             // 
-            this.mnuFileConnectionChange.Name = "mnuFileConnectionChange";
-            this.mnuFileConnectionChange.Size = new System.Drawing.Size(180, 22);
-            this.mnuFileConnectionChange.Text = "Change IP";
+            this.mnuSettingsConnectionChange.Name = "mnuSettingsConnectionChange";
+            this.mnuSettingsConnectionChange.Size = new System.Drawing.Size(180, 22);
+            this.mnuSettingsConnectionChange.Text = "Change IP";
+            this.mnuSettingsConnectionChange.Click += new System.EventHandler(this.mnuSettingsConnectionChange_Click);
+            // 
+            // mnuSettingsSend
+            // 
+            this.mnuSettingsSend.Name = "mnuSettingsSend";
+            this.mnuSettingsSend.Size = new System.Drawing.Size(180, 22);
+            this.mnuSettingsSend.Text = "Send Command";
+            this.mnuSettingsSend.Click += new System.EventHandler(this.mnuSettingsSend_Click);
             // 
             // mainForm
             // 
@@ -397,6 +409,7 @@
             this.Name = "mainForm";
             this.Text = "Draw My Pancake";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.ResizeEnd += new System.EventHandler(this.mainForm_ResizeEnd);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.leftPanel.ResumeLayout(false);
             this.rightPanel.ResumeLayout(false);
@@ -437,11 +450,12 @@
         private System.Windows.Forms.Button btnPresetText;
         private System.Windows.Forms.MenuStrip mnuDrawMyPancake;
         private System.Windows.Forms.ToolStripMenuItem mnuSettings;
-        private System.Windows.Forms.ToolStripMenuItem mnuFileConnection;
-        private System.Windows.Forms.ToolStripMenuItem mnuFileFontSize;
-        private System.Windows.Forms.ToolStripMenuItem mnuFileConnectionConnect;
-        private System.Windows.Forms.ToolStripMenuItem mnaFileConnectionDisconnect;
-        private System.Windows.Forms.ToolStripMenuItem mnuFileConnectionChange;
+        private System.Windows.Forms.ToolStripMenuItem mnuSettingsConnection;
+        private System.Windows.Forms.ToolStripMenuItem mnuSettingsFontSize;
+        private System.Windows.Forms.ToolStripMenuItem mnuSettingsConnectionConnect;
+        private System.Windows.Forms.ToolStripMenuItem mnuSettingsConnectionDisconnect;
+        private System.Windows.Forms.ToolStripMenuItem mnuSettingsConnectionChange;
+        private System.Windows.Forms.ToolStripMenuItem mnuSettingsSend;
     }
 }
 

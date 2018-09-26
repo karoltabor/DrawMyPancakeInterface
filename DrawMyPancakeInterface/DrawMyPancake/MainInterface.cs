@@ -25,7 +25,10 @@ namespace PanelTesting
         int selectedPreset = 1;
         Bitmap bmpPic;
         Color clrSelected = Color.Black;
+
         #endregion
+
+        TextInputDialog inputBox;
 
         #region ev3 Variables
         private string ipEV3 = "192.168.43.153";
@@ -53,24 +56,11 @@ namespace PanelTesting
 
             // EV3: Create an EV3Wifi object which you can use to talk to the EV3.
             myEV3 = new EV3Wifi();
-
-            if (!IPAddress.TryParse(ipEV3, out IPAddress address))
-            {
-                MessageBox.Show("Fill in valid IP address of EV3");
-            }
-            else if (myEV3.Connect("1234", ipEV3) == true)
-            {
-                messageReceiveTimer.Start();
-            }
-            else
-            {
-                myEV3.Disconnect();
-                MessageBox.Show("Failed to connect to EV3 with IP address " + ipEV3);
-            }
+            Connect();
             #endregion
 
             #region Drawing prep
-            
+
             bmpPic = new Bitmap(picCanvas.Width, picCanvas.Height);
             g = Graphics.FromImage(bmpPic);
             g.Clear(Color.White);
@@ -244,47 +234,128 @@ namespace PanelTesting
         #region Presets
         private void btnPresetFreeDraw_Click(object sender, EventArgs e)
         {
+            g.Clear(Color.White);
             selectedPreset = 1;
             picCanvas.BackColor = Color.White;
         }
 
         private void btnPresetSquare_Click(object sender, EventArgs e)
         {
+            g.Clear(Color.White);
             selectedPreset = 2;
             picCanvas.BackColor = Color.DarkOliveGreen;
         }
 
         private void btnPresetCircle_Click(object sender, EventArgs e)
         {
+            g.Clear(Color.White);
             selectedPreset = 3;
             picCanvas.BackColor = Color.Brown;
         }
 
         private void btnPresetTriangle_Click(object sender, EventArgs e)
         {
+            g.Clear(Color.White);
             selectedPreset = 4;
             picCanvas.BackColor = Color.White;
         }
 
         private void btnPresetHeart_Click(object sender, EventArgs e)
         {
+            g.Clear(Color.White);
             selectedPreset = 5;
             picCanvas.BackColor = Color.Red;
         }
 
         private void btnPresetSpiral_Click(object sender, EventArgs e)
         {
+            g.Clear(Color.White);
             selectedPreset = 6;
             picCanvas.BackColor = Color.Blue;
         }
 
         private void btnPresetText_Click(object sender, EventArgs e)
         {
+            g.Clear(Color.White);
             selectedPreset = 7;
-            picCanvas.BackColor = Color.Blue;
+            inputBox = new TextInputDialog();
+            inputBox.Text = "Vul tekst in";
+            inputBox.Show();
+            inputBox.btnSubmit.Click += new EventHandler(writeText);
+        }
+
+        private void writeText(object sender, EventArgs e)
+        {
+            lblTextOverlay.Visible = true;
+            lblTextOverlay.Text = inputBox.tbInput.Text;
+            inputBox.Close();
         }
         #endregion
 
+
+        private void mnuSettingsConnectionConnect_Click(object sender, EventArgs e)
+        {
+            Connect();
+        }
+
+
+        private void mnuSettingsConnectionChange_Click(object sender, EventArgs e)
+        {
+            inputBox = new TextInputDialog();
+            inputBox.Text = "Vul IP in";
+            inputBox.Show();
+            inputBox.btnSubmit.Click += new EventHandler(changeIP);
+        }
+
+        private void changeIP(object sender, EventArgs e)
+        {
+            ipEV3 = inputBox.tbInput.Text;
+            Connect();
+            inputBox.Close();
+        }
+
+        private void Connect()
+        {
+            if (!IPAddress.TryParse(ipEV3, out IPAddress address))
+            {
+                MessageBox.Show("Fill in valid IP address of EV3");
+            }
+            else if (myEV3.Connect("1234", ipEV3) == true)
+            {
+                messageReceiveTimer.Start();
+                MessageBox.Show("Connected to EV3");
+
+            }
+            else
+            {
+                myEV3.Disconnect();
+                MessageBox.Show("Failed to connect to EV3 with IP address " + ipEV3);
+            }
+        }
+
+        private void mainForm_ResizeEnd(object sender, EventArgs e)
+        {
+            //dit is voor canvas
+        }
+
+        private void mnuSettingsSend_Click(object sender, EventArgs e)
+        {
+            inputBox = new TextInputDialog();
+            inputBox.Text = "Vul IP in";
+            inputBox.Show();
+            inputBox.btnSubmit.Click += new EventHandler(sendCommand);
+        }
+        private void sendCommand(object sender, EventArgs e)
+        {
+            myEV3.SendMessage(inputBox.tbInput.Text, "0");
+            inputBox.Close();
+        }
+
+        private void mnuSettingsConnectionDisconnect_Click(object sender, EventArgs e)
+        {
+            myEV3.Disconnect();
+            MessageBox.Show("Disconnect");
+        }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -330,7 +401,7 @@ namespace PanelTesting
                         myEV3.SendMessage("Spiral", "0");  // "0" means EV3_INBOX0
                         break;
                     case 7:
-                        myEV3.SendMessage("Text" + lblTextOverlay.Text ,"0");
+                        myEV3.SendMessage("Text" + lblTextOverlay.Text, "0");
                         break;
                     default:
                         //methode voor analyse();
@@ -361,7 +432,7 @@ namespace PanelTesting
                 g.Save();
                 picCanvas.Image = bmpPic;
                 picCanvas.Refresh();
-                
+
             }
         }
 
