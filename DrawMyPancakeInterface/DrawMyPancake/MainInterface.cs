@@ -56,7 +56,7 @@ namespace PanelTesting
 
             // EV3: Create an EV3Wifi object which you can use to talk to the EV3.
             myEV3 = new EV3Wifi();
-            Connect();
+            //Connect();
             #endregion
 
             #region Drawing prep
@@ -286,8 +286,8 @@ namespace PanelTesting
 
         private void writeText(object sender, EventArgs e)
         {
-            lblTextOverlay.Visible = true;
-            lblTextOverlay.Text = inputBox.tbInput.Text;
+            //lblTextOverlay.Visible = true;
+            //lblTextOverlay.Text = inputBox.tbInput.Text;
             inputBox.Close();
         }
         #endregion
@@ -357,6 +357,11 @@ namespace PanelTesting
             MessageBox.Show("Disconnect");
         }
 
+        private void tbText_TextChanged(object sender, EventArgs e)
+        {
+            tbText.CharacterCasing = CharacterCasing.Upper;
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             sfdSavePic.Filter = "bitmap |*.bmp";
@@ -401,7 +406,7 @@ namespace PanelTesting
                         myEV3.SendMessage("Spiral", "0");  // "0" means EV3_INBOX0
                         break;
                     case 7:
-                        myEV3.SendMessage("Text" + lblTextOverlay.Text, "0");
+                        //myEV3.SendMessage("Text" + lblTextOverlay.Text, "0");
                         break;
                     default:
                         //methode voor analyse();
@@ -432,7 +437,6 @@ namespace PanelTesting
                 g.Save();
                 picCanvas.Image = bmpPic;
                 picCanvas.Refresh();
-
             }
         }
 
