@@ -56,7 +56,7 @@ namespace PanelTesting
 
             // EV3: Create an EV3Wifi object which you can use to talk to the EV3.
             myEV3 = new EV3Wifi();
-            //Connect();
+            Connect();
             #endregion
 
             #region Drawing prep
@@ -89,6 +89,12 @@ namespace PanelTesting
                 //      Therefore the advise is to only use one mailbox to read from: EV3_OUTBOX0.
                 string strMessage = myEV3.ReceiveMessage("EV3_OUTBOX0");
             }
+        }
+
+        private void sendCommand(object sender, EventArgs e)
+        {
+            myEV3.SendMessage(inputBox.tbInput.Text, "0");
+            inputBox.Close();
         }
         #endregion
 
@@ -278,10 +284,10 @@ namespace PanelTesting
         {
             g.Clear(Color.White);
             selectedPreset = 7;
-            inputBox = new TextInputDialog();
-            inputBox.Text = "Vul tekst in";
-            inputBox.Show();
-            inputBox.btnSubmit.Click += new EventHandler(writeText);
+            //inputBox = new TextInputDialog();
+            //inputBox.Text = "Vul tekst in";
+            //inputBox.Show();
+            //inputBox.btnSubmit.Click += new EventHandler(writeText);
         }
 
         private void writeText(object sender, EventArgs e)
@@ -338,6 +344,8 @@ namespace PanelTesting
             //dit is voor canvas
         }
 
+        #region Button clicks
+            
         private void mnuSettingsSend_Click(object sender, EventArgs e)
         {
             inputBox = new TextInputDialog();
@@ -345,11 +353,7 @@ namespace PanelTesting
             inputBox.Show();
             inputBox.btnSubmit.Click += new EventHandler(sendCommand);
         }
-        private void sendCommand(object sender, EventArgs e)
-        {
-            myEV3.SendMessage(inputBox.tbInput.Text, "0");
-            inputBox.Close();
-        }
+        
 
         private void mnuSettingsConnectionDisconnect_Click(object sender, EventArgs e)
         {
@@ -360,6 +364,11 @@ namespace PanelTesting
         private void tbText_TextChanged(object sender, EventArgs e)
         {
             tbText.CharacterCasing = CharacterCasing.Upper;
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -417,8 +426,8 @@ namespace PanelTesting
             }
         }
 
-
-
+        #endregion
+        #region Drawing canvas
         private void picCanvas_MouseDown(object sender, MouseEventArgs e)
         {
             drawFlag = true;
@@ -447,6 +456,7 @@ namespace PanelTesting
             g.Dispose();
             picCanvas.Refresh();
         }
+        #endregion
 
     }
 }
