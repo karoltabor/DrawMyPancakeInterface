@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DrawMyPancake {
     public class Instruction {
@@ -17,6 +12,11 @@ namespace DrawMyPancake {
             coordinateList.Add(p);
         }
 
+        private void Reflect()
+        {
+
+        }
+
         public void OptimizePath()
         {
             // remove unnecessary coordinates
@@ -24,6 +24,8 @@ namespace DrawMyPancake {
 
         public string ToInstructionString()
         {
+            OptimizePath();
+            Reflect();
             foreach (Point coordinate in coordinateList)
             {
                 instructionString += coordinate.X.ToString("D4") + coordinate.Y.ToString("D4") + "T";

@@ -126,5 +126,8 @@
   <ItemGroup>
     <None Include="Resources\square_outline.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DMP_Bitmap.bmp" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

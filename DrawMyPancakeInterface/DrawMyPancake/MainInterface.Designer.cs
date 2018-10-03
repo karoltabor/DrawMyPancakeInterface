@@ -452,7 +452,6 @@
             // 
             // pnlBitmap
             // 
-            this.pnlBitmap.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlBitmap.BackgroundImage")));
             this.pnlBitmap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pnlBitmap.Controls.Add(this.picCanvas);
             this.pnlBitmap.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -466,13 +465,13 @@
             // picCanvas
             // 
             this.picCanvas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(197)))));
-            this.picCanvas.Location = new System.Drawing.Point(0, 0);
+            this.picCanvas.Image = global::PanelTesting.Properties.Resources.DMP_Bitmap;
+            this.picCanvas.Location = new System.Drawing.Point(145, 260);
             this.picCanvas.Margin = new System.Windows.Forms.Padding(0);
             this.picCanvas.Name = "picCanvas";
             this.picCanvas.Size = new System.Drawing.Size(733, 524);
             this.picCanvas.TabIndex = 0;
             this.picCanvas.TabStop = false;
-            this.picCanvas.Visible = false;
             this.picCanvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picCanvas_MouseDown);
             this.picCanvas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picCanvas_MouseMove);
             this.picCanvas.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picCanvas_MouseUp);
@@ -495,7 +494,7 @@
             this.ShowInTaskbar = false;
             this.Text = "Draw My Pancake";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.ResizeEnd += new System.EventHandler(this.mainForm_ResizeEnd);
+            this.Resize += new System.EventHandler(this.mainForm_Resize);
             this.pnlLeft.ResumeLayout(false);
             this.middlePanel.ResumeLayout(false);
             this.pnlCenter.ResumeLayout(false);

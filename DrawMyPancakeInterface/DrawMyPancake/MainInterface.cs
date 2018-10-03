@@ -1,19 +1,12 @@
-﻿using System;
+﻿using EV3WifiLib;
+using PanelTesting.Properties;
+using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.IO.Ports;
 using System.Net;
-using EV3WifiLib;
+using System.Windows.Forms;
 
-namespace DrawMyPancake
-{
+namespace DrawMyPancake {
     public partial class mainForm : Form
     {
         #region paintVariables
@@ -27,7 +20,7 @@ namespace DrawMyPancake
         Bitmap bmpPic;
         Color clrSelected = Color.Black;
         private Instruction ev3Instuction;
-        private ArrayList ev3InstuctionList;
+        private ArrayList ev3InstuctionList = new ArrayList();
 
         #endregion
 
@@ -63,11 +56,12 @@ namespace DrawMyPancake
             #endregion
 
             #region Drawing prep
-
-            bmpPic = new Bitmap(picCanvas.Width, picCanvas.Height);
+            bmpPic = Resources.DMP_Bitmap;
             g = Graphics.FromImage(bmpPic);
-            g.Clear(Color.White);
             picCanvas.Image = bmpPic;
+            picCanvas.Width = bmpPic.Width;
+            picCanvas.Height = bmpPic.Height;
+            picCanvas.Location = new Point((pnlBitmap.Width / 2 - bmpPic.Width / 2), pbLogo.Height + ((pnlBitmap.Height - pbLogo.Height) / 2 - bmpPic.Height / 2));
             #endregion
 
         }
@@ -243,49 +237,45 @@ namespace DrawMyPancake
         #region Presets
         private void btnPresetFreeDraw_Click(object sender, EventArgs e)
         {
-            g.Clear(Color.White);
+            pnlAddText.Visible = false;
+            pnlPresetsButtons.Visible = false;
+            pnlBitmap.Visible = true;
+            g = Graphics.FromImage(Resources.DMP_Bitmap);
             selectedPreset = 1;
-            picCanvas.BackColor = Color.White;
         }
 
-        private void btnPresetSquare_Click(object sender, EventArgs e)
-        {
-            g.Clear(Color.White);
+        private void btnPresetSquare_Click(object sender, EventArgs e) {
+            g = Graphics.FromImage(Resources.DMP_Bitmap);
             selectedPreset = 2;
             picCanvas.BackColor = Color.DarkOliveGreen;
         }
 
-        private void btnPresetCircle_Click(object sender, EventArgs e)
-        {
-            g.Clear(Color.White);
+        private void btnPresetCircle_Click(object sender, EventArgs e) {
+            g = Graphics.FromImage(Resources.DMP_Bitmap);
             selectedPreset = 3;
             picCanvas.BackColor = Color.Brown;
         }
 
-        private void btnPresetTriangle_Click(object sender, EventArgs e)
-        {
-            g.Clear(Color.White);
+        private void btnPresetTriangle_Click(object sender, EventArgs e) {
+            g = Graphics.FromImage(Resources.DMP_Bitmap);
             selectedPreset = 4;
             picCanvas.BackColor = Color.White;
         }
 
-        private void btnPresetHeart_Click(object sender, EventArgs e)
-        {
-            g.Clear(Color.White);
+        private void btnPresetHeart_Click(object sender, EventArgs e) {
+            g = Graphics.FromImage(Resources.DMP_Bitmap);
             selectedPreset = 5;
             picCanvas.BackColor = Color.Red;
         }
 
-        private void btnPresetSpiral_Click(object sender, EventArgs e)
-        {
-            g.Clear(Color.White);
+        private void btnPresetSpiral_Click(object sender, EventArgs e) {
+            g = Graphics.FromImage(Resources.DMP_Bitmap);
             selectedPreset = 6;
             picCanvas.BackColor = Color.Blue;
         }
 
-        private void btnPresetText_Click(object sender, EventArgs e)
-        {
-            g.Clear(Color.White);
+        private void btnPresetText_Click(object sender, EventArgs e) {
+            g = Graphics.FromImage(Resources.DMP_Bitmap);
             selectedPreset = 7;
             //inputBox = new TextInputDialog();
             //inputBox.Text = "Vul tekst in";
@@ -341,12 +331,7 @@ namespace DrawMyPancake
                 MessageBox.Show("Failed to connect to EV3 with IP address " + ipEV3);
             }
         }
-
-        private void mainForm_ResizeEnd(object sender, EventArgs e)
-        {
-            //dit is voor canvas
-        }
-
+        
         #region Button clicks
             
         private void mnuSettingsSend_Click(object sender, EventArgs e)
@@ -374,6 +359,10 @@ namespace DrawMyPancake
 
         }
 
+        private void mainForm_Resize(object sender, EventArgs e) {
+            picCanvas.Location = new Point((pnlBitmap.Width / 2 - bmpPic.Width / 2), pbLogo.Height + ((pnlBitmap.Height- pbLogo.Height) / 2 - bmpPic.Height / 2));
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             sfdSavePic.Filter = "bitmap |*.bmp";
@@ -391,14 +380,16 @@ namespace DrawMyPancake
         }
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            g = Graphics.FromImage(picCanvas.Image);
-            g.Clear(Color.White);
+            bmpPic = Resources.DMP_Bitmap;
+            g = Graphics.FromImage(bmpPic);
+            ev3InstuctionList.Clear();
+            picCanvas.Image = bmpPic;
             picCanvas.Refresh();
         }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            if (myEV3.isConnected)
+            if (myEV3.isConnected || true)
             {
                 switch (selectedPreset)
                 {
@@ -426,6 +417,7 @@ namespace DrawMyPancake
                         {
                             ev3String += instruction.instructionString;
                         }
+                        Console.WriteLine(ev3String);
                         //methode voor analyse();
                         myEV3.SendMessage("FreeDraw", ev3String);  // "0" means EV3_INBOX0 
                         break;
@@ -464,7 +456,6 @@ namespace DrawMyPancake
 
         private void picCanvas_MouseUp(object sender, MouseEventArgs e)
         {
-            ev3Instuction.OptimizePath();
             ev3Instuction.ToInstructionString();
             ev3Instuction.instructionString += e.X.ToString("D4") + e.Y.ToString("D4") + "F";
             ev3InstuctionList.Add(ev3Instuction);

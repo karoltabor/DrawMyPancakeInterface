@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DrawMyPancake.Properties {
+namespace PanelTesting.Properties {
     using System;
     
     
@@ -66,6 +66,16 @@ namespace DrawMyPancake.Properties {
         internal static System.Drawing.Bitmap circle_outline {
             get {
                 object obj = ResourceManager.GetObject("circle_outline", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DMP_Bitmap {
+            get {
+                object obj = ResourceManager.GetObject("DMP_Bitmap", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
