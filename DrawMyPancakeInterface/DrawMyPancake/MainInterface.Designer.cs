@@ -1,4 +1,4 @@
-﻿namespace PanelTesting
+﻿namespace DrawMyPancake
 {
     partial class mainForm
     {

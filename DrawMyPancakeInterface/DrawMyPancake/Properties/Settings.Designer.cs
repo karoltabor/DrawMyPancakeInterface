@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PanelTesting.Properties
+namespace DrawMyPancake.Properties
 {
 
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,7 +12,7 @@ using System.IO.Ports;
 using System.Net;
 using EV3WifiLib;
 
-namespace PanelTesting
+namespace DrawMyPancake
 {
     public partial class mainForm : Form
     {
@@ -25,6 +26,8 @@ namespace PanelTesting
         int selectedPreset = 1;
         Bitmap bmpPic;
         Color clrSelected = Color.Black;
+        private Instruction ev3Instuction;
+        private ArrayList ev3InstuctionList;
 
         #endregion
 
@@ -418,8 +421,13 @@ namespace PanelTesting
                         //myEV3.SendMessage("Text" + lblTextOverlay.Text, "0");
                         break;
                     default:
+                        string ev3String = "";
+                        foreach (Instruction instruction in ev3InstuctionList)
+                        {
+                            ev3String += instruction.instructionString;
+                        }
                         //methode voor analyse();
-                        myEV3.SendMessage("FreeDraw", "0");  // "0" means EV3_INBOX0 
+                        myEV3.SendMessage("FreeDraw", ev3String);  // "0" means EV3_INBOX0 
                         break;
                 }
 
@@ -433,6 +441,9 @@ namespace PanelTesting
             drawFlag = true;
             xDown = e.X;
             yDown = e.Y;
+            ev3Instuction = new Instruction {
+                instructionString = e.X.ToString("D4") + e.Y.ToString("D4") + "F"
+            };
             g = Graphics.FromImage(picCanvas.Image);
         }
 
@@ -442,6 +453,7 @@ namespace PanelTesting
             {
                 xDown = e.X;
                 yDown = e.Y;
+                ev3Instuction.AddCoordinate(xDown, xDown);
                 g.FillEllipse(new SolidBrush(clrSelected), xDown, yDown, intBrushSize, intBrushSize);
                 g.Save();
                 picCanvas.Image = bmpPic;
@@ -452,6 +464,10 @@ namespace PanelTesting
 
         private void picCanvas_MouseUp(object sender, MouseEventArgs e)
         {
+            ev3Instuction.OptimizePath();
+            ev3Instuction.ToInstructionString();
+            ev3Instuction.instructionString += e.X.ToString("D4") + e.Y.ToString("D4") + "F";
+            ev3InstuctionList.Add(ev3Instuction);
             drawFlag = false;
             g.Dispose();
             picCanvas.Refresh();
