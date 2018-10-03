@@ -9,24 +9,18 @@ using System.Windows.Forms;
 namespace DrawMyPancake {
     public partial class mainForm : Form
     {
-        #region paintVariables
-
-        Graphics g; //defines an incredible number of methods for drawing and manipulating gaphic objects.
-        bool drawFlag = false; //check mouse down
-        int xDown, yDown, xUp, yUp, //track the screen positions
-            LLint, TTint, WWint, HHint = 0; //define the bounding rectangle for all of the geometric shapes 
+        Graphics g;                                     //defines methods for drawing
+        bool drawFlag = false;                          //check mouse down
+        int xDown, yDown, xUp, yUp,                     //track the screen positions
+            LLint, TTint, WWint, HHint = 0;             //define the bounding rectangle for all of the geometric shapes 
         int intBrushSize = 20;
         int selectedPreset = 1;
         Bitmap bmpPic;
         Color clrSelected = Color.Black;
-        private Instruction ev3Instuction;
+        private Instruction ev3Instuction;                      
         private ArrayList ev3InstuctionList = new ArrayList();
-
-        #endregion
-
         TextInputDialog inputBox;
 
-        #region ev3 Variables
         private string ipEV3 = "192.168.43.153";
         // myEV3 is used to communicate with the LEGO EV3.
         private EV3Wifi myEV3;
@@ -34,12 +28,11 @@ namespace DrawMyPancake {
         // You need a timer to receive messages from the EV3
         // at specified time intervals.
         private Timer messageReceiveTimer;
-        #endregion
 
         public mainForm()
         {
             InitializeComponent();
-            #region Lego EV3 Stuff
+           
             // Create the Timer object and set it to generate a timer tick event 
             // every 100 milliseconds. The timer tick can be used to execute code at fixed intervals.
             messageReceiveTimer = new Timer();
@@ -53,20 +46,200 @@ namespace DrawMyPancake {
             // EV3: Create an EV3Wifi object which you can use to talk to the EV3.
             myEV3 = new EV3Wifi();
             Connect();
-            #endregion
+            
 
-            #region Drawing prep
+            
             bmpPic = Resources.DMP_Bitmap;
             g = Graphics.FromImage(bmpPic);
             picCanvas.Image = bmpPic;
             picCanvas.Width = bmpPic.Width;
             picCanvas.Height = bmpPic.Height;
             picCanvas.Location = new Point((pnlBitmap.Width / 2 - bmpPic.Width / 2), pbLogo.Height + ((pnlBitmap.Height - pbLogo.Height) / 2 - bmpPic.Height / 2));
-            #endregion
+           
 
         }
 
-        #region ev3Connectionmanagement
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            sfdSavePic.Filter = "bitmap |*.bmp";
+            if (sfdSavePic.ShowDialog() == DialogResult.OK)
+            {
+                picCanvas.Image.Save(sfdSavePic.FileName, System.Drawing.Imaging.ImageFormat.Bmp);
+                MessageBox.Show("file saved.");
+            }
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            ofdLoadPic.Filter = "bitmap |*.bmp";
+            ofdLoadPic.ShowDialog();
+        }
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            bmpPic = Resources.DMP_Bitmap;
+            g = Graphics.FromImage(bmpPic);
+            ev3InstuctionList.Clear();
+            picCanvas.Image = bmpPic;
+            picCanvas.Refresh();
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            if (myEV3.isConnected || true)
+            {
+                switch (selectedPreset)
+                {
+                    case 2:
+                        myEV3.SendMessage("Square", "0");  // "0" means EV3_INBOX0
+                        break;
+                    case 3:
+                        myEV3.SendMessage("Circle", "0");  // "0" means EV3_INBOX0
+                        break;
+                    case 4:
+                        myEV3.SendMessage("Triangle", "0");  // "0" means EV3_INBOX0
+                        break;
+                    case 5:
+                        myEV3.SendMessage("Heart", "0");  // "0" means EV3_INBOX0
+                        break;
+                    case 6:
+                        myEV3.SendMessage("Spiral", "0");  // "0" means EV3_INBOX0
+                        break;
+                    case 7:
+                        //myEV3.SendMessage("Text" + lblTextOverlay.Text, "0");
+                        break;
+                    default:
+                        string ev3String = "";
+                        foreach (Instruction instruction in ev3InstuctionList)
+                        {
+                            ev3String += instruction.instructionString;
+                        }
+                        Console.WriteLine(ev3String);
+                        //methode voor analyse();
+                        myEV3.SendMessage("FreeDraw", ev3String);  // "0" means EV3_INBOX0 
+                        break;
+                }
+
+            }
+        }
+
+        private void btnMenu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+
+        private void btnPresetFreeDraw_Click(object sender, EventArgs e)
+        {
+            pnlAddText.Visible = false;
+            pnlPresetsButtons.Visible = false;
+            pnlBitmap.Visible = true;
+            g = Graphics.FromImage(Resources.DMP_Bitmap);
+            selectedPreset = 1;
+        }
+
+        private void btnPresetSquare_Click(object sender, EventArgs e)
+        {
+            g = Graphics.FromImage(Resources.DMP_Bitmap);
+            selectedPreset = 2;
+            picCanvas.BackColor = Color.DarkOliveGreen;
+        }
+
+        private void btnPresetCircle_Click(object sender, EventArgs e)
+        {
+            g = Graphics.FromImage(Resources.DMP_Bitmap);
+            selectedPreset = 3;
+            picCanvas.BackColor = Color.Brown;
+        }
+
+        private void btnPresetTriangle_Click(object sender, EventArgs e)
+        {
+            g = Graphics.FromImage(Resources.DMP_Bitmap);
+            selectedPreset = 4;
+            picCanvas.BackColor = Color.White;
+        }
+
+        private void btnPresetHeart_Click(object sender, EventArgs e)
+        {
+            g = Graphics.FromImage(Resources.DMP_Bitmap);
+            selectedPreset = 5;
+            picCanvas.BackColor = Color.Red;
+        }
+
+        private void btnPresetSpiral_Click(object sender, EventArgs e)
+        {
+            g = Graphics.FromImage(Resources.DMP_Bitmap);
+            selectedPreset = 6;
+            picCanvas.BackColor = Color.Blue;
+        }
+
+        private void btnPresetText_Click(object sender, EventArgs e)
+        {
+            g = Graphics.FromImage(Resources.DMP_Bitmap);
+            selectedPreset = 7;
+            //inputBox = new TextInputDialog();
+            //inputBox.Text = "Vul tekst in";
+            //inputBox.Show();
+            //inputBox.btnSubmit.Click += new EventHandler(writeText);
+        }
+
+        private void mnuSettingsConnectionConnect_Click(object sender, EventArgs e)
+        {
+            Connect();
+        }
+
+        private void mnuSettingsConnectionChange_Click(object sender, EventArgs e)
+        {
+            inputBox = new TextInputDialog();
+            inputBox.Text = "Vul IP in";
+            inputBox.Show();
+            inputBox.btnSubmit.Click += new EventHandler(changeIP);
+        }
+
+        private void changeIP(object sender, EventArgs e)
+        {
+            ipEV3 = inputBox.tbInput.Text;
+            Connect();
+            inputBox.Close();
+        }
+
+        private void Connect()
+        {
+            if (!IPAddress.TryParse(ipEV3, out IPAddress address))
+            {
+                MessageBox.Show("Fill in valid IP address of EV3");
+            }
+            else if (myEV3.Connect("1234", ipEV3) == true)
+            {
+                messageReceiveTimer.Start();
+                MessageBox.Show("Connected to EV3");
+
+            }
+            else
+            {
+                myEV3.Disconnect();
+                MessageBox.Show("Failed to connect to EV3 with IP address " + ipEV3);
+            }
+        }
+        
+        private void mnuSettingsSend_Click(object sender, EventArgs e)
+        {
+            inputBox = new TextInputDialog();
+            inputBox.Text = "Vul IP in";
+            inputBox.Show();
+            inputBox.btnSubmit.Click += new EventHandler(sendCommand);
+        }
+
+        private void mnuSettingsConnectionDisconnect_Click(object sender, EventArgs e)
+        {
+            myEV3.Disconnect();
+            MessageBox.Show("Disconnect");
+        }
+
         // EV3: This method is the event handler for the messageReadTimer.
         //      The method is called when the timer has reached its 'interval' value.
         //      It receives a message from the EV3.
@@ -93,7 +266,7 @@ namespace DrawMyPancake {
             myEV3.SendMessage(inputBox.tbInput.Text, "0");
             inputBox.Close();
         }
-        #endregion
+        
 
         #region figuurtjes
 
@@ -233,201 +406,12 @@ namespace DrawMyPancake {
         }
 
         #endregion
-
-        #region Presets
-        private void btnPresetFreeDraw_Click(object sender, EventArgs e)
-        {
-            pnlAddText.Visible = false;
-            pnlPresetsButtons.Visible = false;
-            pnlBitmap.Visible = true;
-            g = Graphics.FromImage(Resources.DMP_Bitmap);
-            selectedPreset = 1;
-        }
-
-        private void btnPresetSquare_Click(object sender, EventArgs e) {
-            g = Graphics.FromImage(Resources.DMP_Bitmap);
-            selectedPreset = 2;
-            picCanvas.BackColor = Color.DarkOliveGreen;
-        }
-
-        private void btnPresetCircle_Click(object sender, EventArgs e) {
-            g = Graphics.FromImage(Resources.DMP_Bitmap);
-            selectedPreset = 3;
-            picCanvas.BackColor = Color.Brown;
-        }
-
-        private void btnPresetTriangle_Click(object sender, EventArgs e) {
-            g = Graphics.FromImage(Resources.DMP_Bitmap);
-            selectedPreset = 4;
-            picCanvas.BackColor = Color.White;
-        }
-
-        private void btnPresetHeart_Click(object sender, EventArgs e) {
-            g = Graphics.FromImage(Resources.DMP_Bitmap);
-            selectedPreset = 5;
-            picCanvas.BackColor = Color.Red;
-        }
-
-        private void btnPresetSpiral_Click(object sender, EventArgs e) {
-            g = Graphics.FromImage(Resources.DMP_Bitmap);
-            selectedPreset = 6;
-            picCanvas.BackColor = Color.Blue;
-        }
-
-        private void btnPresetText_Click(object sender, EventArgs e) {
-            g = Graphics.FromImage(Resources.DMP_Bitmap);
-            selectedPreset = 7;
-            //inputBox = new TextInputDialog();
-            //inputBox.Text = "Vul tekst in";
-            //inputBox.Show();
-            //inputBox.btnSubmit.Click += new EventHandler(writeText);
-        }
-
-        private void writeText(object sender, EventArgs e)
-        {
-            //lblTextOverlay.Visible = true;
-            //lblTextOverlay.Text = inputBox.tbInput.Text;
-            inputBox.Close();
-        }
-        #endregion
-
-
-        private void mnuSettingsConnectionConnect_Click(object sender, EventArgs e)
-        {
-            Connect();
-        }
-
-
-        private void mnuSettingsConnectionChange_Click(object sender, EventArgs e)
-        {
-            inputBox = new TextInputDialog();
-            inputBox.Text = "Vul IP in";
-            inputBox.Show();
-            inputBox.btnSubmit.Click += new EventHandler(changeIP);
-        }
-
-        private void changeIP(object sender, EventArgs e)
-        {
-            ipEV3 = inputBox.tbInput.Text;
-            Connect();
-            inputBox.Close();
-        }
-
-        private void Connect()
-        {
-            if (!IPAddress.TryParse(ipEV3, out IPAddress address))
-            {
-                MessageBox.Show("Fill in valid IP address of EV3");
-            }
-            else if (myEV3.Connect("1234", ipEV3) == true)
-            {
-                messageReceiveTimer.Start();
-                MessageBox.Show("Connected to EV3");
-
-            }
-            else
-            {
-                myEV3.Disconnect();
-                MessageBox.Show("Failed to connect to EV3 with IP address " + ipEV3);
-            }
-        }
         
-        #region Button clicks
-            
-        private void mnuSettingsSend_Click(object sender, EventArgs e)
-        {
-            inputBox = new TextInputDialog();
-            inputBox.Text = "Vul IP in";
-            inputBox.Show();
-            inputBox.btnSubmit.Click += new EventHandler(sendCommand);
-        }
-        
-
-        private void mnuSettingsConnectionDisconnect_Click(object sender, EventArgs e)
-        {
-            myEV3.Disconnect();
-            MessageBox.Show("Disconnect");
-        }
-
-        private void tbText_TextChanged(object sender, EventArgs e)
-        {
-            tbText.CharacterCasing = CharacterCasing.Upper;
-        }
-
-        private void btnMenu_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void mainForm_Resize(object sender, EventArgs e) {
             picCanvas.Location = new Point((pnlBitmap.Width / 2 - bmpPic.Width / 2), pbLogo.Height + ((pnlBitmap.Height- pbLogo.Height) / 2 - bmpPic.Height / 2));
         }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            sfdSavePic.Filter = "bitmap |*.bmp";
-            if (sfdSavePic.ShowDialog() == DialogResult.OK)
-            {
-                picCanvas.Image.Save(sfdSavePic.FileName, System.Drawing.Imaging.ImageFormat.Bmp);
-                MessageBox.Show("file saved.");
-            }
-        }
-
-        private void btnLoad_Click(object sender, EventArgs e)
-        {
-            ofdLoadPic.Filter = "bitmap |*.bmp";
-            ofdLoadPic.ShowDialog();
-        }
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            bmpPic = Resources.DMP_Bitmap;
-            g = Graphics.FromImage(bmpPic);
-            ev3InstuctionList.Clear();
-            picCanvas.Image = bmpPic;
-            picCanvas.Refresh();
-        }
-
-        private void btnStart_Click(object sender, EventArgs e)
-        {
-            if (myEV3.isConnected || true)
-            {
-                switch (selectedPreset)
-                {
-                    case 2:
-                        myEV3.SendMessage("Square", "0");  // "0" means EV3_INBOX0
-                        break;
-                    case 3:
-                        myEV3.SendMessage("Circle", "0");  // "0" means EV3_INBOX0
-                        break;
-                    case 4:
-                        myEV3.SendMessage("Triangle", "0");  // "0" means EV3_INBOX0
-                        break;
-                    case 5:
-                        myEV3.SendMessage("Heart", "0");  // "0" means EV3_INBOX0
-                        break;
-                    case 6:
-                        myEV3.SendMessage("Spiral", "0");  // "0" means EV3_INBOX0
-                        break;
-                    case 7:
-                        //myEV3.SendMessage("Text" + lblTextOverlay.Text, "0");
-                        break;
-                    default:
-                        string ev3String = "";
-                        foreach (Instruction instruction in ev3InstuctionList)
-                        {
-                            ev3String += instruction.instructionString;
-                        }
-                        Console.WriteLine(ev3String);
-                        //methode voor analyse();
-                        myEV3.SendMessage("FreeDraw", ev3String);  // "0" means EV3_INBOX0 
-                        break;
-                }
-
-            }
-        }
-
-        #endregion
-        #region Drawing canvas
+        
         private void picCanvas_MouseDown(object sender, MouseEventArgs e)
         {
             drawFlag = true;
@@ -463,7 +447,7 @@ namespace DrawMyPancake {
             g.Dispose();
             picCanvas.Refresh();
         }
-        #endregion
+        
 
     }
 }

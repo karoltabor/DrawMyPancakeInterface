@@ -438,6 +438,7 @@
             this.tbText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tbText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(162)))), ((int)(((byte)(76)))));
             this.tbText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbText.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbText.Font = new System.Drawing.Font("Arial Rounded MT Bold", 120F);
             this.tbText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(115)))), ((int)(((byte)(44)))));
             this.tbText.Location = new System.Drawing.Point(145, 58);
@@ -448,7 +449,6 @@
             this.tbText.TabIndex = 2;
             this.tbText.Text = "HELLO!";
             this.tbText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbText.TextChanged += new System.EventHandler(this.tbText_TextChanged);
             // 
             // pnlBitmap
             // 
