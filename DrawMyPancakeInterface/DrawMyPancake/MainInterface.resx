@@ -163,18 +163,6 @@
         DMMnC6vRLgwisIEAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnText.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADEAAAAoCAYAAABXRRJPAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
-        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAE5SURBVFhH7ZhRccMwEEQNoRACIRACoRACIRDKoBAC
-        JRAKIRACwd1nnTVKOk7STNXzx76Z/ZB19u3O+UcajDHGmL9mHMd36dToU/p4QbzXfucswSFa9UNNMNCT
-        U7Tqh5rchjhKe2kbJRNaM7GWfWxNaL2RdhITuUgzX1HSDzXBNND4yniL9jDYsoutH2jvTZp/pzEe90M9
-        +H9hMQBo/+kQwH4p+58QTOAYy0VU86sQoJppGrHsg76/pYnYxKNFVPNKiIN0iWU/1OTubzSDaanlYYjV
-        geniveIQKWC6eK84RAqYLt4rDpECpov3ikOkgOniveIQKWC6eK84RAqYLt4rDpGCTHM2aLk6Y68eGWYK
-        7eEfWBPs4YEqlTBZD/x3OMcr60PmuLrhSocwTONW88VZ/wsyY4xJZBi+AcnQOHiuR3P5AAAAAElFTkSu
-        QmCC
-</value>
-  </data>
   <data name="btnClear.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADEAAAAyCAYAAAD1CDOyAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
@@ -191,6 +179,18 @@
         Vg/Cjzz3Sdnp0vbtqzf/UCD8HPWzTnGJNZcPrpatlm95sloQtil9p3na+HdAZpfwXpR13hEE2jayf/5z
         WPevFwSBvv2Rxv3BmflNsZwpzeQqoAN2RP6HdfaDB51gHsWZ+EsZm/RNJpPJZHJ/bDbf75Rykpjt5hgA
         AAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnText.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADEAAAAoCAYAAABXRRJPAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAE5SURBVFhH7ZhRccMwEEQNoRACIRACoRACIRDKoBAC
+        JRAKIRACwd1nnTVKOk7STNXzx76Z/ZB19u3O+UcajDHGmL9mHMd36dToU/p4QbzXfucswSFa9UNNMNCT
+        U7Tqh5rchjhKe2kbJRNaM7GWfWxNaL2RdhITuUgzX1HSDzXBNND4yniL9jDYsoutH2jvTZp/pzEe90M9
+        +H9hMQBo/+kQwH4p+58QTOAYy0VU86sQoJppGrHsg76/pYnYxKNFVPNKiIN0iWU/1OTubzSDaanlYYjV
+        geniveIQKWC6eK84RAqYLt4rDpECpov3ikOkgOniveIQKWC6eK84RAqYLt4rDpGCTHM2aLk6Y68eGWYK
+        7eEfWBPs4YEqlTBZD/x3OMcr60PmuLrhSocwTONW88VZ/wsyY4xJZBi+AcnQOHiuR3P5AAAAAElFTkSu
+        QmCC
 </value>
   </data>
   <data name="btnPen.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

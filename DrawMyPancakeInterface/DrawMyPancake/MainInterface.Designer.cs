@@ -73,8 +73,8 @@
             this.pnlLeft.Controls.Add(this.btnSettings);
             this.pnlLeft.Controls.Add(this.btnSave);
             this.pnlLeft.Controls.Add(this.btnOpen);
-            this.pnlLeft.Controls.Add(this.btnText);
             this.pnlLeft.Controls.Add(this.btnClear);
+            this.pnlLeft.Controls.Add(this.btnText);
             this.pnlLeft.Controls.Add(this.btnPen);
             this.pnlLeft.Controls.Add(this.btnPreset);
             this.pnlLeft.Controls.Add(this.btnMenu);
@@ -84,7 +84,7 @@
             this.pnlLeft.MaximumSize = new System.Drawing.Size(200, 0);
             this.pnlLeft.MinimumSize = new System.Drawing.Size(200, 0);
             this.pnlLeft.Name = "pnlLeft";
-            this.pnlLeft.Size = new System.Drawing.Size(200, 726);
+            this.pnlLeft.Size = new System.Drawing.Size(200, 1041);
             this.pnlLeft.TabIndex = 0;
             // 
             // btnSettings
@@ -106,6 +106,7 @@
             this.btnSettings.TabIndex = 17;
             this.btnSettings.Text = "     Settings";
             this.btnSettings.UseVisualStyleBackColor = false;
+            this.btnSettings.MouseHover += new System.EventHandler(this.menuButton_MouseHover);
             // 
             // btnSave
             // 
@@ -127,6 +128,7 @@
             this.btnSave.Text = "   Save File";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSave.MouseHover += new System.EventHandler(this.menuButton_MouseHover);
             // 
             // btnOpen
             // 
@@ -148,6 +150,7 @@
             this.btnOpen.Text = "     Open File";
             this.btnOpen.UseVisualStyleBackColor = false;
             this.btnOpen.Click += new System.EventHandler(this.btnLoad_Click);
+            this.btnOpen.MouseHover += new System.EventHandler(this.menuButton_MouseHover);
             // 
             // btnText
             // 
@@ -159,7 +162,7 @@
             this.btnText.ForeColor = System.Drawing.Color.White;
             this.btnText.Image = ((System.Drawing.Image)(resources.GetObject("btnText.Image")));
             this.btnText.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnText.Location = new System.Drawing.Point(0, 360);
+            this.btnText.Location = new System.Drawing.Point(0, 270);
             this.btnText.Margin = new System.Windows.Forms.Padding(0);
             this.btnText.Name = "btnText";
             this.btnText.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -169,6 +172,7 @@
             this.btnText.Text = "   Add Text";
             this.btnText.UseVisualStyleBackColor = false;
             this.btnText.Click += new System.EventHandler(this.btnPresetText_Click);
+            this.btnText.MouseHover += new System.EventHandler(this.menuButton_MouseHover);
             // 
             // btnClear
             // 
@@ -180,7 +184,7 @@
             this.btnClear.ForeColor = System.Drawing.Color.White;
             this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
             this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClear.Location = new System.Drawing.Point(0, 270);
+            this.btnClear.Location = new System.Drawing.Point(0, 360);
             this.btnClear.Margin = new System.Windows.Forms.Padding(0);
             this.btnClear.Name = "btnClear";
             this.btnClear.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -190,6 +194,7 @@
             this.btnClear.Text = "     Clear Field";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnClear.MouseHover += new System.EventHandler(this.menuButton_MouseHover);
             // 
             // btnPen
             // 
@@ -211,6 +216,7 @@
             this.btnPen.Text = "  Pentool";
             this.btnPen.UseVisualStyleBackColor = false;
             this.btnPen.Click += new System.EventHandler(this.btnPresetFreeDraw_Click);
+            this.btnPen.MouseHover += new System.EventHandler(this.menuButton_MouseHover);
             // 
             // btnPreset
             // 
@@ -231,6 +237,8 @@
             this.btnPreset.TabIndex = 15;
             this.btnPreset.Text = "           Load Preset";
             this.btnPreset.UseVisualStyleBackColor = false;
+            this.btnPreset.Click += new System.EventHandler(this.btnPreset_Click);
+            this.btnPreset.MouseHover += new System.EventHandler(this.menuButton_MouseHover);
             // 
             // btnMenu
             // 
@@ -252,6 +260,7 @@
             this.btnMenu.Text = "Menu";
             this.btnMenu.UseVisualStyleBackColor = false;
             this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
+            this.btnMenu.MouseHover += new System.EventHandler(this.menuButton_MouseHover);
             // 
             // middlePanel
             // 
@@ -269,7 +278,7 @@
             this.middlePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.263823F));
             this.middlePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 98.73618F));
             this.middlePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.middlePanel.Size = new System.Drawing.Size(1334, 726);
+            this.middlePanel.Size = new System.Drawing.Size(1904, 1041);
             this.middlePanel.TabIndex = 2;
             // 
             // pnlCenter
@@ -280,10 +289,10 @@
             this.pnlCenter.Controls.Add(this.pnlAddText);
             this.pnlCenter.Controls.Add(this.pnlBitmap);
             this.pnlCenter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCenter.Location = new System.Drawing.Point(200, 9);
+            this.pnlCenter.Location = new System.Drawing.Point(200, 13);
             this.pnlCenter.Margin = new System.Windows.Forms.Padding(0);
             this.pnlCenter.Name = "pnlCenter";
-            this.pnlCenter.Size = new System.Drawing.Size(1134, 717);
+            this.pnlCenter.Size = new System.Drawing.Size(1704, 1028);
             this.pnlCenter.TabIndex = 1;
             // 
             // pnlPresetsButtons
@@ -299,6 +308,7 @@
             this.pnlPresetsButtons.Name = "pnlPresetsButtons";
             this.pnlPresetsButtons.Size = new System.Drawing.Size(173, 450);
             this.pnlPresetsButtons.TabIndex = 0;
+            this.pnlPresetsButtons.Visible = false;
             // 
             // btnTriangle
             // 
@@ -319,6 +329,7 @@
             this.btnTriangle.TabIndex = 9;
             this.btnTriangle.Text = "       Triangle";
             this.btnTriangle.UseVisualStyleBackColor = false;
+            this.btnTriangle.Click += new System.EventHandler(this.btnPresetTriangle_Click);
             // 
             // btnSquare
             // 
@@ -339,6 +350,7 @@
             this.btnSquare.TabIndex = 8;
             this.btnSquare.Text = "     Square";
             this.btnSquare.UseVisualStyleBackColor = false;
+            this.btnSquare.Click += new System.EventHandler(this.btnPresetSquare_Click);
             // 
             // btnSpiral
             // 
@@ -359,6 +371,7 @@
             this.btnSpiral.TabIndex = 7;
             this.btnSpiral.Text = "  Spiral";
             this.btnSpiral.UseVisualStyleBackColor = false;
+            this.btnSpiral.Click += new System.EventHandler(this.btnPresetSpiral_Click);
             // 
             // btnHeart
             // 
@@ -379,6 +392,7 @@
             this.btnHeart.TabIndex = 6;
             this.btnHeart.Text = " Heart";
             this.btnHeart.UseVisualStyleBackColor = false;
+            this.btnHeart.Click += new System.EventHandler(this.btnPresetHeart_Click);
             // 
             // btnSmiley
             // 
@@ -399,6 +413,7 @@
             this.btnSmiley.TabIndex = 5;
             this.btnSmiley.Text = "  Smiley";
             this.btnSmiley.UseVisualStyleBackColor = false;
+            this.btnSmiley.Click += new System.EventHandler(this.btnPresetCircle_Click);
             // 
             // pbLogo
             // 
@@ -407,7 +422,7 @@
             this.pbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbLogo.Image")));
             this.pbLogo.Location = new System.Drawing.Point(0, 0);
             this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(1134, 151);
+            this.pbLogo.Size = new System.Drawing.Size(1704, 151);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbLogo.TabIndex = 1;
             this.pbLogo.TabStop = false;
@@ -417,9 +432,10 @@
             // 
             this.pnlAddText.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pnlAddText.Controls.Add(this.pnlAddTextBg);
+            this.pnlAddText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlAddText.Location = new System.Drawing.Point(0, 0);
             this.pnlAddText.Name = "pnlAddText";
-            this.pnlAddText.Size = new System.Drawing.Size(1134, 731);
+            this.pnlAddText.Size = new System.Drawing.Size(1704, 1028);
             this.pnlAddText.TabIndex = 3;
             // 
             // pnlAddTextBg
@@ -458,7 +474,7 @@
             this.pnlBitmap.Location = new System.Drawing.Point(0, 0);
             this.pnlBitmap.Margin = new System.Windows.Forms.Padding(0);
             this.pnlBitmap.Name = "pnlBitmap";
-            this.pnlBitmap.Size = new System.Drawing.Size(1134, 717);
+            this.pnlBitmap.Size = new System.Drawing.Size(1704, 1028);
             this.pnlBitmap.TabIndex = 6;
             this.pnlBitmap.Visible = false;
             // 
@@ -485,7 +501,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(197)))));
-            this.ClientSize = new System.Drawing.Size(1334, 726);
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.pnlLeft);
             this.Controls.Add(this.middlePanel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -494,6 +510,7 @@
             this.Name = "mainForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Draw My Pancake";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Resize += new System.EventHandler(this.mainForm_Resize);

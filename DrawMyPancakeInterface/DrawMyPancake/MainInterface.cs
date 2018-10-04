@@ -55,33 +55,13 @@ namespace DrawMyPancake {
             picCanvas.Width = bmpPic.Width;
             picCanvas.Height = bmpPic.Height;
             picCanvas.Location = new Point((pnlBitmap.Width / 2 - bmpPic.Width / 2), pbLogo.Height + ((pnlBitmap.Height - pbLogo.Height) / 2 - bmpPic.Height / 2));
-           
-
+            pnlAddTextBg.Location = new Point((pnlAddText.Width / 2 - pnlAddTextBg.Width / 2), ((pnlAddText.Height - pbLogo.Height) / 2 - pnlAddTextBg.Height / 2));
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            sfdSavePic.Filter = "bitmap |*.bmp";
-            if (sfdSavePic.ShowDialog() == DialogResult.OK)
-            {
-                picCanvas.Image.Save(sfdSavePic.FileName, System.Drawing.Imaging.ImageFormat.Bmp);
-                MessageBox.Show("file saved.");
-            }
+        private void mainForm_Resize(object sender, EventArgs e) {
+            picCanvas.Location = new Point((pnlBitmap.Width / 2 - bmpPic.Width / 2), pbLogo.Height + ((pnlBitmap.Height - pbLogo.Height) / 2 - bmpPic.Height / 2));
         }
 
-        private void btnLoad_Click(object sender, EventArgs e)
-        {
-            ofdLoadPic.Filter = "bitmap |*.bmp";
-            ofdLoadPic.ShowDialog();
-        }
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            bmpPic = Resources.DMP_Bitmap;
-            g = Graphics.FromImage(bmpPic);
-            ev3InstuctionList.Clear();
-            picCanvas.Image = bmpPic;
-            picCanvas.Refresh();
-        }
 
         private void btnStart_Click(object sender, EventArgs e)
         {
@@ -133,8 +113,25 @@ namespace DrawMyPancake {
         /// <param name="sender"></param>
         /// <param name="e"></param>
 
-        private void btnPresetFreeDraw_Click(object sender, EventArgs e)
-        {
+        private void menuButton_MouseHover(object sender, EventArgs e) {
+            string buttonName = ((Button) sender).Name;
+            if (buttonName == "btnPreset")
+            {
+                pnlPresetsButtons.Visible = true;
+            }
+            else
+            {
+                pnlPresetsButtons.Visible = false;
+            }
+            
+        }
+
+        private void btnPreset_Click(object sender, EventArgs e) {
+            pnlAddText.Visible = false;
+            pnlPresetsButtons.Visible = true;
+            pnlBitmap.Visible = true;
+        }
+        private void btnPresetFreeDraw_Click(object sender, EventArgs e) {
             pnlAddText.Visible = false;
             pnlPresetsButtons.Visible = false;
             pnlBitmap.Visible = true;
@@ -142,49 +139,69 @@ namespace DrawMyPancake {
             selectedPreset = 1;
         }
 
-        private void btnPresetSquare_Click(object sender, EventArgs e)
-        {
-            g = Graphics.FromImage(Resources.DMP_Bitmap);
-            selectedPreset = 2;
-            picCanvas.BackColor = Color.DarkOliveGreen;
-        }
-
-        private void btnPresetCircle_Click(object sender, EventArgs e)
-        {
-            g = Graphics.FromImage(Resources.DMP_Bitmap);
-            selectedPreset = 3;
-            picCanvas.BackColor = Color.Brown;
-        }
-
-        private void btnPresetTriangle_Click(object sender, EventArgs e)
-        {
-            g = Graphics.FromImage(Resources.DMP_Bitmap);
-            selectedPreset = 4;
-            picCanvas.BackColor = Color.White;
-        }
-
-        private void btnPresetHeart_Click(object sender, EventArgs e)
-        {
-            g = Graphics.FromImage(Resources.DMP_Bitmap);
-            selectedPreset = 5;
-            picCanvas.BackColor = Color.Red;
-        }
-
-        private void btnPresetSpiral_Click(object sender, EventArgs e)
-        {
-            g = Graphics.FromImage(Resources.DMP_Bitmap);
-            selectedPreset = 6;
-            picCanvas.BackColor = Color.Blue;
-        }
-
-        private void btnPresetText_Click(object sender, EventArgs e)
-        {
-            g = Graphics.FromImage(Resources.DMP_Bitmap);
+        private void btnPresetText_Click(object sender, EventArgs e) {
+            pnlAddText.Visible = true;
+            pnlPresetsButtons.Visible = false;
+            pnlBitmap.Visible = false;
+            pnlAddTextBg.Location = new Point((pnlAddText.Width / 2 - pnlAddTextBg.Width / 2), ((pnlAddText.Height - pbLogo.Height) / 2 - pnlAddTextBg.Height / 2));
             selectedPreset = 7;
             //inputBox = new TextInputDialog();
             //inputBox.Text = "Vul tekst in";
             //inputBox.Show();
             //inputBox.btnSubmit.Click += new EventHandler(writeText);
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            clearDrawing();
+        }
+
+        private void clearDrawing()
+        {
+            bmpPic = Resources.DMP_Bitmap;
+            g = Graphics.FromImage(bmpPic);
+            ev3InstuctionList.Clear();
+            picCanvas.Image = bmpPic;
+            picCanvas.Refresh();
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e) {
+            ofdLoadPic.Filter = "bitmap |*.bmp";
+            ofdLoadPic.ShowDialog();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e) {
+            sfdSavePic.Filter = "bitmap |*.bmp";
+            if(sfdSavePic.ShowDialog() == DialogResult.OK) {
+                picCanvas.Image.Save(sfdSavePic.FileName, System.Drawing.Imaging.ImageFormat.Bmp);
+                MessageBox.Show("file saved.");
+            }
+        }
+
+
+        private void btnPresetSquare_Click(object sender, EventArgs e) {
+            clearDrawing();
+            selectedPreset = 2;
+        }
+
+        private void btnPresetCircle_Click(object sender, EventArgs e) {
+            clearDrawing();
+            selectedPreset = 3;
+        }
+
+        private void btnPresetTriangle_Click(object sender, EventArgs e) {
+            clearDrawing();
+            selectedPreset = 4;
+        }
+
+        private void btnPresetHeart_Click(object sender, EventArgs e) {
+            clearDrawing();
+            selectedPreset = 5;
+        }
+
+        private void btnPresetSpiral_Click(object sender, EventArgs e) {
+            clearDrawing();
+            selectedPreset = 6;
         }
 
         private void mnuSettingsConnectionConnect_Click(object sender, EventArgs e)
@@ -266,7 +283,10 @@ namespace DrawMyPancake {
             myEV3.SendMessage(inputBox.tbInput.Text, "0");
             inputBox.Close();
         }
-        
+
+
+
+
 
         #region figuurtjes
 
@@ -311,6 +331,7 @@ namespace DrawMyPancake {
                 TTint = yDown;
             }
         }
+
 
         private void dimRectangle()
         {
@@ -407,10 +428,6 @@ namespace DrawMyPancake {
 
         #endregion
         
-
-        private void mainForm_Resize(object sender, EventArgs e) {
-            picCanvas.Location = new Point((pnlBitmap.Width / 2 - bmpPic.Width / 2), pbLogo.Height + ((pnlBitmap.Height- pbLogo.Height) / 2 - bmpPic.Height / 2));
-        }
         
         private void picCanvas_MouseDown(object sender, MouseEventArgs e)
         {
@@ -441,7 +458,7 @@ namespace DrawMyPancake {
         private void picCanvas_MouseUp(object sender, MouseEventArgs e)
         {
             ev3Instuction.ToInstructionString();
-            ev3Instuction.instructionString += Math.Abs(e.X-picCanvas.Width).ToString("D4") + e.Y.ToString("D4") + "F");
+            ev3Instuction.instructionString += Math.Abs(e.X-picCanvas.Width).ToString("D4") + e.Y.ToString("D4") + "F";
             ev3InstuctionList.Add(ev3Instuction);
             drawFlag = false;
             g.Dispose();
