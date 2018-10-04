@@ -418,7 +418,7 @@ namespace DrawMyPancake {
             xDown = e.X;
             yDown = e.Y;
             ev3Instuction = new Instruction {
-                instructionString = e.X.ToString("D4") + e.Y.ToString("D4") + "F"
+                instructionString = Math.Abs(e.X-picCanvas.Width).ToString("D4") + e.Y.ToString("D4") + "F"
             };
             g = Graphics.FromImage(picCanvas.Image);
         }
@@ -429,7 +429,7 @@ namespace DrawMyPancake {
             {
                 xDown = e.X;
                 yDown = e.Y;
-                ev3Instuction.AddCoordinate(xDown, xDown);
+                ev3Instuction.AddCoordinate(xDown, xDown, picCanvas.Width);
                 g.FillEllipse(new SolidBrush(clrSelected), xDown, yDown, intBrushSize, intBrushSize);
                 g.Save();
                 picCanvas.Image = bmpPic;
@@ -441,7 +441,7 @@ namespace DrawMyPancake {
         private void picCanvas_MouseUp(object sender, MouseEventArgs e)
         {
             ev3Instuction.ToInstructionString();
-            ev3Instuction.instructionString += e.X.ToString("D4") + e.Y.ToString("D4") + "F";
+            ev3Instuction.instructionString += Math.Abs(e.X-picCanvas.Width).ToString("D4") + e.Y.ToString("D4") + "F");
             ev3InstuctionList.Add(ev3Instuction);
             drawFlag = false;
             g.Dispose();

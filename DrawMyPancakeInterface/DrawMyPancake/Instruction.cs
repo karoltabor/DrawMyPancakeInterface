@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Drawing;
 
 namespace DrawMyPancake {
@@ -6,15 +7,10 @@ namespace DrawMyPancake {
         ArrayList coordinateList = new ArrayList();
         public string instructionString = "";
 
-        public void AddCoordinate(int x, int y)
+        public void AddCoordinate(int x, int y, int canvasWidth)
         {
-            Point p = new Point(x, y);
+            Point p = new Point(Math.Abs(x-canvasWidth), y);
             coordinateList.Add(p);
-        }
-
-        private void Reflect()
-        {
-
         }
 
         public void OptimizePath()
@@ -25,7 +21,6 @@ namespace DrawMyPancake {
         public string ToInstructionString()
         {
             OptimizePath();
-            Reflect();
             foreach (Point coordinate in coordinateList)
             {
                 instructionString += coordinate.X.ToString("D4") + coordinate.Y.ToString("D4") + "T";

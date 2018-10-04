@@ -489,6 +489,8 @@
             this.Controls.Add(this.pnlLeft);
             this.Controls.Add(this.middlePanel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "mainForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
@@ -514,7 +516,7 @@
         private System.Windows.Forms.TableLayoutPanel middlePanel;
         private System.Windows.Forms.Panel pnlCenter;
         private System.Windows.Forms.ColorDialog clrDialog;
-        private System.Windows.Forms.PictureBox picCanvas;
+        public System.Windows.Forms.PictureBox picCanvas;
         private System.Windows.Forms.SaveFileDialog sfdSavePic;
         private System.Windows.Forms.OpenFileDialog ofdLoadPic;
         private System.Windows.Forms.Button btnPen;
