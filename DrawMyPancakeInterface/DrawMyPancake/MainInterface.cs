@@ -114,16 +114,7 @@ namespace DrawMyPancake {
         /// <param name="e"></param>
 
         private void menuButton_MouseHover(object sender, EventArgs e) {
-            string buttonName = ((Button) sender).Name;
-            if (buttonName == "btnPreset")
-            {
-                pnlPresetsButtons.Visible = true;
-            }
-            else
-            {
-                pnlPresetsButtons.Visible = false;
-            }
-            
+            pnlPresetsButtons.Visible = ((Button) sender).Name == "btnPreset" ? true : false;
         }
 
         private void btnPreset_Click(object sender, EventArgs e) {
