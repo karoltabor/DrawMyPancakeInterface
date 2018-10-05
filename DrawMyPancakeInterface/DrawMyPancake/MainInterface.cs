@@ -94,7 +94,6 @@ namespace DrawMyPancake {
                             ev3String += instruction.instructionString;
                         }
                         Console.WriteLine(ev3String);
-                        //methode voor analyse();
                         myEV3.SendMessage("FreeDraw", ev3String);  // "0" means EV3_INBOX0 
                         break;
                 }
@@ -437,7 +436,7 @@ namespace DrawMyPancake {
             {
                 xDown = e.X;
                 yDown = e.Y;
-                ev3Instuction.AddCoordinate(xDown, xDown, picCanvas.Width);
+                ev3Instuction.AddCoordinate(xDown, yDown, picCanvas.Width);
                 g.FillEllipse(new SolidBrush(clrSelected), xDown, yDown, intBrushSize, intBrushSize);
                 g.Save();
                 picCanvas.Image = bmpPic;
