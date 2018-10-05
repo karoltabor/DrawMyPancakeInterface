@@ -70,22 +70,23 @@ namespace DrawMyPancake {
                 switch (selectedPreset)
                 {
                     case 2:
-                        myEV3.SendMessage("Square", "0");  // "0" means EV3_INBOX0
+                        myEV3.SendMessage("Square", "0");
                         break;
                     case 3:
-                        myEV3.SendMessage("Circle", "0");  // "0" means EV3_INBOX0
+                        myEV3.SendMessage("Circle", "0");
                         break;
                     case 4:
-                        myEV3.SendMessage("Triangle", "0");  // "0" means EV3_INBOX0
+                        myEV3.SendMessage("Triangle", "0");
                         break;
                     case 5:
-                        myEV3.SendMessage("Heart", "0");  // "0" means EV3_INBOX0
+                        myEV3.SendMessage("Heart", "0");
                         break;
                     case 6:
-                        myEV3.SendMessage("Spiral", "0");  // "0" means EV3_INBOX0
+                        myEV3.SendMessage("Spiral", "0");
                         break;
                     case 7:
-                        //myEV3.SendMessage("Text" + lblTextOverlay.Text, "0");
+                        myEV3.SendMessage("Text", "0");
+                        myEV3.SendMessage(inputBox.Text.ToLower(), "1");
                         break;
                     default:
                         string ev3String = "";
@@ -94,7 +95,8 @@ namespace DrawMyPancake {
                             ev3String += instruction.instructionString;
                         }
                         Console.WriteLine(ev3String);
-                        myEV3.SendMessage("FreeDraw", ev3String);  // "0" means EV3_INBOX0 
+                        myEV3.SendMessage("FreeDraw", "0");
+                        myEV3.SendMessage(ev3String, "0");
                         break;
                 }
 
