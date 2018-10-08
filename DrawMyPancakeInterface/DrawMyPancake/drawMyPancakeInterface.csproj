@@ -127,7 +127,49 @@
     <None Include="Resources\square_outline.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\DMP_Bitmap.bmp" />
+    <None Include="Resources\DMP_Bitmap.BMP" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smiley-icon3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spiral-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\square-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text-icon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Text-Pancake3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\triangle-icon3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dustbin-icon5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-tekst.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu-icon3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open-icon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pen-icon5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\preset-icon4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings-icon2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

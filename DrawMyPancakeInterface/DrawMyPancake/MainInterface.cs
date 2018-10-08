@@ -5,51 +5,38 @@ using System.Collections;
 using System.Drawing;
 using System.Net;
 using System.Windows.Forms;
+using System.IO;
 
 namespace DrawMyPancake {
     public partial class mainForm : Form
     {
         Graphics g;                                     //defines methods for drawing
-        bool drawFlag = false;                          //check mouse down
-        int xDown, yDown, xUp, yUp,                     //track the screen positions
-            LLint, TTint, WWint, HHint = 0;             //define the bounding rectangle for all of the geometric shapes 
+        bool drawFlag = false;                          
+        int xDown, yDown, xUp, yUp,                     
+            LLint, TTint, WWint, HHint = 0;             
         int intBrushSize = 20;
         int selectedPreset = 1;
         Bitmap bmpPic;
-        Color clrSelected = Color.Black;
+        Color clrSelected = Color.FromArgb(218, 134, 73);
         private Instruction ev3Instuction;                      
         private ArrayList ev3InstuctionList = new ArrayList();
         TextInputDialog inputBox;
 
         private string ipEV3 = "192.168.43.153";
-        // myEV3 is used to communicate with the LEGO EV3.
         private EV3Wifi myEV3;
-
-        // You need a timer to receive messages from the EV3
-        // at specified time intervals.
         private Timer messageReceiveTimer;
 
         public mainForm()
         {
+            bmpPic = Resources.DMP_Bitmap;
             InitializeComponent();
-           
-            // Create the Timer object and set it to generate a timer tick event 
-            // every 100 milliseconds. The timer tick can be used to execute code at fixed intervals.
+
             messageReceiveTimer = new Timer();
             messageReceiveTimer.Interval = 100;
-
-            // Set the "messageReadTimer_Tick" method as method that is executed when
-            // a timer tick event occurs.
-            // The "messageReadTimer_Tick" method is defined later in this code (search!).
             messageReceiveTimer.Tick += new System.EventHandler(messageReadTimer_Tick);
-
-            // EV3: Create an EV3Wifi object which you can use to talk to the EV3.
             myEV3 = new EV3Wifi();
             Connect();
             
-
-            
-            bmpPic = Resources.DMP_Bitmap;
             g = Graphics.FromImage(bmpPic);
             picCanvas.Image = bmpPic;
             picCanvas.Width = bmpPic.Width;
@@ -105,17 +92,30 @@ namespace DrawMyPancake {
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-
+            //inputBox = new TextInputDialog();
+            //inputBox.Text = "Vul tekst in";
+            //inputBox.Show();
+            //inputBox.btnSubmit.Click += new EventHandler(writeText);
         }
 
         /// <summary>
-        /// 
+        /// Main Buttons eventhandlers
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
 
         private void menuButton_MouseHover(object sender, EventArgs e) {
             pnlPresetsButtons.Visible = ((Button) sender).Name == "btnPreset" ? true : false;
+        }
+
+        private void SelectPreset(object sender,EventArgs e)
+        {
+            switch (((Button)sender).Name)
+            {
+                case "btnSmiley": break;
+                case "btnTriangle": break;
+                case "btnSprial": break;
+                case "btnHeart": break;
+                case "btnSquare": break;
+            }
         }
 
         private void btnPreset_Click(object sender, EventArgs e) {
@@ -137,10 +137,6 @@ namespace DrawMyPancake {
             pnlBitmap.Visible = false;
             pnlAddTextBg.Location = new Point((pnlAddText.Width / 2 - pnlAddTextBg.Width / 2), ((pnlAddText.Height - pbLogo.Height) / 2 - pnlAddTextBg.Height / 2));
             selectedPreset = 7;
-            //inputBox = new TextInputDialog();
-            //inputBox.Text = "Vul tekst in";
-            //inputBox.Show();
-            //inputBox.btnSubmit.Click += new EventHandler(writeText);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -158,8 +154,15 @@ namespace DrawMyPancake {
         }
 
         private void btnLoad_Click(object sender, EventArgs e) {
+
             ofdLoadPic.Filter = "bitmap |*.bmp";
-            ofdLoadPic.ShowDialog();
+            if (ofdLoadPic.ShowDialog() == DialogResult.OK)
+            {
+                picCanvas.Image = new Bitmap(ofdLoadPic.FileName);
+                picCanvas.Refresh();
+            }
+            
+            //ofdLoadPic.ShowDialog();
         }
 
         private void btnSave_Click(object sender, EventArgs e) {
@@ -169,8 +172,7 @@ namespace DrawMyPancake {
                 MessageBox.Show("file saved.");
             }
         }
-
-
+        
         private void btnPresetSquare_Click(object sender, EventArgs e) {
             clearDrawing();
             selectedPreset = 2;
@@ -248,24 +250,11 @@ namespace DrawMyPancake {
             myEV3.Disconnect();
             MessageBox.Show("Disconnect");
         }
-
-        // EV3: This method is the event handler for the messageReadTimer.
-        //      The method is called when the timer has reached its 'interval' value.
-        //      It receives a message from the EV3.
-        //      Make sure that in the code below you comply with the message format sent by the EV3.
-        //      The message itself is always one string.
-        //      In the code below it is assumed that the message sent by the EV3 string consists of three substrings separated by a space:
-        //      substring 0: message count
-        //      substring 1: distance in cm
-        //      substring 2: angle in degrees
+        
         private void messageReadTimer_Tick(object sender, EventArgs e)
         {
             if (myEV3.isConnected)
             {
-                // EV3: ReceiveMessage is asynchronous so it actually gets the message read at the previous call to ReceiveMessage
-                //      and it triggers reading the next message from the specified mailbox.
-                //      Due to the simple implementation the message read does not contain information of the mailbox it came from.
-                //      Therefore the advise is to only use one mailbox to read from: EV3_OUTBOX0.
                 string strMessage = myEV3.ReceiveMessage("EV3_OUTBOX0");
             }
         }
@@ -275,10 +264,6 @@ namespace DrawMyPancake {
             myEV3.SendMessage(inputBox.tbInput.Text, "0");
             inputBox.Close();
         }
-
-
-
-
 
         #region figuurtjes
 

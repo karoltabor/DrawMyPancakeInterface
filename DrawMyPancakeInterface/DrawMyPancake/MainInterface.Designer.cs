@@ -33,8 +33,8 @@
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnOpen = new System.Windows.Forms.Button();
-            this.btnText = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.btnText = new System.Windows.Forms.Button();
             this.btnPen = new System.Windows.Forms.Button();
             this.btnPreset = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.Button();
@@ -84,7 +84,7 @@
             this.pnlLeft.MaximumSize = new System.Drawing.Size(200, 0);
             this.pnlLeft.MinimumSize = new System.Drawing.Size(200, 0);
             this.pnlLeft.Name = "pnlLeft";
-            this.pnlLeft.Size = new System.Drawing.Size(200, 1041);
+            this.pnlLeft.Size = new System.Drawing.Size(200, 881);
             this.pnlLeft.TabIndex = 0;
             // 
             // btnSettings
@@ -152,28 +152,6 @@
             this.btnOpen.Click += new System.EventHandler(this.btnLoad_Click);
             this.btnOpen.MouseHover += new System.EventHandler(this.menuButton_MouseHover);
             // 
-            // btnText
-            // 
-            this.btnText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(171)))), ((int)(((byte)(225)))));
-            this.btnText.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnText.FlatAppearance.BorderSize = 0;
-            this.btnText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnText.Font = new System.Drawing.Font("Bahnschrift Light", 14F);
-            this.btnText.ForeColor = System.Drawing.Color.White;
-            this.btnText.Image = ((System.Drawing.Image)(resources.GetObject("btnText.Image")));
-            this.btnText.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnText.Location = new System.Drawing.Point(0, 270);
-            this.btnText.Margin = new System.Windows.Forms.Padding(0);
-            this.btnText.Name = "btnText";
-            this.btnText.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnText.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnText.Size = new System.Drawing.Size(200, 90);
-            this.btnText.TabIndex = 12;
-            this.btnText.Text = "   Add Text";
-            this.btnText.UseVisualStyleBackColor = false;
-            this.btnText.Click += new System.EventHandler(this.btnPresetText_Click);
-            this.btnText.MouseHover += new System.EventHandler(this.menuButton_MouseHover);
-            // 
             // btnClear
             // 
             this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(171)))), ((int)(((byte)(225)))));
@@ -195,6 +173,28 @@
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnDelete_Click);
             this.btnClear.MouseHover += new System.EventHandler(this.menuButton_MouseHover);
+            // 
+            // btnText
+            // 
+            this.btnText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(171)))), ((int)(((byte)(225)))));
+            this.btnText.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnText.FlatAppearance.BorderSize = 0;
+            this.btnText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnText.Font = new System.Drawing.Font("Bahnschrift Light", 14F);
+            this.btnText.ForeColor = System.Drawing.Color.White;
+            this.btnText.Image = ((System.Drawing.Image)(resources.GetObject("btnText.Image")));
+            this.btnText.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnText.Location = new System.Drawing.Point(0, 270);
+            this.btnText.Margin = new System.Windows.Forms.Padding(0);
+            this.btnText.Name = "btnText";
+            this.btnText.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnText.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnText.Size = new System.Drawing.Size(200, 90);
+            this.btnText.TabIndex = 12;
+            this.btnText.Text = "   Add Text";
+            this.btnText.UseVisualStyleBackColor = false;
+            this.btnText.Click += new System.EventHandler(this.btnPresetText_Click);
+            this.btnText.MouseHover += new System.EventHandler(this.menuButton_MouseHover);
             // 
             // btnPen
             // 
@@ -278,7 +278,7 @@
             this.middlePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.263823F));
             this.middlePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 98.73618F));
             this.middlePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.middlePanel.Size = new System.Drawing.Size(1904, 1041);
+            this.middlePanel.Size = new System.Drawing.Size(1604, 881);
             this.middlePanel.TabIndex = 2;
             // 
             // pnlCenter
@@ -289,10 +289,10 @@
             this.pnlCenter.Controls.Add(this.pnlAddText);
             this.pnlCenter.Controls.Add(this.pnlBitmap);
             this.pnlCenter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCenter.Location = new System.Drawing.Point(200, 13);
+            this.pnlCenter.Location = new System.Drawing.Point(200, 11);
             this.pnlCenter.Margin = new System.Windows.Forms.Padding(0);
             this.pnlCenter.Name = "pnlCenter";
-            this.pnlCenter.Size = new System.Drawing.Size(1704, 1028);
+            this.pnlCenter.Size = new System.Drawing.Size(1404, 870);
             this.pnlCenter.TabIndex = 1;
             // 
             // pnlPresetsButtons
@@ -422,7 +422,7 @@
             this.pbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbLogo.Image")));
             this.pbLogo.Location = new System.Drawing.Point(0, 0);
             this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(1704, 151);
+            this.pbLogo.Size = new System.Drawing.Size(1404, 151);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbLogo.TabIndex = 1;
             this.pbLogo.TabStop = false;
@@ -435,7 +435,7 @@
             this.pnlAddText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlAddText.Location = new System.Drawing.Point(0, 0);
             this.pnlAddText.Name = "pnlAddText";
-            this.pnlAddText.Size = new System.Drawing.Size(1704, 1028);
+            this.pnlAddText.Size = new System.Drawing.Size(1404, 870);
             this.pnlAddText.TabIndex = 3;
             // 
             // pnlAddTextBg
@@ -474,7 +474,7 @@
             this.pnlBitmap.Location = new System.Drawing.Point(0, 0);
             this.pnlBitmap.Margin = new System.Windows.Forms.Padding(0);
             this.pnlBitmap.Name = "pnlBitmap";
-            this.pnlBitmap.Size = new System.Drawing.Size(1704, 1028);
+            this.pnlBitmap.Size = new System.Drawing.Size(1404, 870);
             this.pnlBitmap.TabIndex = 6;
             this.pnlBitmap.Visible = false;
             // 
@@ -500,8 +500,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(197)))));
-            this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.ClientSize = new System.Drawing.Size(1604, 881);
             this.Controls.Add(this.pnlLeft);
             this.Controls.Add(this.middlePanel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
