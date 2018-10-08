@@ -30,6 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.pnlLeft = new System.Windows.Forms.Panel();
+            this.middlePanel = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlCenter = new System.Windows.Forms.Panel();
+            this.pnlPresetsButtons = new System.Windows.Forms.Panel();
+            this.pnlAddText = new System.Windows.Forms.Panel();
+            this.pnlBitmap = new System.Windows.Forms.Panel();
+            this.clrDialog = new System.Windows.Forms.ColorDialog();
+            this.sfdSavePic = new System.Windows.Forms.SaveFileDialog();
+            this.ofdLoadPic = new System.Windows.Forms.OpenFileDialog();
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnOpen = new System.Windows.Forms.Button();
@@ -38,31 +46,23 @@
             this.btnPen = new System.Windows.Forms.Button();
             this.btnPreset = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.Button();
-            this.middlePanel = new System.Windows.Forms.TableLayoutPanel();
-            this.pnlCenter = new System.Windows.Forms.Panel();
-            this.pnlPresetsButtons = new System.Windows.Forms.Panel();
             this.btnTriangle = new System.Windows.Forms.Button();
             this.btnSquare = new System.Windows.Forms.Button();
             this.btnSpiral = new System.Windows.Forms.Button();
             this.btnHeart = new System.Windows.Forms.Button();
             this.btnSmiley = new System.Windows.Forms.Button();
             this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.pnlAddText = new System.Windows.Forms.Panel();
             this.pnlAddTextBg = new System.Windows.Forms.Panel();
             this.tbText = new System.Windows.Forms.TextBox();
-            this.pnlBitmap = new System.Windows.Forms.Panel();
             this.picCanvas = new System.Windows.Forms.PictureBox();
-            this.clrDialog = new System.Windows.Forms.ColorDialog();
-            this.sfdSavePic = new System.Windows.Forms.SaveFileDialog();
-            this.ofdLoadPic = new System.Windows.Forms.OpenFileDialog();
             this.pnlLeft.SuspendLayout();
             this.middlePanel.SuspendLayout();
             this.pnlCenter.SuspendLayout();
             this.pnlPresetsButtons.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.pnlAddText.SuspendLayout();
-            this.pnlAddTextBg.SuspendLayout();
             this.pnlBitmap.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            this.pnlAddTextBg.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,181 +86,6 @@
             this.pnlLeft.Name = "pnlLeft";
             this.pnlLeft.Size = new System.Drawing.Size(200, 881);
             this.pnlLeft.TabIndex = 0;
-            // 
-            // btnSettings
-            // 
-            this.btnSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(171)))), ((int)(((byte)(225)))));
-            this.btnSettings.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSettings.FlatAppearance.BorderSize = 0;
-            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSettings.Font = new System.Drawing.Font("Bahnschrift Light", 14F);
-            this.btnSettings.ForeColor = System.Drawing.Color.White;
-            this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
-            this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSettings.Location = new System.Drawing.Point(0, 630);
-            this.btnSettings.Margin = new System.Windows.Forms.Padding(0);
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnSettings.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnSettings.Size = new System.Drawing.Size(200, 90);
-            this.btnSettings.TabIndex = 17;
-            this.btnSettings.Text = "     Settings";
-            this.btnSettings.UseVisualStyleBackColor = false;
-            this.btnSettings.MouseHover += new System.EventHandler(this.menuButton_MouseHover);
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(171)))), ((int)(((byte)(225)))));
-            this.btnSave.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSave.FlatAppearance.BorderSize = 0;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Bahnschrift Light", 14F);
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
-            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(0, 540);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(0);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnSave.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnSave.Size = new System.Drawing.Size(200, 90);
-            this.btnSave.TabIndex = 14;
-            this.btnSave.Text = "   Save File";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            this.btnSave.MouseHover += new System.EventHandler(this.menuButton_MouseHover);
-            // 
-            // btnOpen
-            // 
-            this.btnOpen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(171)))), ((int)(((byte)(225)))));
-            this.btnOpen.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnOpen.FlatAppearance.BorderSize = 0;
-            this.btnOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOpen.Font = new System.Drawing.Font("Bahnschrift Light", 14F);
-            this.btnOpen.ForeColor = System.Drawing.Color.White;
-            this.btnOpen.Image = ((System.Drawing.Image)(resources.GetObject("btnOpen.Image")));
-            this.btnOpen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOpen.Location = new System.Drawing.Point(0, 450);
-            this.btnOpen.Margin = new System.Windows.Forms.Padding(0);
-            this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnOpen.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnOpen.Size = new System.Drawing.Size(200, 90);
-            this.btnOpen.TabIndex = 13;
-            this.btnOpen.Text = "     Open File";
-            this.btnOpen.UseVisualStyleBackColor = false;
-            this.btnOpen.Click += new System.EventHandler(this.btnLoad_Click);
-            this.btnOpen.MouseHover += new System.EventHandler(this.menuButton_MouseHover);
-            // 
-            // btnClear
-            // 
-            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(171)))), ((int)(((byte)(225)))));
-            this.btnClear.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnClear.FlatAppearance.BorderSize = 0;
-            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Font = new System.Drawing.Font("Bahnschrift Light", 14F);
-            this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
-            this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClear.Location = new System.Drawing.Point(0, 360);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(0);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnClear.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnClear.Size = new System.Drawing.Size(200, 90);
-            this.btnClear.TabIndex = 16;
-            this.btnClear.Text = "     Clear Field";
-            this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.btnDelete_Click);
-            this.btnClear.MouseHover += new System.EventHandler(this.menuButton_MouseHover);
-            // 
-            // btnText
-            // 
-            this.btnText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(171)))), ((int)(((byte)(225)))));
-            this.btnText.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnText.FlatAppearance.BorderSize = 0;
-            this.btnText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnText.Font = new System.Drawing.Font("Bahnschrift Light", 14F);
-            this.btnText.ForeColor = System.Drawing.Color.White;
-            this.btnText.Image = ((System.Drawing.Image)(resources.GetObject("btnText.Image")));
-            this.btnText.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnText.Location = new System.Drawing.Point(0, 270);
-            this.btnText.Margin = new System.Windows.Forms.Padding(0);
-            this.btnText.Name = "btnText";
-            this.btnText.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnText.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnText.Size = new System.Drawing.Size(200, 90);
-            this.btnText.TabIndex = 12;
-            this.btnText.Text = "   Add Text";
-            this.btnText.UseVisualStyleBackColor = false;
-            this.btnText.Click += new System.EventHandler(this.btnPresetText_Click);
-            this.btnText.MouseHover += new System.EventHandler(this.menuButton_MouseHover);
-            // 
-            // btnPen
-            // 
-            this.btnPen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(171)))), ((int)(((byte)(225)))));
-            this.btnPen.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPen.FlatAppearance.BorderSize = 0;
-            this.btnPen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPen.Font = new System.Drawing.Font("Bahnschrift Light", 14F);
-            this.btnPen.ForeColor = System.Drawing.Color.White;
-            this.btnPen.Image = ((System.Drawing.Image)(resources.GetObject("btnPen.Image")));
-            this.btnPen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPen.Location = new System.Drawing.Point(0, 180);
-            this.btnPen.Margin = new System.Windows.Forms.Padding(0);
-            this.btnPen.Name = "btnPen";
-            this.btnPen.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnPen.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnPen.Size = new System.Drawing.Size(200, 90);
-            this.btnPen.TabIndex = 4;
-            this.btnPen.Text = "  Pentool";
-            this.btnPen.UseVisualStyleBackColor = false;
-            this.btnPen.Click += new System.EventHandler(this.btnPresetFreeDraw_Click);
-            this.btnPen.MouseHover += new System.EventHandler(this.menuButton_MouseHover);
-            // 
-            // btnPreset
-            // 
-            this.btnPreset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(171)))), ((int)(((byte)(225)))));
-            this.btnPreset.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPreset.FlatAppearance.BorderSize = 0;
-            this.btnPreset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPreset.Font = new System.Drawing.Font("Bahnschrift Light", 14F);
-            this.btnPreset.ForeColor = System.Drawing.Color.White;
-            this.btnPreset.Image = ((System.Drawing.Image)(resources.GetObject("btnPreset.Image")));
-            this.btnPreset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPreset.Location = new System.Drawing.Point(0, 90);
-            this.btnPreset.Margin = new System.Windows.Forms.Padding(0);
-            this.btnPreset.Name = "btnPreset";
-            this.btnPreset.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnPreset.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnPreset.Size = new System.Drawing.Size(200, 90);
-            this.btnPreset.TabIndex = 15;
-            this.btnPreset.Text = "           Load Preset";
-            this.btnPreset.UseVisualStyleBackColor = false;
-            this.btnPreset.Click += new System.EventHandler(this.btnPreset_Click);
-            this.btnPreset.MouseHover += new System.EventHandler(this.menuButton_MouseHover);
-            // 
-            // btnMenu
-            // 
-            this.btnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(171)))), ((int)(((byte)(225)))));
-            this.btnMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMenu.FlatAppearance.BorderSize = 0;
-            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenu.Font = new System.Drawing.Font("Bahnschrift Light", 14F);
-            this.btnMenu.ForeColor = System.Drawing.Color.White;
-            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
-            this.btnMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenu.Location = new System.Drawing.Point(0, 0);
-            this.btnMenu.Margin = new System.Windows.Forms.Padding(0);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnMenu.Size = new System.Drawing.Size(200, 90);
-            this.btnMenu.TabIndex = 18;
-            this.btnMenu.Text = "Menu";
-            this.btnMenu.UseVisualStyleBackColor = false;
-            this.btnMenu.Click += new System.EventHandler(this.btnMenu_Click);
-            this.btnMenu.MouseHover += new System.EventHandler(this.menuButton_MouseHover);
             // 
             // middlePanel
             // 
@@ -310,6 +135,208 @@
             this.pnlPresetsButtons.TabIndex = 0;
             this.pnlPresetsButtons.Visible = false;
             // 
+            // pnlAddText
+            // 
+            this.pnlAddText.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pnlAddText.Controls.Add(this.pnlAddTextBg);
+            this.pnlAddText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlAddText.Location = new System.Drawing.Point(0, 0);
+            this.pnlAddText.Name = "pnlAddText";
+            this.pnlAddText.Size = new System.Drawing.Size(1404, 870);
+            this.pnlAddText.TabIndex = 3;
+            // 
+            // pnlBitmap
+            // 
+            this.pnlBitmap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pnlBitmap.Controls.Add(this.picCanvas);
+            this.pnlBitmap.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlBitmap.Location = new System.Drawing.Point(0, 0);
+            this.pnlBitmap.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlBitmap.Name = "pnlBitmap";
+            this.pnlBitmap.Size = new System.Drawing.Size(1404, 870);
+            this.pnlBitmap.TabIndex = 6;
+            this.pnlBitmap.Visible = false;
+            // 
+            // ofdLoadPic
+            // 
+            this.ofdLoadPic.FileName = "openFileDialog1";
+            // 
+            // btnSettings
+            // 
+            this.btnSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(171)))), ((int)(((byte)(225)))));
+            this.btnSettings.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSettings.FlatAppearance.BorderSize = 0;
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettings.Font = new System.Drawing.Font("Bahnschrift Light", 14F);
+            this.btnSettings.ForeColor = System.Drawing.Color.White;
+            this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
+            this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSettings.Location = new System.Drawing.Point(0, 630);
+            this.btnSettings.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnSettings.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnSettings.Size = new System.Drawing.Size(200, 90);
+            this.btnSettings.TabIndex = 17;
+            this.btnSettings.Text = "     Settings";
+            this.btnSettings.UseVisualStyleBackColor = false;
+            this.btnSettings.Click += new System.EventHandler(this.SelectTool);
+            this.btnSettings.MouseHover += new System.EventHandler(this.menuButton_MouseHover);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(171)))), ((int)(((byte)(225)))));
+            this.btnSave.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Bahnschrift Light", 14F);
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.Location = new System.Drawing.Point(0, 540);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnSave.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnSave.Size = new System.Drawing.Size(200, 90);
+            this.btnSave.TabIndex = 14;
+            this.btnSave.Text = "   Save File";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.SelectTool);
+            this.btnSave.MouseHover += new System.EventHandler(this.menuButton_MouseHover);
+            // 
+            // btnOpen
+            // 
+            this.btnOpen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(171)))), ((int)(((byte)(225)))));
+            this.btnOpen.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnOpen.FlatAppearance.BorderSize = 0;
+            this.btnOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpen.Font = new System.Drawing.Font("Bahnschrift Light", 14F);
+            this.btnOpen.ForeColor = System.Drawing.Color.White;
+            this.btnOpen.Image = ((System.Drawing.Image)(resources.GetObject("btnOpen.Image")));
+            this.btnOpen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOpen.Location = new System.Drawing.Point(0, 450);
+            this.btnOpen.Margin = new System.Windows.Forms.Padding(0);
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnOpen.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnOpen.Size = new System.Drawing.Size(200, 90);
+            this.btnOpen.TabIndex = 13;
+            this.btnOpen.Text = "     Open File";
+            this.btnOpen.UseVisualStyleBackColor = false;
+            this.btnOpen.Click += new System.EventHandler(this.SelectTool);
+            this.btnOpen.MouseHover += new System.EventHandler(this.menuButton_MouseHover);
+            // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(171)))), ((int)(((byte)(225)))));
+            this.btnClear.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnClear.FlatAppearance.BorderSize = 0;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Bahnschrift Light", 14F);
+            this.btnClear.ForeColor = System.Drawing.Color.White;
+            this.btnClear.Image = ((System.Drawing.Image)(resources.GetObject("btnClear.Image")));
+            this.btnClear.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClear.Location = new System.Drawing.Point(0, 360);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(0);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnClear.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnClear.Size = new System.Drawing.Size(200, 90);
+            this.btnClear.TabIndex = 16;
+            this.btnClear.Text = "     Clear Field";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.SelectTool);
+            this.btnClear.MouseHover += new System.EventHandler(this.menuButton_MouseHover);
+            // 
+            // btnText
+            // 
+            this.btnText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(171)))), ((int)(((byte)(225)))));
+            this.btnText.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnText.FlatAppearance.BorderSize = 0;
+            this.btnText.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnText.Font = new System.Drawing.Font("Bahnschrift Light", 14F);
+            this.btnText.ForeColor = System.Drawing.Color.White;
+            this.btnText.Image = ((System.Drawing.Image)(resources.GetObject("btnText.Image")));
+            this.btnText.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnText.Location = new System.Drawing.Point(0, 270);
+            this.btnText.Margin = new System.Windows.Forms.Padding(0);
+            this.btnText.Name = "btnText";
+            this.btnText.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnText.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnText.Size = new System.Drawing.Size(200, 90);
+            this.btnText.TabIndex = 12;
+            this.btnText.Text = "   Add Text";
+            this.btnText.UseVisualStyleBackColor = false;
+            this.btnText.Click += new System.EventHandler(this.SelectTool);
+            this.btnText.MouseHover += new System.EventHandler(this.menuButton_MouseHover);
+            // 
+            // btnPen
+            // 
+            this.btnPen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(171)))), ((int)(((byte)(225)))));
+            this.btnPen.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPen.FlatAppearance.BorderSize = 0;
+            this.btnPen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPen.Font = new System.Drawing.Font("Bahnschrift Light", 14F);
+            this.btnPen.ForeColor = System.Drawing.Color.White;
+            this.btnPen.Image = ((System.Drawing.Image)(resources.GetObject("btnPen.Image")));
+            this.btnPen.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPen.Location = new System.Drawing.Point(0, 180);
+            this.btnPen.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPen.Name = "btnPen";
+            this.btnPen.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnPen.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnPen.Size = new System.Drawing.Size(200, 90);
+            this.btnPen.TabIndex = 4;
+            this.btnPen.Text = "  Pentool";
+            this.btnPen.UseVisualStyleBackColor = false;
+            this.btnPen.Click += new System.EventHandler(this.SelectTool);
+            this.btnPen.MouseHover += new System.EventHandler(this.menuButton_MouseHover);
+            // 
+            // btnPreset
+            // 
+            this.btnPreset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(171)))), ((int)(((byte)(225)))));
+            this.btnPreset.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPreset.FlatAppearance.BorderSize = 0;
+            this.btnPreset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPreset.Font = new System.Drawing.Font("Bahnschrift Light", 14F);
+            this.btnPreset.ForeColor = System.Drawing.Color.White;
+            this.btnPreset.Image = ((System.Drawing.Image)(resources.GetObject("btnPreset.Image")));
+            this.btnPreset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPreset.Location = new System.Drawing.Point(0, 90);
+            this.btnPreset.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPreset.Name = "btnPreset";
+            this.btnPreset.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnPreset.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnPreset.Size = new System.Drawing.Size(200, 90);
+            this.btnPreset.TabIndex = 15;
+            this.btnPreset.Text = "           Load Preset";
+            this.btnPreset.UseVisualStyleBackColor = false;
+            this.btnPreset.Click += new System.EventHandler(this.SelectTool);
+            this.btnPreset.MouseHover += new System.EventHandler(this.menuButton_MouseHover);
+            // 
+            // btnMenu
+            // 
+            this.btnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(171)))), ((int)(((byte)(225)))));
+            this.btnMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMenu.FlatAppearance.BorderSize = 0;
+            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenu.Font = new System.Drawing.Font("Bahnschrift Light", 14F);
+            this.btnMenu.ForeColor = System.Drawing.Color.White;
+            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
+            this.btnMenu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMenu.Location = new System.Drawing.Point(0, 0);
+            this.btnMenu.Margin = new System.Windows.Forms.Padding(0);
+            this.btnMenu.Name = "btnMenu";
+            this.btnMenu.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnMenu.Size = new System.Drawing.Size(200, 90);
+            this.btnMenu.TabIndex = 18;
+            this.btnMenu.Text = "Menu";
+            this.btnMenu.UseVisualStyleBackColor = false;
+            this.btnMenu.Click += new System.EventHandler(this.SelectTool);
+            this.btnMenu.MouseHover += new System.EventHandler(this.menuButton_MouseHover);
+            // 
             // btnTriangle
             // 
             this.btnTriangle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(116)))), ((int)(((byte)(185)))));
@@ -329,7 +356,7 @@
             this.btnTriangle.TabIndex = 9;
             this.btnTriangle.Text = "       Triangle";
             this.btnTriangle.UseVisualStyleBackColor = false;
-            this.btnTriangle.Click += new System.EventHandler(this.btnPresetTriangle_Click);
+            this.btnTriangle.Click += new System.EventHandler(this.SelectPreset);
             // 
             // btnSquare
             // 
@@ -350,7 +377,7 @@
             this.btnSquare.TabIndex = 8;
             this.btnSquare.Text = "     Square";
             this.btnSquare.UseVisualStyleBackColor = false;
-            this.btnSquare.Click += new System.EventHandler(this.btnPresetSquare_Click);
+            this.btnSquare.Click += new System.EventHandler(this.SelectPreset);
             // 
             // btnSpiral
             // 
@@ -371,7 +398,7 @@
             this.btnSpiral.TabIndex = 7;
             this.btnSpiral.Text = "  Spiral";
             this.btnSpiral.UseVisualStyleBackColor = false;
-            this.btnSpiral.Click += new System.EventHandler(this.btnPresetSpiral_Click);
+            this.btnSpiral.Click += new System.EventHandler(this.SelectPreset);
             // 
             // btnHeart
             // 
@@ -392,7 +419,7 @@
             this.btnHeart.TabIndex = 6;
             this.btnHeart.Text = " Heart";
             this.btnHeart.UseVisualStyleBackColor = false;
-            this.btnHeart.Click += new System.EventHandler(this.btnPresetHeart_Click);
+            this.btnHeart.Click += new System.EventHandler(this.SelectPreset);
             // 
             // btnSmiley
             // 
@@ -413,7 +440,7 @@
             this.btnSmiley.TabIndex = 5;
             this.btnSmiley.Text = "  Smiley";
             this.btnSmiley.UseVisualStyleBackColor = false;
-            this.btnSmiley.Click += new System.EventHandler(this.btnPresetCircle_Click);
+            this.btnSmiley.Click += new System.EventHandler(this.SelectPreset);
             // 
             // pbLogo
             // 
@@ -427,16 +454,6 @@
             this.pbLogo.TabIndex = 1;
             this.pbLogo.TabStop = false;
             this.pbLogo.Click += new System.EventHandler(this.btnStart_Click);
-            // 
-            // pnlAddText
-            // 
-            this.pnlAddText.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pnlAddText.Controls.Add(this.pnlAddTextBg);
-            this.pnlAddText.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlAddText.Location = new System.Drawing.Point(0, 0);
-            this.pnlAddText.Name = "pnlAddText";
-            this.pnlAddText.Size = new System.Drawing.Size(1404, 870);
-            this.pnlAddText.TabIndex = 3;
             // 
             // pnlAddTextBg
             // 
@@ -466,18 +483,6 @@
             this.tbText.Text = "HELLO!";
             this.tbText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // pnlBitmap
-            // 
-            this.pnlBitmap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pnlBitmap.Controls.Add(this.picCanvas);
-            this.pnlBitmap.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlBitmap.Location = new System.Drawing.Point(0, 0);
-            this.pnlBitmap.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlBitmap.Name = "pnlBitmap";
-            this.pnlBitmap.Size = new System.Drawing.Size(1404, 870);
-            this.pnlBitmap.TabIndex = 6;
-            this.pnlBitmap.Visible = false;
-            // 
             // picCanvas
             // 
             this.picCanvas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(197)))));
@@ -491,10 +496,6 @@
             this.picCanvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picCanvas_MouseDown);
             this.picCanvas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picCanvas_MouseMove);
             this.picCanvas.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picCanvas_MouseUp);
-            // 
-            // ofdLoadPic
-            // 
-            this.ofdLoadPic.FileName = "openFileDialog1";
             // 
             // mainForm
             // 
@@ -518,11 +519,11 @@
             this.middlePanel.ResumeLayout(false);
             this.pnlCenter.ResumeLayout(false);
             this.pnlPresetsButtons.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.pnlAddText.ResumeLayout(false);
+            this.pnlBitmap.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.pnlAddTextBg.ResumeLayout(false);
             this.pnlAddTextBg.PerformLayout();
-            this.pnlBitmap.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).EndInit();
             this.ResumeLayout(false);
 

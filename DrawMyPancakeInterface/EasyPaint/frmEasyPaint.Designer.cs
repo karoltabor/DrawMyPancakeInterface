@@ -31,9 +31,10 @@
             this.dlgFont = new System.Windows.Forms.FontDialog();
             this.sfdSavePic = new System.Windows.Forms.SaveFileDialog();
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.lblText = new System.Windows.Forms.Label();
+            this.lblTextOverlay = new System.Windows.Forms.Label();
             this.picCanvas = new System.Windows.Forms.PictureBox();
             this.pnlFrame = new System.Windows.Forms.Panel();
+            this.lblText = new System.Windows.Forms.Label();
             this.lblRed = new System.Windows.Forms.Label();
             this.lblNavy = new System.Windows.Forms.Label();
             this.cmbPenWidth = new System.Windows.Forms.ComboBox();
@@ -55,15 +56,14 @@
             this.mnuFileNew = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFileSave = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFileExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblTextOverlay = new System.Windows.Forms.Label();
             this.pnlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).BeginInit();
+            this.pnlFrame.SuspendLayout();
             this.mnuEasyPaint.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMain
             // 
-            this.pnlMain.Controls.Add(this.lblTextOverlay);
             this.pnlMain.Controls.Add(this.picCanvas);
             this.pnlMain.Controls.Add(this.pnlFrame);
             this.pnlMain.Controls.Add(this.lblText);
@@ -89,16 +89,17 @@
             this.pnlMain.Size = new System.Drawing.Size(624, 538);
             this.pnlMain.TabIndex = 1;
             // 
-            // lblText
+            // lblTextOverlay
             // 
-            this.lblText.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblText.Image = global::EasyPaint.Properties.Resources.text;
-            this.lblText.Location = new System.Drawing.Point(573, 262);
-            this.lblText.Name = "lblText";
-            this.lblText.Size = new System.Drawing.Size(36, 36);
-            this.lblText.TabIndex = 16;
-            this.lblText.Tag = "Text";
-            this.lblText.Click += new System.EventHandler(this.lblTool_Click);
+            this.lblTextOverlay.AutoSize = true;
+            this.lblTextOverlay.BackColor = System.Drawing.Color.Transparent;
+            this.lblTextOverlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTextOverlay.Location = new System.Drawing.Point(-94, 9);
+            this.lblTextOverlay.Name = "lblTextOverlay";
+            this.lblTextOverlay.Size = new System.Drawing.Size(937, 108);
+            this.lblTextOverlay.TabIndex = 0;
+            this.lblTextOverlay.Text = "akjsdbfahbdfbawbfhij";
+            this.lblTextOverlay.Visible = false;
             // 
             // picCanvas
             // 
@@ -115,10 +116,22 @@
             // pnlFrame
             // 
             this.pnlFrame.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlFrame.Controls.Add(this.lblTextOverlay);
             this.pnlFrame.Location = new System.Drawing.Point(9, 49);
             this.pnlFrame.Name = "pnlFrame";
             this.pnlFrame.Size = new System.Drawing.Size(482, 482);
             this.pnlFrame.TabIndex = 2;
+            // 
+            // lblText
+            // 
+            this.lblText.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblText.Image = global::EasyPaint.Properties.Resources.text;
+            this.lblText.Location = new System.Drawing.Point(573, 262);
+            this.lblText.Name = "lblText";
+            this.lblText.Size = new System.Drawing.Size(36, 36);
+            this.lblText.TabIndex = 16;
+            this.lblText.Tag = "Text";
+            this.lblText.Click += new System.EventHandler(this.lblTool_Click);
             // 
             // lblRed
             // 
@@ -359,14 +372,14 @@
             // mnuFileNew
             // 
             this.mnuFileNew.Name = "mnuFileNew";
-            this.mnuFileNew.Size = new System.Drawing.Size(98, 22);
+            this.mnuFileNew.Size = new System.Drawing.Size(135, 22);
             this.mnuFileNew.Text = "New";
             this.mnuFileNew.Click += new System.EventHandler(this.mnuFileNew_Click);
             // 
             // mnuFileSave
             // 
             this.mnuFileSave.Name = "mnuFileSave";
-            this.mnuFileSave.Size = new System.Drawing.Size(98, 22);
+            this.mnuFileSave.Size = new System.Drawing.Size(135, 22);
             this.mnuFileSave.Text = "Save";
             this.mnuFileSave.Click += new System.EventHandler(this.mnuFileSave_Click);
             // 
@@ -374,21 +387,9 @@
             // 
             this.mnuFileExit.Name = "mnuFileExit";
             this.mnuFileExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.mnuFileExit.Size = new System.Drawing.Size(180, 22);
+            this.mnuFileExit.Size = new System.Drawing.Size(135, 22);
             this.mnuFileExit.Text = "Exit";
             this.mnuFileExit.Click += new System.EventHandler(this.mnuFileExit_Click);
-            // 
-            // lblTextOverlay
-            // 
-            this.lblTextOverlay.AutoSize = true;
-            this.lblTextOverlay.BackColor = System.Drawing.Color.Transparent;
-            this.lblTextOverlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTextOverlay.Location = new System.Drawing.Point(17, 169);
-            this.lblTextOverlay.Name = "lblTextOverlay";
-            this.lblTextOverlay.Size = new System.Drawing.Size(937, 108);
-            this.lblTextOverlay.TabIndex = 0;
-            this.lblTextOverlay.Text = "akjsdbfahbdfbawbfhij";
-            this.lblTextOverlay.Visible = false;
             // 
             // form1
             // 
@@ -402,6 +403,8 @@
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).EndInit();
+            this.pnlFrame.ResumeLayout(false);
+            this.pnlFrame.PerformLayout();
             this.mnuEasyPaint.ResumeLayout(false);
             this.mnuEasyPaint.PerformLayout();
             this.ResumeLayout(false);

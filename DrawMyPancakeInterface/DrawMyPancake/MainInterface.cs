@@ -20,7 +20,7 @@ namespace DrawMyPancake {
         Color clrSelected = Color.FromArgb(218, 134, 73);
         private Instruction ev3Instuction;                      
         private ArrayList ev3InstuctionList = new ArrayList();
-        TextInputDialog inputBox;
+        SettingsForm inputBox;
 
         private string ipEV3 = "192.168.43.153";
         private EV3Wifi myEV3;
@@ -92,56 +92,103 @@ namespace DrawMyPancake {
 
         private void btnMenu_Click(object sender, EventArgs e)
         {
-            //inputBox = new TextInputDialog();
-            //inputBox.Text = "Vul tekst in";
-            //inputBox.Show();
-            //inputBox.btnSubmit.Click += new EventHandler(writeText);
+            
         }
 
-        /// <summary>
-        /// Main Buttons eventhandlers
-        /// </summary>
+        
 
         private void menuButton_MouseHover(object sender, EventArgs e) {
             pnlPresetsButtons.Visible = ((Button) sender).Name == "btnPreset" ? true : false;
         }
 
+        /// <summary>
+        /// Main Buttons eventhandlers
+        /// </summary>
+        
         private void SelectPreset(object sender,EventArgs e)
         {
             switch (((Button)sender).Name)
             {
-                case "btnSmiley": break;
-                case "btnTriangle": break;
-                case "btnSprial": break;
-                case "btnHeart": break;
-                case "btnSquare": break;
+                case "btnSquare":
+                    clearDrawing();
+                    selectedPreset = 2;
+                    break;
+                case "btnSmiley":
+                    clearDrawing();
+                    selectedPreset = 3;
+                    break;
+                case "btnTriangle":
+                    clearDrawing();
+                    selectedPreset = 4;
+                    break;
+                case "btnHeart":
+                    clearDrawing();
+                    selectedPreset = 5;
+                    break;
+                case "btnSprial":
+                    clearDrawing();
+                    selectedPreset = 6;
+                    break;
             }
         }
 
-        private void btnPreset_Click(object sender, EventArgs e) {
-            pnlAddText.Visible = false;
-            pnlPresetsButtons.Visible = true;
-            pnlBitmap.Visible = true;
-        }
-        private void btnPresetFreeDraw_Click(object sender, EventArgs e) {
-            pnlAddText.Visible = false;
-            pnlPresetsButtons.Visible = false;
-            pnlBitmap.Visible = true;
-            g = Graphics.FromImage(Resources.DMP_Bitmap);
-            selectedPreset = 1;
-        }
-
-        private void btnPresetText_Click(object sender, EventArgs e) {
-            pnlAddText.Visible = true;
-            pnlPresetsButtons.Visible = false;
-            pnlBitmap.Visible = false;
-            pnlAddTextBg.Location = new Point((pnlAddText.Width / 2 - pnlAddTextBg.Width / 2), ((pnlAddText.Height - pbLogo.Height) / 2 - pnlAddTextBg.Height / 2));
-            selectedPreset = 7;
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void SelectTool(object sender, EventArgs e)
         {
-            clearDrawing();
+            switch (((Button)sender).Name)
+            {
+                case "btnMenu":
+                    //inputBox = new TextInputDialog();
+                    //inputBox.Text = "Vul tekst in";
+                    //inputBox.Show();
+                    //inputBox.btnSubmit.Click += new EventHandler(writeText);
+                    break;
+
+                case "btnPreset":
+                    pnlAddText.Visible = false;
+                    pnlPresetsButtons.Visible = true;
+                    pnlBitmap.Visible = true;
+                    break;
+
+                case "btnPen":
+                    pnlAddText.Visible = false;
+                    pnlPresetsButtons.Visible = false;
+                    pnlBitmap.Visible = true;
+                    g = Graphics.FromImage(Resources.DMP_Bitmap);
+                    selectedPreset = 1;
+                    break;
+
+                case "btnText":
+                    pnlAddText.Visible = true;
+                    pnlPresetsButtons.Visible = false;
+                    pnlBitmap.Visible = false;
+                    pnlAddTextBg.Location = new Point((pnlAddText.Width / 2 - pnlAddTextBg.Width / 2), ((pnlAddText.Height - pbLogo.Height) / 2 - pnlAddTextBg.Height / 2));
+                    selectedPreset = 7;
+                    break;
+
+                case "btnDelete":
+                    clearDrawing();
+                    break;
+
+                case "btnOpen":
+                    ofdLoadPic.Filter = "bitmap |*.bmp";
+                    if (ofdLoadPic.ShowDialog() == DialogResult.OK)
+                    {
+                        picCanvas.Image = new Bitmap(ofdLoadPic.FileName);
+                        picCanvas.Refresh();
+                    }
+                    break;
+
+                case "btnSave":
+                    sfdSavePic.Filter = "bitmap |*.bmp";
+                    if (sfdSavePic.ShowDialog() == DialogResult.OK)
+                    {
+                        picCanvas.Image.Save(sfdSavePic.FileName, System.Drawing.Imaging.ImageFormat.Bmp);
+                        MessageBox.Show("file saved.");
+                    }
+                    break;
+                case "btnSettings": break;
+
+            }
         }
 
         private void clearDrawing()
@@ -153,51 +200,6 @@ namespace DrawMyPancake {
             picCanvas.Refresh();
         }
 
-        private void btnLoad_Click(object sender, EventArgs e) {
-
-            ofdLoadPic.Filter = "bitmap |*.bmp";
-            if (ofdLoadPic.ShowDialog() == DialogResult.OK)
-            {
-                picCanvas.Image = new Bitmap(ofdLoadPic.FileName);
-                picCanvas.Refresh();
-            }
-            
-            //ofdLoadPic.ShowDialog();
-        }
-
-        private void btnSave_Click(object sender, EventArgs e) {
-            sfdSavePic.Filter = "bitmap |*.bmp";
-            if(sfdSavePic.ShowDialog() == DialogResult.OK) {
-                picCanvas.Image.Save(sfdSavePic.FileName, System.Drawing.Imaging.ImageFormat.Bmp);
-                MessageBox.Show("file saved.");
-            }
-        }
-        
-        private void btnPresetSquare_Click(object sender, EventArgs e) {
-            clearDrawing();
-            selectedPreset = 2;
-        }
-
-        private void btnPresetCircle_Click(object sender, EventArgs e) {
-            clearDrawing();
-            selectedPreset = 3;
-        }
-
-        private void btnPresetTriangle_Click(object sender, EventArgs e) {
-            clearDrawing();
-            selectedPreset = 4;
-        }
-
-        private void btnPresetHeart_Click(object sender, EventArgs e) {
-            clearDrawing();
-            selectedPreset = 5;
-        }
-
-        private void btnPresetSpiral_Click(object sender, EventArgs e) {
-            clearDrawing();
-            selectedPreset = 6;
-        }
-
         private void mnuSettingsConnectionConnect_Click(object sender, EventArgs e)
         {
             Connect();
@@ -205,15 +207,15 @@ namespace DrawMyPancake {
 
         private void mnuSettingsConnectionChange_Click(object sender, EventArgs e)
         {
-            inputBox = new TextInputDialog();
+            inputBox = new SettingsForm();
             inputBox.Text = "Vul IP in";
             inputBox.Show();
-            inputBox.btnSubmit.Click += new EventHandler(changeIP);
+            inputBox.btnConnect.Click += new EventHandler(changeIP);
         }
 
         private void changeIP(object sender, EventArgs e)
         {
-            ipEV3 = inputBox.tbInput.Text;
+            ipEV3 = inputBox.tbIp.Text;
             Connect();
             inputBox.Close();
         }
@@ -239,10 +241,10 @@ namespace DrawMyPancake {
         
         private void mnuSettingsSend_Click(object sender, EventArgs e)
         {
-            inputBox = new TextInputDialog();
+            inputBox = new SettingsForm();
             inputBox.Text = "Vul IP in";
             inputBox.Show();
-            inputBox.btnSubmit.Click += new EventHandler(sendCommand);
+            inputBox.btnConnect.Click += new EventHandler(sendCommand);
         }
 
         private void mnuSettingsConnectionDisconnect_Click(object sender, EventArgs e)
@@ -261,7 +263,7 @@ namespace DrawMyPancake {
 
         private void sendCommand(object sender, EventArgs e)
         {
-            myEV3.SendMessage(inputBox.tbInput.Text, "0");
+            myEV3.SendMessage(inputBox.tbIp.Text, "0");
             inputBox.Close();
         }
 

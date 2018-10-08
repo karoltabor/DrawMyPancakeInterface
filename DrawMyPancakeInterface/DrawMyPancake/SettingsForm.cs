@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DrawMyPancake
 {
-    public partial class TextInputDialog : Form
+    public partial class SettingsForm : Form
     {
-        public TextInputDialog()
+        public SettingsForm()
         {
             InitializeComponent();
         }
