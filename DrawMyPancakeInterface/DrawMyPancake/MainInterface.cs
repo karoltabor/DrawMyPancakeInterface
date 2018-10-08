@@ -89,18 +89,7 @@ namespace DrawMyPancake {
 
             }
         }
-
-        private void btnMenu_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         
-
-        private void menuButton_MouseHover(object sender, EventArgs e) {
-            pnlPresetsButtons.Visible = ((Button) sender).Name == "btnPreset" ? true : false;
-        }
-
         /// <summary>
         /// Main Buttons eventhandlers
         /// </summary>
@@ -111,10 +100,12 @@ namespace DrawMyPancake {
             {
                 case "btnSquare":
                     clearDrawing();
+                    picCanvas.Image = Resources.square_icon;
                     selectedPreset = 2;
                     break;
                 case "btnSmiley":
                     clearDrawing();
+                    picCanvas.Image = Resources.smiley_icon3;
                     selectedPreset = 3;
                     break;
                 case "btnTriangle":
@@ -186,9 +177,52 @@ namespace DrawMyPancake {
                         MessageBox.Show("file saved.");
                     }
                     break;
-                case "btnSettings": break;
-
+                case "btnSettings":
+                    if (inputBox != null) break;
+                    inputBox = new SettingsForm();
+                    inputBox.TopMost = true;
+                    inputBox.Show();
+                    inputBox.lblBrushColor.BackColor = clrSelected;
+                    inputBox.btnConnect.Click += new EventHandler(changeIP);
+                    inputBox.btnSendCommand.Click += new EventHandler(sendCommand);
+                    inputBox.btnDisconnect.Click += new EventHandler(Disconnection);
+                    inputBox.btnConfirm.Click += new EventHandler(changeBrushSize);
+                    inputBox.rbtnDark.CheckedChanged += new EventHandler(setTheme);
+                    inputBox.FormClosed += new FormClosedEventHandler(disposeInputbox);
+                    break;
             }
+        }
+
+        private void menuButton_MouseHover(object sender, EventArgs e)
+        {
+            pnlPresetsButtons.Visible = ((Button)sender).Name == "btnPreset" ? true : false;
+        }
+
+        private void disposeInputbox(object sender, EventArgs e)
+        {
+            inputBox.Dispose();
+            inputBox = null;
+        }
+
+        private void setTheme(object sender, EventArgs e)
+        {
+            if (((RadioButton)sender).Checked)
+            {
+                this.BackColor = Color.FromArgb(68, 67, 67);
+                //sidepanel todo
+            }
+            else
+            {
+                this.BackColor = Color.FromArgb(247,247,247);
+                //sidepanel todo
+            }
+        }
+
+        private void changeBrushSize(object sender, EventArgs e)
+        {
+            intBrushSize = Convert.ToInt32(inputBox.cmbSize.Text);
+            clrSelected = inputBox.clrBrushColor.Color;
+            inputBox.lblBrushColor.BackColor = clrSelected;
         }
 
         private void clearDrawing()
@@ -199,25 +233,11 @@ namespace DrawMyPancake {
             picCanvas.Image = bmpPic;
             picCanvas.Refresh();
         }
-
-        private void mnuSettingsConnectionConnect_Click(object sender, EventArgs e)
-        {
-            Connect();
-        }
-
-        private void mnuSettingsConnectionChange_Click(object sender, EventArgs e)
-        {
-            inputBox = new SettingsForm();
-            inputBox.Text = "Vul IP in";
-            inputBox.Show();
-            inputBox.btnConnect.Click += new EventHandler(changeIP);
-        }
-
+        
         private void changeIP(object sender, EventArgs e)
         {
             ipEV3 = inputBox.tbIp.Text;
             Connect();
-            inputBox.Close();
         }
 
         private void Connect()
@@ -238,16 +258,8 @@ namespace DrawMyPancake {
                 MessageBox.Show("Failed to connect to EV3 with IP address " + ipEV3);
             }
         }
-        
-        private void mnuSettingsSend_Click(object sender, EventArgs e)
-        {
-            inputBox = new SettingsForm();
-            inputBox.Text = "Vul IP in";
-            inputBox.Show();
-            inputBox.btnConnect.Click += new EventHandler(sendCommand);
-        }
 
-        private void mnuSettingsConnectionDisconnect_Click(object sender, EventArgs e)
+        private void Disconnection(object sender, EventArgs e)
         {
             myEV3.Disconnect();
             MessageBox.Show("Disconnect");
@@ -263,11 +275,14 @@ namespace DrawMyPancake {
 
         private void sendCommand(object sender, EventArgs e)
         {
-            myEV3.SendMessage(inputBox.tbIp.Text, "0");
-            inputBox.Close();
+            myEV3.SendMessage(inputBox.tbCommand.Text, "0");
         }
 
         #region figuurtjes
+
+        /// <summary>
+        /// Backup draw figures in case of drawing functionalities are increased
+        /// </summary>
 
         private void dimSquare()
         {
@@ -407,7 +422,6 @@ namespace DrawMyPancake {
 
         #endregion
         
-        
         private void picCanvas_MouseDown(object sender, MouseEventArgs e)
         {
             drawFlag = true;
@@ -432,8 +446,7 @@ namespace DrawMyPancake {
                 picCanvas.Refresh();
             }
         }
-
-
+        
         private void picCanvas_MouseUp(object sender, MouseEventArgs e)
         {
             ev3Instuction.ToInstructionString();

@@ -43,6 +43,7 @@
             this.clrBrushColor = new System.Windows.Forms.ColorDialog();
             this.label5 = new System.Windows.Forms.Label();
             this.rbtnDark = new System.Windows.Forms.RadioButton();
+            this.btnConfirm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbIp
@@ -533,6 +534,7 @@
             this.cmbSize.Name = "cmbSize";
             this.cmbSize.Size = new System.Drawing.Size(51, 21);
             this.cmbSize.TabIndex = 7;
+            this.cmbSize.Text = "20";
             // 
             // label4
             // 
@@ -551,6 +553,7 @@
             this.lblBrushColor.Name = "lblBrushColor";
             this.lblBrushColor.Size = new System.Drawing.Size(23, 23);
             this.lblBrushColor.TabIndex = 8;
+            this.lblBrushColor.Click += new System.EventHandler(this.lblBrushColor_Click);
             // 
             // clrBrushColor
             // 
@@ -576,11 +579,22 @@
             this.rbtnDark.Text = "Dark";
             this.rbtnDark.UseVisualStyleBackColor = true;
             // 
-            // TextInputDialog
+            // btnConfirm
+            // 
+            this.btnConfirm.Location = new System.Drawing.Point(230, 63);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirm.TabIndex = 11;
+            this.btnConfirm.Text = "Confirm";
+            this.btnConfirm.UseVisualStyleBackColor = true;
+            // 
+            // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
             this.ClientSize = new System.Drawing.Size(396, 116);
+            this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.rbtnDark);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblBrushColor);
@@ -595,7 +609,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnConnect);
             this.Controls.Add(this.tbIp);
-            this.Name = "TextInputDialog";
+            this.Name = "SettingsForm";
             this.Text = "Settings";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -608,16 +622,17 @@
         public System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnDisconnect;
-        private System.Windows.Forms.TextBox tbCommand;
-        private System.Windows.Forms.Button btnSendCommand;
-        private System.Windows.Forms.RadioButton rbtnLight;
+        public System.Windows.Forms.Button btnDisconnect;
+        public System.Windows.Forms.TextBox tbCommand;
+        public System.Windows.Forms.Button btnSendCommand;
+        public System.Windows.Forms.RadioButton rbtnLight;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cmbSize;
+        public System.Windows.Forms.ComboBox cmbSize;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lblBrushColor;
-        private System.Windows.Forms.ColorDialog clrBrushColor;
+        public System.Windows.Forms.Label lblBrushColor;
+        public System.Windows.Forms.ColorDialog clrBrushColor;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RadioButton rbtnDark;
+        public System.Windows.Forms.RadioButton rbtnDark;
+        public System.Windows.Forms.Button btnConfirm;
     }
 }

@@ -30,14 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.pnlLeft = new System.Windows.Forms.Panel();
-            this.middlePanel = new System.Windows.Forms.TableLayoutPanel();
-            this.pnlCenter = new System.Windows.Forms.Panel();
-            this.pnlPresetsButtons = new System.Windows.Forms.Panel();
-            this.pnlAddText = new System.Windows.Forms.Panel();
-            this.pnlBitmap = new System.Windows.Forms.Panel();
-            this.clrDialog = new System.Windows.Forms.ColorDialog();
-            this.sfdSavePic = new System.Windows.Forms.SaveFileDialog();
-            this.ofdLoadPic = new System.Windows.Forms.OpenFileDialog();
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnOpen = new System.Windows.Forms.Button();
@@ -46,23 +38,30 @@
             this.btnPen = new System.Windows.Forms.Button();
             this.btnPreset = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.Button();
+            this.middlePanel = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlCenter = new System.Windows.Forms.Panel();
+            this.pnlPresetsButtons = new System.Windows.Forms.Panel();
             this.btnTriangle = new System.Windows.Forms.Button();
             this.btnSquare = new System.Windows.Forms.Button();
             this.btnSpiral = new System.Windows.Forms.Button();
             this.btnHeart = new System.Windows.Forms.Button();
             this.btnSmiley = new System.Windows.Forms.Button();
             this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.pnlAddText = new System.Windows.Forms.Panel();
             this.pnlAddTextBg = new System.Windows.Forms.Panel();
             this.tbText = new System.Windows.Forms.TextBox();
+            this.pnlBitmap = new System.Windows.Forms.Panel();
             this.picCanvas = new System.Windows.Forms.PictureBox();
+            this.sfdSavePic = new System.Windows.Forms.SaveFileDialog();
+            this.ofdLoadPic = new System.Windows.Forms.OpenFileDialog();
             this.pnlLeft.SuspendLayout();
             this.middlePanel.SuspendLayout();
             this.pnlCenter.SuspendLayout();
             this.pnlPresetsButtons.SuspendLayout();
-            this.pnlAddText.SuspendLayout();
-            this.pnlBitmap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
+            this.pnlAddText.SuspendLayout();
             this.pnlAddTextBg.SuspendLayout();
+            this.pnlBitmap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,80 +85,6 @@
             this.pnlLeft.Name = "pnlLeft";
             this.pnlLeft.Size = new System.Drawing.Size(200, 881);
             this.pnlLeft.TabIndex = 0;
-            // 
-            // middlePanel
-            // 
-            this.middlePanel.BackColor = System.Drawing.Color.Transparent;
-            this.middlePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.middlePanel.ColumnCount = 1;
-            this.middlePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.middlePanel.Controls.Add(this.pnlCenter, 0, 1);
-            this.middlePanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.middlePanel.Location = new System.Drawing.Point(0, 0);
-            this.middlePanel.Margin = new System.Windows.Forms.Padding(0);
-            this.middlePanel.Name = "middlePanel";
-            this.middlePanel.Padding = new System.Windows.Forms.Padding(200, 0, 0, 0);
-            this.middlePanel.RowCount = 2;
-            this.middlePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.263823F));
-            this.middlePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 98.73618F));
-            this.middlePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.middlePanel.Size = new System.Drawing.Size(1604, 881);
-            this.middlePanel.TabIndex = 2;
-            // 
-            // pnlCenter
-            // 
-            this.pnlCenter.BackColor = System.Drawing.Color.Transparent;
-            this.pnlCenter.Controls.Add(this.pnlPresetsButtons);
-            this.pnlCenter.Controls.Add(this.pbLogo);
-            this.pnlCenter.Controls.Add(this.pnlAddText);
-            this.pnlCenter.Controls.Add(this.pnlBitmap);
-            this.pnlCenter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCenter.Location = new System.Drawing.Point(200, 11);
-            this.pnlCenter.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlCenter.Name = "pnlCenter";
-            this.pnlCenter.Size = new System.Drawing.Size(1404, 870);
-            this.pnlCenter.TabIndex = 1;
-            // 
-            // pnlPresetsButtons
-            // 
-            this.pnlPresetsButtons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(116)))), ((int)(((byte)(185)))));
-            this.pnlPresetsButtons.Controls.Add(this.btnTriangle);
-            this.pnlPresetsButtons.Controls.Add(this.btnSquare);
-            this.pnlPresetsButtons.Controls.Add(this.btnSpiral);
-            this.pnlPresetsButtons.Controls.Add(this.btnHeart);
-            this.pnlPresetsButtons.Controls.Add(this.btnSmiley);
-            this.pnlPresetsButtons.Location = new System.Drawing.Point(0, 80);
-            this.pnlPresetsButtons.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlPresetsButtons.Name = "pnlPresetsButtons";
-            this.pnlPresetsButtons.Size = new System.Drawing.Size(173, 450);
-            this.pnlPresetsButtons.TabIndex = 0;
-            this.pnlPresetsButtons.Visible = false;
-            // 
-            // pnlAddText
-            // 
-            this.pnlAddText.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pnlAddText.Controls.Add(this.pnlAddTextBg);
-            this.pnlAddText.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlAddText.Location = new System.Drawing.Point(0, 0);
-            this.pnlAddText.Name = "pnlAddText";
-            this.pnlAddText.Size = new System.Drawing.Size(1404, 870);
-            this.pnlAddText.TabIndex = 3;
-            // 
-            // pnlBitmap
-            // 
-            this.pnlBitmap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pnlBitmap.Controls.Add(this.picCanvas);
-            this.pnlBitmap.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlBitmap.Location = new System.Drawing.Point(0, 0);
-            this.pnlBitmap.Margin = new System.Windows.Forms.Padding(0);
-            this.pnlBitmap.Name = "pnlBitmap";
-            this.pnlBitmap.Size = new System.Drawing.Size(1404, 870);
-            this.pnlBitmap.TabIndex = 6;
-            this.pnlBitmap.Visible = false;
-            // 
-            // ofdLoadPic
-            // 
-            this.ofdLoadPic.FileName = "openFileDialog1";
             // 
             // btnSettings
             // 
@@ -337,6 +262,54 @@
             this.btnMenu.Click += new System.EventHandler(this.SelectTool);
             this.btnMenu.MouseHover += new System.EventHandler(this.menuButton_MouseHover);
             // 
+            // middlePanel
+            // 
+            this.middlePanel.BackColor = System.Drawing.Color.Transparent;
+            this.middlePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.middlePanel.ColumnCount = 1;
+            this.middlePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.middlePanel.Controls.Add(this.pnlCenter, 0, 1);
+            this.middlePanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.middlePanel.Location = new System.Drawing.Point(0, 0);
+            this.middlePanel.Margin = new System.Windows.Forms.Padding(0);
+            this.middlePanel.Name = "middlePanel";
+            this.middlePanel.Padding = new System.Windows.Forms.Padding(200, 0, 0, 0);
+            this.middlePanel.RowCount = 2;
+            this.middlePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.263823F));
+            this.middlePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 98.73618F));
+            this.middlePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.middlePanel.Size = new System.Drawing.Size(1604, 881);
+            this.middlePanel.TabIndex = 2;
+            // 
+            // pnlCenter
+            // 
+            this.pnlCenter.BackColor = System.Drawing.Color.Transparent;
+            this.pnlCenter.Controls.Add(this.pnlPresetsButtons);
+            this.pnlCenter.Controls.Add(this.pbLogo);
+            this.pnlCenter.Controls.Add(this.pnlAddText);
+            this.pnlCenter.Controls.Add(this.pnlBitmap);
+            this.pnlCenter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlCenter.Location = new System.Drawing.Point(200, 11);
+            this.pnlCenter.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlCenter.Name = "pnlCenter";
+            this.pnlCenter.Size = new System.Drawing.Size(1404, 870);
+            this.pnlCenter.TabIndex = 1;
+            // 
+            // pnlPresetsButtons
+            // 
+            this.pnlPresetsButtons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(116)))), ((int)(((byte)(185)))));
+            this.pnlPresetsButtons.Controls.Add(this.btnTriangle);
+            this.pnlPresetsButtons.Controls.Add(this.btnSquare);
+            this.pnlPresetsButtons.Controls.Add(this.btnSpiral);
+            this.pnlPresetsButtons.Controls.Add(this.btnHeart);
+            this.pnlPresetsButtons.Controls.Add(this.btnSmiley);
+            this.pnlPresetsButtons.Location = new System.Drawing.Point(0, 80);
+            this.pnlPresetsButtons.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlPresetsButtons.Name = "pnlPresetsButtons";
+            this.pnlPresetsButtons.Size = new System.Drawing.Size(173, 450);
+            this.pnlPresetsButtons.TabIndex = 0;
+            this.pnlPresetsButtons.Visible = false;
+            // 
             // btnTriangle
             // 
             this.btnTriangle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(116)))), ((int)(((byte)(185)))));
@@ -455,6 +428,16 @@
             this.pbLogo.TabStop = false;
             this.pbLogo.Click += new System.EventHandler(this.btnStart_Click);
             // 
+            // pnlAddText
+            // 
+            this.pnlAddText.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pnlAddText.Controls.Add(this.pnlAddTextBg);
+            this.pnlAddText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlAddText.Location = new System.Drawing.Point(0, 0);
+            this.pnlAddText.Name = "pnlAddText";
+            this.pnlAddText.Size = new System.Drawing.Size(1404, 870);
+            this.pnlAddText.TabIndex = 3;
+            // 
             // pnlAddTextBg
             // 
             this.pnlAddTextBg.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlAddTextBg.BackgroundImage")));
@@ -483,6 +466,18 @@
             this.tbText.Text = "HELLO!";
             this.tbText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // pnlBitmap
+            // 
+            this.pnlBitmap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pnlBitmap.Controls.Add(this.picCanvas);
+            this.pnlBitmap.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlBitmap.Location = new System.Drawing.Point(0, 0);
+            this.pnlBitmap.Margin = new System.Windows.Forms.Padding(0);
+            this.pnlBitmap.Name = "pnlBitmap";
+            this.pnlBitmap.Size = new System.Drawing.Size(1404, 870);
+            this.pnlBitmap.TabIndex = 6;
+            this.pnlBitmap.Visible = false;
+            // 
             // picCanvas
             // 
             this.picCanvas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(197)))));
@@ -496,6 +491,10 @@
             this.picCanvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picCanvas_MouseDown);
             this.picCanvas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.picCanvas_MouseMove);
             this.picCanvas.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picCanvas_MouseUp);
+            // 
+            // ofdLoadPic
+            // 
+            this.ofdLoadPic.FileName = "openFileDialog1";
             // 
             // mainForm
             // 
@@ -519,11 +518,11 @@
             this.middlePanel.ResumeLayout(false);
             this.pnlCenter.ResumeLayout(false);
             this.pnlPresetsButtons.ResumeLayout(false);
-            this.pnlAddText.ResumeLayout(false);
-            this.pnlBitmap.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
+            this.pnlAddText.ResumeLayout(false);
             this.pnlAddTextBg.ResumeLayout(false);
             this.pnlAddTextBg.PerformLayout();
+            this.pnlBitmap.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).EndInit();
             this.ResumeLayout(false);
 
@@ -533,7 +532,6 @@
         private System.Windows.Forms.Panel pnlLeft;
         private System.Windows.Forms.TableLayoutPanel middlePanel;
         private System.Windows.Forms.Panel pnlCenter;
-        private System.Windows.Forms.ColorDialog clrDialog;
         public System.Windows.Forms.PictureBox picCanvas;
         private System.Windows.Forms.SaveFileDialog sfdSavePic;
         private System.Windows.Forms.OpenFileDialog ofdLoadPic;

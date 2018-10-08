@@ -16,5 +16,11 @@ namespace DrawMyPancake
         {
             InitializeComponent();
         }
+
+        private void lblBrushColor_Click(object sender, EventArgs e)
+        {
+            clrBrushColor.ShowDialog();
+            lblBrushColor.BackColor = clrBrushColor.Color;
+        }
     }
 }

@@ -31,9 +31,9 @@
             this.dlgFont = new System.Windows.Forms.FontDialog();
             this.sfdSavePic = new System.Windows.Forms.SaveFileDialog();
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.lblTextOverlay = new System.Windows.Forms.Label();
             this.picCanvas = new System.Windows.Forms.PictureBox();
             this.pnlFrame = new System.Windows.Forms.Panel();
+            this.lblTextOverlay = new System.Windows.Forms.Label();
             this.lblText = new System.Windows.Forms.Label();
             this.lblRed = new System.Windows.Forms.Label();
             this.lblNavy = new System.Windows.Forms.Label();
@@ -89,18 +89,6 @@
             this.pnlMain.Size = new System.Drawing.Size(624, 538);
             this.pnlMain.TabIndex = 1;
             // 
-            // lblTextOverlay
-            // 
-            this.lblTextOverlay.AutoSize = true;
-            this.lblTextOverlay.BackColor = System.Drawing.Color.Transparent;
-            this.lblTextOverlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTextOverlay.Location = new System.Drawing.Point(-94, 9);
-            this.lblTextOverlay.Name = "lblTextOverlay";
-            this.lblTextOverlay.Size = new System.Drawing.Size(937, 108);
-            this.lblTextOverlay.TabIndex = 0;
-            this.lblTextOverlay.Text = "akjsdbfahbdfbawbfhij";
-            this.lblTextOverlay.Visible = false;
-            // 
             // picCanvas
             // 
             this.picCanvas.BackColor = System.Drawing.Color.Gray;
@@ -121,6 +109,18 @@
             this.pnlFrame.Name = "pnlFrame";
             this.pnlFrame.Size = new System.Drawing.Size(482, 482);
             this.pnlFrame.TabIndex = 2;
+            // 
+            // lblTextOverlay
+            // 
+            this.lblTextOverlay.AutoSize = true;
+            this.lblTextOverlay.BackColor = System.Drawing.Color.Transparent;
+            this.lblTextOverlay.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTextOverlay.Location = new System.Drawing.Point(-94, 9);
+            this.lblTextOverlay.Name = "lblTextOverlay";
+            this.lblTextOverlay.Size = new System.Drawing.Size(937, 108);
+            this.lblTextOverlay.TabIndex = 0;
+            this.lblTextOverlay.Text = "akjsdbfahbdfbawbfhij";
+            this.lblTextOverlay.Visible = false;
             // 
             // lblText
             // 
@@ -245,6 +245,7 @@
             this.cmbBrushSize.Size = new System.Drawing.Size(36, 21);
             this.cmbBrushSize.TabIndex = 11;
             this.cmbBrushSize.Text = "6";
+            this.cmbBrushSize.SelectedIndexChanged += new System.EventHandler(this.cmbBrushSize_SelectedIndexChanged);
             this.cmbBrushSize.SelectedValueChanged += new System.EventHandler(this.cmbBrushSize_SelectedValueChanged);
             // 
             // label1

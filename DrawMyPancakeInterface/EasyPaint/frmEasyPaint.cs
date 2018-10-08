@@ -215,6 +215,11 @@ namespace EasyPaint
             //lblFontDetails.Text = "(" + strFont + " " + intFontSize + "pt, " + strFontStyleArray(styFontStyle) + ")";
         }
 
+        private void cmbBrushSize_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void picCanvas_MouseUp(object sender, MouseEventArgs e)
         {
             SolidBrush brushFill = new SolidBrush(clrSelected);
