@@ -43,10 +43,14 @@ namespace DrawMyPancake {
             picCanvas.Height = bmpPic.Height;
             picCanvas.Location = new Point((pnlBitmap.Width / 2 - bmpPic.Width / 2), pbLogo.Height + ((pnlBitmap.Height - pbLogo.Height) / 2 - bmpPic.Height / 2));
             pnlAddTextBg.Location = new Point((pnlAddText.Width / 2 - pnlAddTextBg.Width / 2), ((pnlAddText.Height - pbLogo.Height) / 2 - pnlAddTextBg.Height / 2));
+            pbPresetPreview.Location = new Point((pnlBitmap.Width / 2 - bmpPic.Width / 2), pbLogo.Height + ((pnlBitmap.Height - pbLogo.Height) / 2 - bmpPic.Height / 2));
+
         }
 
         private void mainForm_Resize(object sender, EventArgs e) {
             picCanvas.Location = new Point((pnlBitmap.Width / 2 - bmpPic.Width / 2), pbLogo.Height + ((pnlBitmap.Height - pbLogo.Height) / 2 - bmpPic.Height / 2));
+            pbPresetPreview.Location = new Point((pnlBitmap.Width / 2 - bmpPic.Width / 2), pbLogo.Height + ((pnlBitmap.Height - pbLogo.Height) / 2 - bmpPic.Height / 2));
+
         }
 
 
@@ -96,28 +100,35 @@ namespace DrawMyPancake {
         
         private void SelectPreset(object sender,EventArgs e)
         {
+            pbPresetPreview.Visible = true;
+            picCanvas.Visible = true;
+            pnlBitmap.Visible = true;
+            pbPresetPreview.BackColor = Color.Transparent;          /// todo: plaatjes
             switch (((Button)sender).Name)
             {
                 case "btnSquare":
                     clearDrawing();
-                    picCanvas.Image = Resources.square_icon;
+                    pbPresetPreview.Image = Resources.square_icon;
                     selectedPreset = 2;
                     break;
                 case "btnSmiley":
                     clearDrawing();
-                    picCanvas.Image = Resources.smiley_icon3;
+                    pbPresetPreview.Image = Resources.smiley_icon3;
                     selectedPreset = 3;
                     break;
                 case "btnTriangle":
                     clearDrawing();
+                    pbPresetPreview.Image = Resources.triangle_icon3;
                     selectedPreset = 4;
                     break;
                 case "btnHeart":
                     clearDrawing();
+                    pbPresetPreview.Image = Resources.preset_icon4;
                     selectedPreset = 5;
                     break;
-                case "btnSprial":
+                case "btnSpiral":
                     clearDrawing();
+                    pbPresetPreview.Image = Resources.spiral_icon;
                     selectedPreset = 6;
                     break;
             }
@@ -128,16 +139,13 @@ namespace DrawMyPancake {
             switch (((Button)sender).Name)
             {
                 case "btnMenu":
-                    //inputBox = new TextInputDialog();
-                    //inputBox.Text = "Vul tekst in";
-                    //inputBox.Show();
-                    //inputBox.btnSubmit.Click += new EventHandler(writeText);
+                    // to do: Make menu buttons smaller
                     break;
 
                 case "btnPreset":
                     pnlAddText.Visible = false;
                     pnlPresetsButtons.Visible = true;
-                    pnlBitmap.Visible = true;
+                    //pnlBitmap.Visible = false;
                     break;
 
                 case "btnPen":

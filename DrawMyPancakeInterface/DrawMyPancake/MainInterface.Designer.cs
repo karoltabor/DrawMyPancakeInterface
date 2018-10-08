@@ -54,6 +54,7 @@
             this.picCanvas = new System.Windows.Forms.PictureBox();
             this.sfdSavePic = new System.Windows.Forms.SaveFileDialog();
             this.ofdLoadPic = new System.Windows.Forms.OpenFileDialog();
+            this.pbPresetPreview = new System.Windows.Forms.PictureBox();
             this.pnlLeft.SuspendLayout();
             this.middlePanel.SuspendLayout();
             this.pnlCenter.SuspendLayout();
@@ -63,6 +64,7 @@
             this.pnlAddTextBg.SuspendLayout();
             this.pnlBitmap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPresetPreview)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlLeft
@@ -469,6 +471,7 @@
             // pnlBitmap
             // 
             this.pnlBitmap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pnlBitmap.Controls.Add(this.pbPresetPreview);
             this.pnlBitmap.Controls.Add(this.picCanvas);
             this.pnlBitmap.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlBitmap.Location = new System.Drawing.Point(0, 0);
@@ -495,6 +498,16 @@
             // ofdLoadPic
             // 
             this.ofdLoadPic.FileName = "openFileDialog1";
+            // 
+            // pbPresetPreview
+            // 
+            this.pbPresetPreview.Location = new System.Drawing.Point(145, 260);
+            this.pbPresetPreview.Name = "pbPresetPreview";
+            this.pbPresetPreview.Size = new System.Drawing.Size(733, 524);
+            this.pbPresetPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbPresetPreview.TabIndex = 6;
+            this.pbPresetPreview.TabStop = false;
+            this.pbPresetPreview.Visible = false;
             // 
             // mainForm
             // 
@@ -524,6 +537,7 @@
             this.pnlAddTextBg.PerformLayout();
             this.pnlBitmap.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPresetPreview)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -554,6 +568,7 @@
         private System.Windows.Forms.Button btnSmiley;
         private System.Windows.Forms.Button btnTriangle;
         private System.Windows.Forms.PictureBox pbLogo;
+        private System.Windows.Forms.PictureBox pbPresetPreview;
     }
 }
 
