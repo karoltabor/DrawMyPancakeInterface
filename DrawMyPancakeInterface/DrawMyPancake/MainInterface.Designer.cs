@@ -51,10 +51,10 @@
             this.pnlAddTextBg = new System.Windows.Forms.Panel();
             this.tbText = new System.Windows.Forms.TextBox();
             this.pnlBitmap = new System.Windows.Forms.Panel();
+            this.pbPresetPreview = new System.Windows.Forms.PictureBox();
             this.picCanvas = new System.Windows.Forms.PictureBox();
             this.sfdSavePic = new System.Windows.Forms.SaveFileDialog();
             this.ofdLoadPic = new System.Windows.Forms.OpenFileDialog();
-            this.pbPresetPreview = new System.Windows.Forms.PictureBox();
             this.pnlLeft.SuspendLayout();
             this.middlePanel.SuspendLayout();
             this.pnlCenter.SuspendLayout();
@@ -63,8 +63,8 @@
             this.pnlAddText.SuspendLayout();
             this.pnlAddTextBg.SuspendLayout();
             this.pnlBitmap.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPresetPreview)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlLeft
@@ -85,7 +85,7 @@
             this.pnlLeft.MaximumSize = new System.Drawing.Size(200, 0);
             this.pnlLeft.MinimumSize = new System.Drawing.Size(200, 0);
             this.pnlLeft.Name = "pnlLeft";
-            this.pnlLeft.Size = new System.Drawing.Size(200, 881);
+            this.pnlLeft.Size = new System.Drawing.Size(200, 1041);
             this.pnlLeft.TabIndex = 0;
             // 
             // btnSettings
@@ -280,7 +280,7 @@
             this.middlePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 1.263823F));
             this.middlePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 98.73618F));
             this.middlePanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.middlePanel.Size = new System.Drawing.Size(1604, 881);
+            this.middlePanel.Size = new System.Drawing.Size(1904, 1041);
             this.middlePanel.TabIndex = 2;
             // 
             // pnlCenter
@@ -291,10 +291,10 @@
             this.pnlCenter.Controls.Add(this.pnlAddText);
             this.pnlCenter.Controls.Add(this.pnlBitmap);
             this.pnlCenter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCenter.Location = new System.Drawing.Point(200, 11);
+            this.pnlCenter.Location = new System.Drawing.Point(200, 13);
             this.pnlCenter.Margin = new System.Windows.Forms.Padding(0);
             this.pnlCenter.Name = "pnlCenter";
-            this.pnlCenter.Size = new System.Drawing.Size(1404, 870);
+            this.pnlCenter.Size = new System.Drawing.Size(1704, 1028);
             this.pnlCenter.TabIndex = 1;
             // 
             // pnlPresetsButtons
@@ -424,7 +424,7 @@
             this.pbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbLogo.Image")));
             this.pbLogo.Location = new System.Drawing.Point(0, 0);
             this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(1404, 151);
+            this.pbLogo.Size = new System.Drawing.Size(1704, 151);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbLogo.TabIndex = 1;
             this.pbLogo.TabStop = false;
@@ -437,7 +437,7 @@
             this.pnlAddText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlAddText.Location = new System.Drawing.Point(0, 0);
             this.pnlAddText.Name = "pnlAddText";
-            this.pnlAddText.Size = new System.Drawing.Size(1404, 870);
+            this.pnlAddText.Size = new System.Drawing.Size(1704, 1028);
             this.pnlAddText.TabIndex = 3;
             // 
             // pnlAddTextBg
@@ -477,9 +477,19 @@
             this.pnlBitmap.Location = new System.Drawing.Point(0, 0);
             this.pnlBitmap.Margin = new System.Windows.Forms.Padding(0);
             this.pnlBitmap.Name = "pnlBitmap";
-            this.pnlBitmap.Size = new System.Drawing.Size(1404, 870);
+            this.pnlBitmap.Size = new System.Drawing.Size(1704, 1028);
             this.pnlBitmap.TabIndex = 6;
             this.pnlBitmap.Visible = false;
+            // 
+            // pbPresetPreview
+            // 
+            this.pbPresetPreview.Location = new System.Drawing.Point(145, 260);
+            this.pbPresetPreview.Name = "pbPresetPreview";
+            this.pbPresetPreview.Size = new System.Drawing.Size(733, 524);
+            this.pbPresetPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbPresetPreview.TabIndex = 6;
+            this.pbPresetPreview.TabStop = false;
+            this.pbPresetPreview.Visible = false;
             // 
             // picCanvas
             // 
@@ -499,22 +509,12 @@
             // 
             this.ofdLoadPic.FileName = "openFileDialog1";
             // 
-            // pbPresetPreview
-            // 
-            this.pbPresetPreview.Location = new System.Drawing.Point(145, 260);
-            this.pbPresetPreview.Name = "pbPresetPreview";
-            this.pbPresetPreview.Size = new System.Drawing.Size(733, 524);
-            this.pbPresetPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbPresetPreview.TabIndex = 6;
-            this.pbPresetPreview.TabStop = false;
-            this.pbPresetPreview.Visible = false;
-            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.ClientSize = new System.Drawing.Size(1604, 881);
+            this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.pnlLeft);
             this.Controls.Add(this.middlePanel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -525,7 +525,6 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Draw My Pancake";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Resize += new System.EventHandler(this.mainForm_Resize);
             this.pnlLeft.ResumeLayout(false);
             this.middlePanel.ResumeLayout(false);
@@ -536,8 +535,8 @@
             this.pnlAddTextBg.ResumeLayout(false);
             this.pnlAddTextBg.PerformLayout();
             this.pnlBitmap.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPresetPreview)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCanvas)).EndInit();
             this.ResumeLayout(false);
 
         }

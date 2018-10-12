@@ -41,6 +41,7 @@ namespace DrawMyPancake {
             picCanvas.Image = bmpPic;
             picCanvas.Width = bmpPic.Width;
             picCanvas.Height = bmpPic.Height;
+
             picCanvas.Location = new Point((pnlBitmap.Width / 2 - bmpPic.Width / 2), pbLogo.Height + ((pnlBitmap.Height - pbLogo.Height) / 2 - bmpPic.Height / 2));
             pnlAddTextBg.Location = new Point((pnlAddText.Width / 2 - pnlAddTextBg.Width / 2), ((pnlAddText.Height - pbLogo.Height) / 2 - pnlAddTextBg.Height / 2));
             pbPresetPreview.Location = new Point((pnlBitmap.Width / 2 - bmpPic.Width / 2), pbLogo.Height + ((pnlBitmap.Height - pbLogo.Height) / 2 - bmpPic.Height / 2));
@@ -151,6 +152,7 @@ namespace DrawMyPancake {
                 case "btnPen":
                     pnlAddText.Visible = false;
                     pnlPresetsButtons.Visible = false;
+                    pbPresetPreview.Visible = false;
                     pnlBitmap.Visible = true;
                     g = Graphics.FromImage(Resources.DMP_Bitmap);
                     selectedPreset = 1;
@@ -164,7 +166,7 @@ namespace DrawMyPancake {
                     selectedPreset = 7;
                     break;
 
-                case "btnDelete":
+                case "btnClear":
                     clearDrawing();
                     break;
 
@@ -240,6 +242,7 @@ namespace DrawMyPancake {
             ev3InstuctionList.Clear();
             picCanvas.Image = bmpPic;
             picCanvas.Refresh();
+            tbText.Text = "";
         }
         
         private void changeIP(object sender, EventArgs e)
