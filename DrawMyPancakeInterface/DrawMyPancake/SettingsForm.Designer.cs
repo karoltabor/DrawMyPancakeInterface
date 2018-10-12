@@ -52,6 +52,7 @@
             this.tbIp.Name = "tbIp";
             this.tbIp.Size = new System.Drawing.Size(151, 20);
             this.tbIp.TabIndex = 0;
+            this.tbIp.Text = "192.168.43.153";
             // 
             // btnConnect
             // 

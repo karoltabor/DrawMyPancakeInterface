@@ -15,7 +15,7 @@ namespace DrawMyPancake {
         int xDown, yDown, xUp, yUp,                     
             LLint, TTint, WWint, HHint = 0;             
         int intBrushSize = 20;
-        int selectedPreset = 1;
+        int selectedPreset = 7;
         Bitmap bmpPic;
         Color clrSelected = Color.FromArgb(218, 134, 73);
         private Instruction ev3Instuction;                      
@@ -65,7 +65,7 @@ namespace DrawMyPancake {
                         myEV3.SendMessage("Square", "0");
                         break;
                     case 3:
-                        myEV3.SendMessage("Circle", "0");
+                        myEV3.SendMessage("Smiley", "0");
                         break;
                     case 4:
                         myEV3.SendMessage("Triangle", "0");
@@ -78,21 +78,40 @@ namespace DrawMyPancake {
                         break;
                     case 7:
                         myEV3.SendMessage("Text", "0");
-                        myEV3.SendMessage(inputBox.Text.ToLower(), "1");
+                        Console.WriteLine(tbText.Text.ToLower());
+                        myEV3.SendMessage(textPayload(tbText.Text), "1");
                         break;
                     default:
                         string ev3String = "";
+                        ev3String += ((Instruction) ev3InstuctionList[0]).instructionString.Substring(0, 9);
+                        ev3String += ((Instruction) ev3InstuctionList[1]).instructionString.Substring(0, 9);
+                        ev3String += ((Instruction) ev3InstuctionList[2]).instructionString.Substring(0, 9);
                         foreach (Instruction instruction in ev3InstuctionList)
                         {
-                            ev3String += instruction.instructionString;
+                            //ev3String += instruction.instructionString;
                         }
                         Console.WriteLine(ev3String);
                         myEV3.SendMessage("FreeDraw", "0");
-                        myEV3.SendMessage(ev3String, "0");
+                        myEV3.SendMessage(ev3String, "1");
                         break;
                 }
 
             }
+        }
+
+        private string textPayload(string text)
+        {
+            text = text.ToLower();
+            int len = text.Length;
+            if (len % 2 == 0) {
+                text = text.PadLeft((6 - len) / 2);
+                text = text.PadRight((6 - len) / 2);
+            }
+            else {
+                text = text.PadLeft((6 - len + 1) / 2);
+                text = text.PadRight(((6 - len + 1) / 2)+1);
+            }
+            return text;
         }
         
         /// <summary>
@@ -261,7 +280,6 @@ namespace DrawMyPancake {
             {
                 messageReceiveTimer.Start();
                 MessageBox.Show("Connected to EV3");
-
             }
             else
             {
