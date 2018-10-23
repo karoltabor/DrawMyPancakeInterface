@@ -36,7 +36,8 @@ namespace DrawMyPancake {
             messageReceiveTimer.Tick += new System.EventHandler(messageReadTimer_Tick);
             myEV3 = new EV3Wifi();
             Connect();
-            
+
+            //Make Canvas on opening
             g = Graphics.FromImage(bmpPic);
             picCanvas.Image = bmpPic;
             picCanvas.Width = bmpPic.Width;
@@ -89,34 +90,19 @@ namespace DrawMyPancake {
                                 myEV3.SendMessage(instruction, "0");
                             }
                         } else {
-                            //no drawing found
+                            MessageBox.Show("No drawing found!");
                         }
-
                         break;
                 }
 
             }
         }
 
-        private string textPayload(string text)
-        {
-            text = text.ToLower();
-            int len = text.Length;
-            if (len % 2 == 0) {
-                text = text.PadLeft((6 - len) / 2);
-                text = text.PadRight((6 - len) / 2);
-            }
-            else {
-                text = text.PadLeft((6 - len + 1) / 2);
-                text = text.PadRight(((6 - len + 1) / 2)+1);
-            }
-            return text;
-        }
-        
+        #region Main buttons
         /// <summary>
         /// Main Buttons eventhandlers
         /// </summary>
-        
+
         private void SelectPreset(object sender,EventArgs e)
         {
             pbPresetPreview.Visible = true;
@@ -245,6 +231,12 @@ namespace DrawMyPancake {
                 //sidepanel todo
             }
         }
+        #endregion
+
+        #region SettingsForm
+        /// <summary>
+        /// Settingsform Functions
+        /// </summary>
 
         private void changeBrushSize(object sender, EventArgs e)
         {
@@ -305,6 +297,8 @@ namespace DrawMyPancake {
         {
             myEV3.SendMessage(inputBox.tbCommand.Text, "0");
         }
+
+        #endregion
 
         #region figuurtjes
 
@@ -449,7 +443,14 @@ namespace DrawMyPancake {
         }
 
         #endregion
-        
+
+        #region Freedraw
+        /// <summary>
+        /// Freedraw function
+        /// Send Instructions to robot
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void picCanvas_MouseDown(object sender, MouseEventArgs e)
         {
             drawFlag = true;
@@ -484,6 +485,27 @@ namespace DrawMyPancake {
             g.Dispose();
             picCanvas.Refresh();
         }
-        
+        #endregion
+
+        /// <summary>
+        /// Send central text to robot (align center)
+        /// </summary>
+        private string textPayload(string text)
+        {
+            text = text.ToLower();
+            int len = text.Length;
+            if (len % 2 == 0)
+            {
+                text = text.PadLeft((6 - len) / 2);
+                text = text.PadRight((6 - len) / 2);
+            }
+            else
+            {
+                text = text.PadLeft((6 - len + 1) / 2);
+                text = text.PadRight(((6 - len + 1) / 2) + 1);
+            }
+            return text;
+        }
+
     }
 }
