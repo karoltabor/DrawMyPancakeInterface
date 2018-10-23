@@ -6,6 +6,7 @@ using System.Drawing;
 namespace DrawMyPancake {
     public class Instruction {
         private ArrayList coordinateList = new ArrayList();
+        private ArrayList coordinateStringList = new ArrayList();
         public string instructionString = "";
         private const int unprecision = 50;
 
@@ -48,12 +49,17 @@ namespace DrawMyPancake {
             return false;
         }
 
-        public string ToInstructionString() {
+        public ArrayList InstructionStrings() {
             OptimizePath();
-            foreach(Point coordinate in coordinateList) {
-                instructionString += coordinate.X.ToString("D4") + coordinate.Y.ToString("D4") + "T";
+            for(int i = 0; i < coordinateList.Count; i++) {
+                Point coordinate = (Point) coordinateList[i];
+                if(i == 0 || i == (coordinateList.Count - 1)) {
+                    coordinateStringList.Add(coordinate.X.ToString("D4") + coordinate.Y.ToString("D4") + "F");
+                } else {
+                    coordinateStringList.Add(coordinate.X.ToString("D4") + coordinate.Y.ToString("D4") + "T");
+                }
             }
-            return instructionString;
+            return coordinateStringList;
         }
     }
 }

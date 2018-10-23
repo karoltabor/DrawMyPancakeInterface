@@ -82,17 +82,16 @@ namespace DrawMyPancake {
                         myEV3.SendMessage(textPayload(tbText.Text), "1");
                         break;
                     default:
-                        string ev3String = "";
-                        ev3String += ((Instruction) ev3InstuctionList[0]).instructionString.Substring(0, 9);
-                        ev3String += ((Instruction) ev3InstuctionList[1]).instructionString.Substring(0, 9);
-                        ev3String += ((Instruction) ev3InstuctionList[2]).instructionString.Substring(0, 9);
-                        foreach (Instruction instruction in ev3InstuctionList)
-                        {
-                            //ev3String += instruction.instructionString;
+                        if(ev3InstuctionList.Count > 0) {
+                            myEV3.SendMessage("FreeDraw", "0");
+
+                            foreach(String instruction in ev3InstuctionList) {
+                                myEV3.SendMessage(instruction, "0");
+                            }
+                        } else {
+                            //no drawing found
                         }
-                        Console.WriteLine(ev3String);
-                        myEV3.SendMessage("FreeDraw", "0");
-                        myEV3.SendMessage(ev3String, "1");
+
                         break;
                 }
 
@@ -456,9 +455,8 @@ namespace DrawMyPancake {
             drawFlag = true;
             xDown = e.X;
             yDown = e.Y;
-            ev3Instuction = new Instruction {
-                instructionString = Math.Abs(e.X-picCanvas.Width).ToString("D4") + e.Y.ToString("D4") + "F"
-            };
+            ev3Instuction = new Instruction();
+            ev3Instuction.AddCoordinate(e.X, e.Y, picCanvas.Width);
             g = Graphics.FromImage(picCanvas.Image);
         }
 
@@ -476,16 +474,16 @@ namespace DrawMyPancake {
             }
         }
         
-        private void picCanvas_MouseUp(object sender, MouseEventArgs e)
-        {
-            ev3Instuction.ToInstructionString();
-            ev3Instuction.instructionString += Math.Abs(e.X-picCanvas.Width).ToString("D4") + e.Y.ToString("D4") + "F";
-            ev3InstuctionList.Add(ev3Instuction);
+        private void picCanvas_MouseUp(object sender, MouseEventArgs e) {
+            ev3Instuction.AddCoordinate(e.X, e.Y, picCanvas.Width);
+            ArrayList instructionStrings = ev3Instuction.InstructionStrings();
+            foreach(String instruction in instructionStrings) {
+                ev3InstuctionList.Add(instruction);
+            }
             drawFlag = false;
             g.Dispose();
             picCanvas.Refresh();
         }
         
-
     }
 }
