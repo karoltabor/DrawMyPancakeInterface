@@ -50,7 +50,9 @@ namespace DrawMyPancake {
         }
 
         public ArrayList InstructionStrings() {
+            Console.WriteLine("Count coordinates: " + coordinateList.Count );
             OptimizePath();
+            Console.WriteLine("Count after optimizing coordinates: " + coordinateList.Count);
             for(int i = 0; i < coordinateList.Count; i++) {
                 Point coordinate = (Point) coordinateList[i];
                 if(i == 0 || i == (coordinateList.Count - 1)) {

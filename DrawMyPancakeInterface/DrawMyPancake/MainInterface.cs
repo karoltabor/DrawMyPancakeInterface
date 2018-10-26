@@ -60,6 +60,7 @@ namespace DrawMyPancake {
         {
             if (myEV3.isConnected || true)
             {
+                Console.WriteLine(selectedPreset);
                 switch (selectedPreset)
                 {
                     case 2:
@@ -300,7 +301,7 @@ namespace DrawMyPancake {
 
         #endregion
 
-        #region figuurtjes
+        #region Shapes
 
         /// <summary>
         /// Backup draw figures in case of drawing functionalities are increased
@@ -504,7 +505,20 @@ namespace DrawMyPancake {
                 text = text.PadLeft((6 - len + 1) / 2);
                 text = text.PadRight(((6 - len + 1) / 2) + 1);
             }
-            return text;
+            return ReverseString(text);
+        }
+
+        public static string ReverseString(string s) {
+            char[] charArray = s.ToCharArray();
+            int len = s.Length - 1;
+
+            for(int i = 0; i < len; i++, len--) {
+                charArray[i] ^= charArray[len];
+                charArray[len] ^= charArray[i];
+                charArray[i] ^= charArray[len];
+            }
+
+            return new string(charArray);
         }
 
     }
