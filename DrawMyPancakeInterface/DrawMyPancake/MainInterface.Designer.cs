@@ -518,8 +518,6 @@
             this.Controls.Add(this.pnlLeft);
             this.Controls.Add(this.middlePanel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "mainForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
