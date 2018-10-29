@@ -127,9 +127,6 @@
     <None Include="Resources\square_outline.gif" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\DMP_Bitmap.BMP" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\smiley-icon3.png" />
   </ItemGroup>
   <ItemGroup>
@@ -170,6 +167,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\settings-icon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\draw-my-pancake-logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paper-texture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\koek.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DMP_Bitmap.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn_play.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

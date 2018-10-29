@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
             this.pnlLeft = new System.Windows.Forms.Panel();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnOpen = new System.Windows.Forms.Button();
@@ -71,6 +72,7 @@
             // 
             this.pnlLeft.AutoScroll = true;
             this.pnlLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(171)))), ((int)(((byte)(225)))));
+            this.pnlLeft.Controls.Add(this.btnPrint);
             this.pnlLeft.Controls.Add(this.btnSettings);
             this.pnlLeft.Controls.Add(this.btnSave);
             this.pnlLeft.Controls.Add(this.btnOpen);
@@ -87,6 +89,28 @@
             this.pnlLeft.Name = "pnlLeft";
             this.pnlLeft.Size = new System.Drawing.Size(200, 1041);
             this.pnlLeft.TabIndex = 0;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(171)))), ((int)(((byte)(225)))));
+            this.btnPrint.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPrint.FlatAppearance.BorderSize = 0;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.Font = new System.Drawing.Font("Bahnschrift Light", 14F);
+            this.btnPrint.ForeColor = System.Drawing.Color.White;
+            this.btnPrint.Image = global::PanelTesting.Properties.Resources.btn_play;
+            this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrint.Location = new System.Drawing.Point(0, 720);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(0);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnPrint.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnPrint.Size = new System.Drawing.Size(200, 90);
+            this.btnPrint.TabIndex = 19;
+            this.btnPrint.Text = "                  Print";
+            this.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrint.UseVisualStyleBackColor = false;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnSettings
             // 
@@ -105,7 +129,7 @@
             this.btnSettings.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnSettings.Size = new System.Drawing.Size(200, 90);
             this.btnSettings.TabIndex = 17;
-            this.btnSettings.Text = "     Settings";
+            this.btnSettings.Text = "   Settings";
             this.btnSettings.UseVisualStyleBackColor = false;
             this.btnSettings.Click += new System.EventHandler(this.SelectTool);
             this.btnSettings.MouseHover += new System.EventHandler(this.menuButton_MouseHover);
@@ -149,7 +173,7 @@
             this.btnOpen.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnOpen.Size = new System.Drawing.Size(200, 90);
             this.btnOpen.TabIndex = 13;
-            this.btnOpen.Text = "     Open File";
+            this.btnOpen.Text = "    Open File";
             this.btnOpen.UseVisualStyleBackColor = false;
             this.btnOpen.Click += new System.EventHandler(this.SelectTool);
             this.btnOpen.MouseHover += new System.EventHandler(this.menuButton_MouseHover);
@@ -171,7 +195,7 @@
             this.btnClear.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnClear.Size = new System.Drawing.Size(200, 90);
             this.btnClear.TabIndex = 16;
-            this.btnClear.Text = "     Clear Field";
+            this.btnClear.Text = "         Clear Field";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.SelectTool);
             this.btnClear.MouseHover += new System.EventHandler(this.menuButton_MouseHover);
@@ -193,7 +217,7 @@
             this.btnText.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnText.Size = new System.Drawing.Size(200, 90);
             this.btnText.TabIndex = 12;
-            this.btnText.Text = "   Add Text";
+            this.btnText.Text = "  Add Text";
             this.btnText.UseVisualStyleBackColor = false;
             this.btnText.Click += new System.EventHandler(this.SelectTool);
             this.btnText.MouseHover += new System.EventHandler(this.menuButton_MouseHover);
@@ -215,7 +239,7 @@
             this.btnPen.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnPen.Size = new System.Drawing.Size(200, 90);
             this.btnPen.TabIndex = 4;
-            this.btnPen.Text = "  Pentool";
+            this.btnPen.Text = "Pentool";
             this.btnPen.UseVisualStyleBackColor = false;
             this.btnPen.Click += new System.EventHandler(this.SelectTool);
             this.btnPen.MouseHover += new System.EventHandler(this.menuButton_MouseHover);
@@ -259,7 +283,8 @@
             this.btnMenu.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnMenu.Size = new System.Drawing.Size(200, 90);
             this.btnMenu.TabIndex = 18;
-            this.btnMenu.Text = "Menu";
+            this.btnMenu.Text = "                 Menu";
+            this.btnMenu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenu.UseVisualStyleBackColor = false;
             this.btnMenu.Click += new System.EventHandler(this.SelectTool);
             this.btnMenu.MouseHover += new System.EventHandler(this.menuButton_MouseHover);
@@ -428,7 +453,6 @@
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbLogo.TabIndex = 1;
             this.pbLogo.TabStop = false;
-            this.pbLogo.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // pnlAddText
             // 
@@ -494,7 +518,7 @@
             // picCanvas
             // 
             this.picCanvas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(231)))), ((int)(((byte)(197)))));
-            this.picCanvas.Image = global::PanelTesting.Properties.Resources.DMP_Bitmap;
+            this.picCanvas.Image = global::PanelTesting.Properties.Resources.koek;
             this.picCanvas.Location = new System.Drawing.Point(145, 260);
             this.picCanvas.Margin = new System.Windows.Forms.Padding(0);
             this.picCanvas.Name = "picCanvas";
@@ -514,6 +538,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.BackgroundImage = global::PanelTesting.Properties.Resources.paper_texture;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
             this.Controls.Add(this.pnlLeft);
             this.Controls.Add(this.middlePanel);
@@ -566,6 +591,7 @@
         private System.Windows.Forms.Button btnTriangle;
         private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.PictureBox pbPresetPreview;
+        private System.Windows.Forms.Button btnPrint;
     }
 }
 

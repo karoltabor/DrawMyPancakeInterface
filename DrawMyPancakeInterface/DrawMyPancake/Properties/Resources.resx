@@ -169,4 +169,16 @@
   <data name="triangle_icon3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\triangle-icon3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="draw_my_pancake_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\draw-my-pancake-logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="koek" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\koek.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="paper_texture" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\paper-texture.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_play" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btn_play.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

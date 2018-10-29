@@ -8,7 +8,7 @@ namespace DrawMyPancake {
         private ArrayList coordinateList = new ArrayList();
         private ArrayList coordinateStringList = new ArrayList();
         public string instructionString = "";
-        private const int unprecision = 50;
+        private const int unprecision = 10;
 
         public void AddCoordinate(int x, int y, int canvasWidth) {
             Point p = new Point(Math.Abs(x - canvasWidth), y);

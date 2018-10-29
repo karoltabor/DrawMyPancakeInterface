@@ -63,6 +63,16 @@ namespace PanelTesting.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btn_play {
+            get {
+                object obj = ResourceManager.GetObject("btn_play", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap circle_outline {
             get {
                 object obj = ResourceManager.GetObject("circle_outline", resourceCulture);
@@ -83,9 +93,29 @@ namespace PanelTesting.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap draw_my_pancake_logo {
+            get {
+                object obj = ResourceManager.GetObject("draw_my_pancake_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dustbin_icon5 {
             get {
                 object obj = ResourceManager.GetObject("dustbin_icon5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap koek {
+            get {
+                object obj = ResourceManager.GetObject("koek", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -116,6 +146,16 @@ namespace PanelTesting.Properties {
         internal static System.Drawing.Bitmap open_icon2 {
             get {
                 object obj = ResourceManager.GetObject("open_icon2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap paper_texture {
+            get {
+                object obj = ResourceManager.GetObject("paper_texture", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

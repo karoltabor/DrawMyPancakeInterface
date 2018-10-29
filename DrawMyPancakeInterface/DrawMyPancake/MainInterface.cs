@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Net;
 using System.Windows.Forms;
 using System.IO;
+using System.Threading;
+using Timer = System.Windows.Forms.Timer;
 
 namespace DrawMyPancake {
     public partial class mainForm : Form
@@ -34,6 +36,7 @@ namespace DrawMyPancake {
             messageReceiveTimer = new Timer();
             messageReceiveTimer.Interval = 100;
             messageReceiveTimer.Tick += new System.EventHandler(messageReadTimer_Tick);
+
             myEV3 = new EV3Wifi();
             Connect();
 
@@ -57,7 +60,7 @@ namespace DrawMyPancake {
         }
 
 
-        private void btnStart_Click(object sender, EventArgs e)
+        private void btnPrint_Click(object sender, EventArgs e)
         {
             if (myEV3.isConnected || true)
             {
@@ -87,9 +90,17 @@ namespace DrawMyPancake {
                     default:
                         if(ev3InstuctionList.Count > 0) {
                             myEV3.SendMessage("FreeDraw", "0");
-
+                            bool first = true;
                             foreach(String instruction in ev3InstuctionList) {
-                                myEV3.SendMessage(instruction, "0");
+                                myEV3.SendMessage(instruction, "1");
+                                Console.WriteLine(instruction);
+                                if (first) {
+                                    Thread.Sleep(15000);
+                                    first = false;
+                                }
+                                else {
+                                    Thread.Sleep(1000);
+                                }
                             }
                         } else {
                             MessageBox.Show("No drawing found!");
