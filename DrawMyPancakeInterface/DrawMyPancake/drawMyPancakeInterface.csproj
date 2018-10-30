@@ -186,5 +186,23 @@
   <ItemGroup>
     <None Include="Resources\btn_play.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\driehoek.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hartje.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spiraal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ster.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vierkant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smiley.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

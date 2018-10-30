@@ -116,37 +116,39 @@ namespace DrawMyPancake {
         /// Main Buttons eventhandlers
         /// </summary>
 
-        private void SelectPreset(object sender,EventArgs e)
-        {
+        private void SelectPreset(object sender,EventArgs e) {
+            pnlPresetsButtons.Visible = true;
+            pnlAddText.Visible = false;
+            pnlBitmap.Visible = false;
             pbPresetPreview.Visible = true;
-            picCanvas.Visible = true;
             pnlBitmap.Visible = true;
+            picCanvas.Visible = false;
             pbPresetPreview.BackColor = Color.Transparent;          /// todo: plaatjes
             switch (((Button)sender).Name)
             {
                 case "btnSquare":
                     clearDrawing();
-                    pbPresetPreview.Image = Resources.square_icon;
+                    pbPresetPreview.Image = Resources.vierkant;
                     selectedPreset = 2;
                     break;
                 case "btnSmiley":
                     clearDrawing();
-                    pbPresetPreview.Image = Resources.smiley_icon3;
+                    pbPresetPreview.Image = Resources.smiley;
                     selectedPreset = 3;
                     break;
                 case "btnTriangle":
                     clearDrawing();
-                    pbPresetPreview.Image = Resources.triangle_icon3;
+                    pbPresetPreview.Image = Resources.driehoek;
                     selectedPreset = 4;
                     break;
                 case "btnHeart":
                     clearDrawing();
-                    pbPresetPreview.Image = Resources.preset_icon4;
+                    pbPresetPreview.Image = Resources.hartje;
                     selectedPreset = 5;
                     break;
                 case "btnSpiral":
                     clearDrawing();
-                    pbPresetPreview.Image = Resources.spiral_icon;
+                    pbPresetPreview.Image = Resources.spiraal;
                     selectedPreset = 6;
                     break;
             }
@@ -161,9 +163,9 @@ namespace DrawMyPancake {
                     break;
 
                 case "btnPreset":
-                    pnlAddText.Visible = false;
                     pnlPresetsButtons.Visible = true;
-                    //pnlBitmap.Visible = false;
+                    pnlAddText.Visible = false;
+                    pnlBitmap.Visible = false;
                     break;
 
                 case "btnPen":
@@ -171,6 +173,7 @@ namespace DrawMyPancake {
                     pnlPresetsButtons.Visible = false;
                     pbPresetPreview.Visible = false;
                     pnlBitmap.Visible = true;
+                    picCanvas.Visible = true;
                     g = Graphics.FromImage(Resources.DMP_Bitmap);
                     selectedPreset = 1;
                     break;

@@ -103,9 +103,29 @@ namespace PanelTesting.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap driehoek {
+            get {
+                object obj = ResourceManager.GetObject("driehoek", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dustbin_icon5 {
             get {
                 object obj = ResourceManager.GetObject("dustbin_icon5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hartje {
+            get {
+                object obj = ResourceManager.GetObject("hartje", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,9 +223,29 @@ namespace PanelTesting.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap smiley {
+            get {
+                object obj = ResourceManager.GetObject("smiley", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap smiley_icon3 {
             get {
                 object obj = ResourceManager.GetObject("smiley_icon3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap spiraal {
+            get {
+                object obj = ResourceManager.GetObject("spiraal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,6 +283,16 @@ namespace PanelTesting.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ster {
+            get {
+                object obj = ResourceManager.GetObject("ster", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap text_icon2 {
             get {
                 object obj = ResourceManager.GetObject("text_icon2", resourceCulture);
@@ -266,6 +316,16 @@ namespace PanelTesting.Properties {
         internal static System.Drawing.Bitmap triangle_icon3 {
             get {
                 object obj = ResourceManager.GetObject("triangle_icon3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vierkant {
+            get {
+                object obj = ResourceManager.GetObject("vierkant", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -507,6 +507,7 @@
             // 
             // pbPresetPreview
             // 
+            this.pbPresetPreview.BackColor = System.Drawing.Color.SandyBrown;
             this.pbPresetPreview.Location = new System.Drawing.Point(145, 260);
             this.pbPresetPreview.Name = "pbPresetPreview";
             this.pbPresetPreview.Size = new System.Drawing.Size(733, 524);
